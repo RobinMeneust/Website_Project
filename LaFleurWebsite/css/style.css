@@ -163,6 +163,10 @@ a.navElement:hover{
 	margin: auto;
 }
 
+.tableContactForm td{
+	padding-top: 1vh;
+}
+
 input, select, textarea{
 	color:black;
 }
@@ -173,4 +177,18 @@ input, select, textarea{
 
 .mediumSize{
 	width: 40vw;
+}
+
+.submitButton{
+	width: 10vw;
+	height:5vh;
+	background-color: #232B32;
+	border:white 1px solid;
+	color: #e94560;;
+	font-weight:bold;
+	font-size: 15px;
+}
+
+.submitButton:hover{
+	cursor: pointer;
 }

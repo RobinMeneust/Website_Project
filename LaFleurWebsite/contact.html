@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Accueil</title>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<table class="tableHeader">
+					<tr>
+						<td class="logo"><img src="./img/logo.png" alt="nom du site" width="80%"></td>
+						<td><h1 class="title">LA FLEUR</h1></td>
+						<td>
+							<div class="loginAndCart">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff"><path d="M10 12c-7.3 0-9 5.5-9 5.5v1h18v-1S17.3 12 10 12z"/><circle cx="10" cy="6" r="5"/></svg> Connexion <br>
+							</div>
+						</td>
+					</tr>
+					<tfoot>
+						<tr>
+						<td colspan="3">
+							<nav>
+								<ul>
+									<li class="navElement" id="firstNavElement"><a class="navElement" href="index.php">Accueil</a></li>
+									<li class="navElement"><a class="navElement" href="WIP.php">Bulbes</a></li>
+									<li class="navElement"><a class="navElement" href="WIP.php">Rosiers</a></li>
+									<li class="navElement" id="largeNavElement"><a class="navElement" href="WIP.php">Plantes à massif</a></li>
+									<li class="navElement"><a class="navElement" href="contact.html">Contact</a></li>
+								</ul>
+							</nav>
+						</td>
+					</tr></tfoot>
+				</table>
+			</header>
+			<div class="base">
+				<div class="box menu">
+					<p>Placeholder menu</p>
+				</div>
+				<div class="verticalRule"></div>
+				<div class="box mainPart">
+					<h1>PLACEHOLDER TITLE</h1><br>
+					<form>
+                        <h1 style="text-align: center; color:#e94560;">Demande de contact</h1><br>
+                        <table class="tableContactForm">
+                            <tr>
+                                <td class="smallSize"><label for="formDate">Date du contact</label></td>
+                                <td><input class="smallSize" type="date" id="formDate" name="formDate"></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="lastName">Nom</label></td>
+                                <td><input class="mediumSize" placeholder="Entrez votre nom" type="text" id="lastName" name="lastName"></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="firstName">Prénom</label></td>
+                                <td><input placeholder="Entrez votre prénom" type="text" id="firstName" name="firstName"></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="email">Email</label></td>
+                                <td><input placeholder="monmail@monsite.org" type="email" id="email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize">Genre</td>
+                                <td>
+                                    <input style="margin: 0 7px 0 7px" type="radio" id="female" name="gender"><label for="genderF">Femme</label>
+                                    <input style="margin: 0 7px 0 7px" type="radio" id="male" name="gender"><label for="genderM">Homme</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="birthDate">Date de Naissance</label></td>
+                                <td><input class="smallSize" type="date" id="birthDate" name="birthDate"></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="job">Fonction</label></td>
+                                <td><select id="job" name="job">
+                                    <option>TEST</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="subject">Sujet</label></td>
+                                <td><input class="mediumSize" placeholder="Entrez le sujet de votre mail" type="text" id="subject" name="subject"></td>
+                            </tr>
+                            <tr>
+                                <td class="smallSize"><label for="subject">Sujet</label></td>
+                                <td><textarea placeholder="Tapez ici votre mail" style="height: 10vh; width:50vw"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="submitButton" type="submit"></td>
+                            </tr>
+                        </table>
+                    </form>
+				</div>
+			</div>
+			<footer>
+				<div class="footerContent">
+					<h4>footer title placeholder</h4><br>
+					<address>
+						placeholder<br>
+					</address>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
