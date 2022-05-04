@@ -176,7 +176,7 @@ input, select, textarea{
 }
 
 .mediumSize{
-	width: 40vw;
+	width: 32vw;
 }
 
 .submitButton{
@@ -191,4 +191,13 @@ input, select, textarea{
 
 .submitButton:hover{
 	cursor: pointer;
+}
+
+#contact_form_job option{
+	background-color: #232B32;
+}
+
+.contact_form_format_info{
+	display: none;
+	color: red;
 }
