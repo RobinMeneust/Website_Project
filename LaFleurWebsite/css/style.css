@@ -38,6 +38,8 @@ header{
 .menu{
 	width:15vw;
 	word-break:break-all;
+	/*background-color: #322f46;*/
+	border-radius: 20px;
 }
 
 .menu, .mainPart{
@@ -75,7 +77,6 @@ the whole page of the browser (and never overflows).
 it has also been designed to remain fixed. 
 */
 
-/*The part bellow is linked to the Headder*/
 .tableHeader{
 	border-collapse:collapse;
 	width:100%;
@@ -90,19 +91,19 @@ it has also been designed to remain fixed.
 }
 
 .title{
-	vertical-align:center;
+	text-align:center;
 	font-size:60px;
+	width: 70vw;
 }
 
-.loginAndCart{
-	margin-left:auto;
-	margin-top:auto;
+.loginBox, .cartBox{
 	height:8vh;
 	width:12vw;
+	margin-right: 1vw;
 }
 
 body{
-	background-color: #232B32;
+	background-color: #22202f;
 }
 
 hr{
@@ -112,33 +113,50 @@ hr{
 }
 
 nav{
-	border-bottom: solid white 1px;
-	border-top: solid white 1px;
 	padding: 0.5vw;
-	width:63vw;
+	height: 100%;
 	font-size:25px;
-	color:white;
-	margin-left:15vw;
-	margin-bottom: 3vh;
+	text-align: center;
 }
 
-li.navElement{
+.horizontalMenu{
+	background-color: #322f46;
+}
+
+.navElement li{
 	list-style-type: none;
 	display: inline-block;
 	width: 8vw;
 	text-align: center;
-	border-left: solid white 1px;
 	text-decoration:none;
 }
 
-a.navElement{
+.navElement a, .menuElement a{
 	text-decoration:none;
+	color: white;
 }
 
-a.navElement:hover{
-	text-decoration: underline;
-	text-decoration-color:#e94560;
-	color:rgb(201, 201, 201)
+.navElement a:hover, .menuElement a:hover{
+	color:#a8a8a8;
+}
+
+.menuElement{
+	font-size:25px;
+	list-style-type: none;
+}
+
+.menuElement img{
+	width: 35px;
+	height: 35px;
+}
+
+.menuElement a{
+	border-radius: 10px;
+	display: inline-block;
+	width:100%;
+}
+.menuElement a:hover{
+	background-color: #322f46;
 }
 
 #firstNavElement{
@@ -182,7 +200,7 @@ input, select, textarea{
 .submitButton{
 	width: 10vw;
 	height:5vh;
-	background-color: #232B32;
+	background-color: #22202f;
 	border:white 1px solid;
 	color: #e94560;;
 	font-weight:bold;
@@ -194,7 +212,7 @@ input, select, textarea{
 }
 
 #contact_form_job option{
-	background-color: #232B32;
+	background-color: #22202f;
 }
 
 .contact_form_format_info{
