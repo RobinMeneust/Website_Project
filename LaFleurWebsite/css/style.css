@@ -235,8 +235,3 @@ input, select, textarea{
 #contact_form_job option{
 	background-color: #22202f;
 }
-
-.contact_form_format_info{
-	display: none;
-	color: red;
-}

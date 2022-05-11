@@ -68,22 +68,19 @@
 						<tr>
 							<td class="smallSize"><label for="contact_form_lastName">Nom</label></td>
 							<td>
-								<input onfocusout="checkIfEmpty(this)" class="mediumSize" placeholder="Entrez votre nom" type="text" id="contact_form_lastName" name="contact_form_lastName" required>
-								<span class="contact_form_format_info" id="contact_form_lastName_format">Ne doit pas être vide</span>
+								<input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="Entrez votre nom" type="text" id="contact_form_lastName" name="contact_form_lastName" required>
 							</td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_firstName">Prénom</label></td>
 							<td>
-								<input onfocusout="checkIfEmpty(this)" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="contact_form_firstName" name="contact_form_firstName" required>
-								<span class="contact_form_format_info" id="contact_form_firstName_format">Ne doit pas être vide</span>
+								<input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="contact_form_firstName" name="contact_form_firstName" required>
 							</td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_email">Email</label></td>
 							<td>
-								<input onfocusout="checkIfEmpty(this)" placeholder="monmail@monsite.org" class="mediumSize" type="email" id="contact_form_email" name="contact_form_email" required>
-								<span class="contact_form_format_info" id="contact_form_email_format">Ne doit pas être vide</span>
+								<input placeholder="monmail@monsite.org" class="mediumSize" type="email" id="contact_form_email" name="contact_form_email" required>
 							</td>
 						</tr>
 						<tr>
@@ -113,15 +110,13 @@
 						<tr>
 							<td class="smallSize"><label for="contact_form_subject">Sujet</label></td>
 							<td>
-								<input onfocusout="checkIfEmpty(this)" class="mediumSize" placeholder="Entrez le sujet de votre mail" type="text" id="contact_form_subject" name="contact_form_subject" required>
-								<span class="contact_form_format_info"class="smallSize" id="contact_form_subject_format">Ne doit pas être vide</span>
+								<input maxlength="255" class="mediumSize" placeholder="Entrez le sujet de votre mail" type="text" id="contact_form_subject" name="contact_form_subject" required>
 							</td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_content">Contenu</label></td>
 							<td>
-								<textarea style="resize: none;" rows="5" cols="120" onfocusout="checkIfEmpty(this)" placeholder="Tapez ici votre mail" id="contact_form_content" name="contact_form_content" style="height: 10vh; width:50vw" required></textarea>
-								<span class="contact_form_format_info" id="contact_form_content_format">Ne doit pas être vide</span>
+								<textarea maxlength="10000" style="resize: none;" rows="5" cols="120" placeholder="Tapez ici votre mail" id="contact_form_content" name="contact_form_content" style="height: 10vh; width:50vw" required></textarea>
 							</td>
 						</tr>
 						<tr>
