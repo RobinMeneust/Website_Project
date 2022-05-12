@@ -102,16 +102,7 @@ it has also been designed to remain fixed.
 	margin-right: 1vw;
 }
 
-.loginBox button{
-	background-color: transparent;
-	border: none;
-}
-
-.loginBox button:hover{
-	cursor:pointer;
-}
-
-.cartBox a{
+.cartBox a, .loginBox a{
 	text-decoration: none;
 }
 
@@ -146,7 +137,6 @@ nav{
 
 .navElement a, .menuElement a{
 	text-decoration:none;
-	color: white;
 }
 
 .navElement a:hover, .menuElement a:hover{
@@ -228,11 +218,36 @@ input, select, textarea{
 	background-color: #22202f;
 }
 /* Style of all element of login.php */
+.loginHead{
+	width:100%;
+	height:20vh;
+}
 .loginDiv{
 	background-color: #322f46;
 	border: 1px solid #22202f;
-	position:absolute;
-	right:2vw;
+  	margin: auto;
+	width: 300px;
+	height: auto;
 	padding:5px;
+}
+
+.loginFooter{
+	margin-top:2vh;
+	margin-left:20vw;
+	width:60vw;
+	height:10vh;
+	border-top: 1px white solid;
+}
+.loginFooter tr{
+	text-align: center;
+}
+.loginFootMenu{
+	list-style-type: none;
+	display: inline-block;
+	text-align: center;
+}
+.loginFootMenu a{
+	font-size: small;
+	text-decoration:none;
 }
 /* Style of all element of login.php */
