@@ -8,7 +8,7 @@
 </head>
 <body>
         <div class="loginHead"></div>
-        <div class="loginDiv"><form>
+        <div class="loginDiv"><form name="login_form" id="login_form" method="post">
             <table>
                 <tr>
                     <td colspan="2" style="padding:10px ; text-align: center;"><h2>Se connecter à Wip.com<h2></td>
