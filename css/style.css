@@ -217,13 +217,12 @@ input, select, textarea{
 #contact_form_job option{
 	background-color: #22202f;
 }
-/* Style of all element of login.php */
+/* Style of all element of login.php*/
 .loginDiv{
 	background-color: #322f46;
-	border: 1px solid #22202f;
   	margin: auto;
 	margin-top:20vh;
-	width: 300px;
+	width: 350px;
 	height: auto;
 	padding:5px;
 }
@@ -233,20 +232,24 @@ input, select, textarea{
 	margin-left:20vw;
 	width:60vw;
 	border-top: 1px white solid;
+	text-align:center;
 }
-.loginFooter tr{
-	text-align: center;
-}
-.loginFootMenu{
-	list-style-type: none;
-	display: inline-block;
-	text-align: center;
-}
-.loginFootMenu a{
-	font-size: small;
+.loginFooter a{
 	text-decoration:none;
+	font-size:small;
 }
 /* Style of all element of login.php */
+
+/* Style of all element of createaccount.php*/
+.createaccountDiv{
+	background-color: #322f46;
+  	margin: auto;
+	margin-top:20vh;
+	width: 400px;
+	height: auto;
+	padding:5px;
+}
+/* Style of all element of createaccount.php*/
 
 /* Style of all element of profil.php */
 .profilDiv{

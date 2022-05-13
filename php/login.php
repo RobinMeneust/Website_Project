@@ -15,20 +15,23 @@ $_SESSION["errorlogin"];
         <div class="loginDiv">
             <form name="login_form" id="login_form" method="post" action="verification.php">
                 <fieldset>
-                    <table>
+                    <table style="width:100%">
                         <tr>
                             <td colspan="2" style="padding:10px ; text-align: center;"><h2>Se connecter à Wip.com<h2></td>
                         </tr>
                         <tr>
-                            <td style="padding:5px"><br>Mail:</td>
-                            <td style="padding:5px"><br><input placeholder="monmail@monsite.org" type="email" name="mail" id="mail" required></td>
+                            <td style="padding:5px"><br>Mail :</td>
+                            <td style="padding:5px;"><br><input placeholder="monmail@monsite.org" type="email" name="mail" id="mail" required></td>
                         </tr>
                         <tr>
-                            <td style="padding:5px">Password:</td>
+                            <td style="padding:5px">Password :</td>
                             <td style="padding:5px"><input type="password" name="password" id="password" required></td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="padding:5px; text-align: center;"><input type="submit" value="Valider" style="padding:2px"></td>
+                            <td colspan="2" style="padding:5px; text-align: center;">
+                                <input type="submit" value="Se connecter" style="padding:2px">
+                                <button onclick="location.href='createaccount.php'" style="margin-left:10px; padding:2px; color:black;">Créer un compte</button>
+                            </td>
                         </tr>
                     </table>    
                     <?php
@@ -40,12 +43,8 @@ $_SESSION["errorlogin"];
                 </fieldset>
             </form>
     </div>
-        <div class="loginFooter">
-            <nav>
-                <ul class="loginFootMenu">
-                    <li><a href="../index.php">Retourner à l'accueil</a></li>
-                </ul>
-            </nav>
+    <div class="loginFooter">
+            <p><a href="../index.php">Retourner à l'accueil</a></p>
         </div>
 </body>
 </html>
