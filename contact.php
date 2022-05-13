@@ -58,27 +58,27 @@
 			</div>
 			<div class="box mainPart">
 				<h1>PLACEHOLDER TITLE</h1><br>
-				<form name="contact_form" id="contact_form" method="post">
+				<form name="contact_form" id="contact_form" method="post" action="php/sendContactForm.php">
 					<h1 style="text-align: center; color:#e94560;">Demande de contact</h1><br>
 					<table class="tableContactForm">
 						<tr>
-							<td class="smallSize"><label for="contact_form_date">Date du contact</label></td>
+							<td class="smallSize"><label for="contact_form_date">Date du contact *</label></td>
 							<td><input class="smallSize" type="date" id="contact_form_date" name="contact_form_date" required></td>
 						</tr>
 						<tr>
-							<td class="smallSize"><label for="contact_form_lastName">Nom</label></td>
+							<td class="smallSize"><label for="contact_form_lastName">Nom *</label></td>
 							<td>
 								<input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="Entrez votre nom" type="text" id="contact_form_lastName" name="contact_form_lastName" required>
 							</td>
 						</tr>
 						<tr>
-							<td class="smallSize"><label for="contact_form_firstName">Prénom</label></td>
+							<td class="smallSize"><label for="contact_form_firstName">Prénom *</label></td>
 							<td>
 								<input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="contact_form_firstName" name="contact_form_firstName" required>
 							</td>
 						</tr>
 						<tr>
-							<td class="smallSize"><label for="contact_form_email">Email</label></td>
+							<td class="smallSize"><label for="contact_form_email">Email *</label></td>
 							<td>
 								<input placeholder="monmail@monsite.org" class="mediumSize" type="email" id="contact_form_email" name="contact_form_email" required>
 							</td>
@@ -86,17 +86,18 @@
 						<tr>
 							<td class="smallSize">Genre</td>
 							<td>
-								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderF" name="contact_form_gender"><label for="contact_form_genderF" required>Femme</label>
-								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderM" name="contact_form_gender"><label for="contact_form_genderM">Homme</label>
+								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderF" name="contact_form_gender" value="femme"><label for="contact_form_genderF">Femme</label>
+								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderM" name="contact_form_gender" value="homme"><label for="contact_form_genderM">Homme</label>
 							</td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_birthDate">Date de Naissance</label></td>
-							<td><input class="smallSize" type="date" id="contact_form_birthDate" name="contact_form_birthDate" required></td>
+							<td><input class="smallSize" type="date" id="contact_form_birthDate" name="contact_form_birthDate"></td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_job">Fonction</label></td>
-							<td><select id="contact_form_job" name="contact_form_job" required>
+							<td><select id="contact_form_job" name="contact_form_job">
+								<option selected></option>
 								<option>Agriculteurs exploitants</option>
 								<option>Artisans. commerçants. chefs entreprise</option>
 								<option>Cadres et professions intellectuelles supérieures</option>
@@ -108,20 +109,20 @@
 							</select></td>
 						</tr>
 						<tr>
-							<td class="smallSize"><label for="contact_form_subject">Sujet</label></td>
+							<td class="smallSize"><label for="contact_form_subject">Sujet *</label></td>
 							<td>
 								<input maxlength="255" class="mediumSize" placeholder="Entrez le sujet de votre mail" type="text" id="contact_form_subject" name="contact_form_subject" required>
 							</td>
 						</tr>
 						<tr>
-							<td class="smallSize"><label for="contact_form_content">Contenu</label></td>
+							<td class="smallSize"><label for="contact_form_content">Contenu *</label></td>
 							<td>
 								<textarea maxlength="10000" style="resize: none;" rows="5" cols="120" placeholder="Tapez ici votre mail" id="contact_form_content" name="contact_form_content" style="height: 10vh; width:50vw" required></textarea>
 							</td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><input class="submitButton" type="submit"></td>
+							<td><input class="submitButton" type="submit"><span style="margin-left: 50px">Les champs avec un "*" ne doivent pas être vides</span></td>
 						</tr>
 					</table>
 				</form>

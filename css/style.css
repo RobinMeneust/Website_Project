@@ -266,4 +266,25 @@ input, select, textarea{
 	text-decoration: none;
 	border:solid 1px white;
 }
-/* Style of all element of profil.php */
+
+.mailTable{
+	border-collapse: collapse;
+	width:75vw;
+	margin:5vw;
+}
+
+.mailTable td{
+	border: white solid 1px;
+	padding:1vw;
+}
+
+.mailTable td a{
+	padding: 0.5vw;
+	height:5vh;
+	background-color: #22202f;
+	border:white 1px solid;
+	color: #e94560;;
+	font-weight:bold;
+	font-size: 15px;
+	text-decoration: none;
+}

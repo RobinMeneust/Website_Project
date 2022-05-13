@@ -13,7 +13,7 @@ $_SESSION["errorlogin"];
 </head>
 <body>
         <div class="createaccountDiv">
-            <form name="login_form" id="login_form" method="post" action="verification.php">
+            <form name="login_form" id="login_form" method="post" action="loginVerification.php">
                 <fieldset>
                     <table style="width:100%">
                         <tr>
