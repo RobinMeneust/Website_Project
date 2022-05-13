@@ -1,6 +1,5 @@
 <?php
-session_start();
-$_SESSION["errorlogin"];
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +19,11 @@ $_SESSION["errorlogin"];
                             <td colspan="2" style="padding:10px ; text-align: center;"><h2>Se connecter à Wip.com<h2></td>
                         </tr>
                         <tr>
-                            <td style="padding:5px"><br>Mail :</td>
-                            <td style="padding:5px;"><br><input placeholder="monmail@monsite.org" type="email" name="mail" id="mail" required></td>
+                            <td style="padding:5px"><br>Mail ou identifiant :</td>
+                            <td style="padding:5px;"><br><input placeholder="identifiant" type="text" name="username" id="username" required></td>
                         </tr>
                         <tr>
-                            <td style="padding:5px">Password :</td>
+                            <td style="padding:5px">Mot de passe :</td>
                             <td style="padding:5px"><input type="password" name="password" id="password" required></td>
                         </tr>
                         <tr>
@@ -35,9 +34,11 @@ $_SESSION["errorlogin"];
                         </tr>
                     </table>    
                     <?php
-                    if($_SESSION["errorlogin"]==1){
-                        echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Nom d\'utilisateur ou mot de passe incorrect</p>');
-                        $_SESSION["errorlogin"]=0;
+                    if(isset($_SESSION["errorLogin"])){
+                        if($_SESSION["errorLogin"]==1){
+                            echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Nom d\'utilisateur ou mot de passe incorrect</p>');
+                            $_SESSION["errorLogin"]=0;
+                        }
                     }
                     ?>
                 </fieldset>

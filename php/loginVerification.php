@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +9,8 @@ session_start();
 </head>
 <body>
 <?php
-    $_SESSION["errorlogin"]=0;
-    $_SESSION["Islogin"]=0;
+    $_SESSION["errorLogin"]=0;
+    $_SESSION["isLoggedIn"]=0;
     $_SESSION["currentUsername"]="";
     $loginsArray = array(
         // [mail, password, username]
@@ -20,7 +20,7 @@ session_start();
     );
 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $username=$_REQUEST["mail"];
+        $username=$_REQUEST["username"];
         $password=$_REQUEST["password"];
         
         foreach($loginsArray as $login){
@@ -32,7 +32,7 @@ session_start();
                 exit();
             }
         }
-        $_SESSION["errorlogin"]=1;
+        $_SESSION["errorLogin"]=1;
         header("Location: ./login.php", true);
         exit();
     }

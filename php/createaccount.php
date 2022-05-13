@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["errorlogin"];
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +63,9 @@ $_SESSION["errorlogin"];
                         </tr>
                     </table>    
                     <?php
-                    if($_SESSION["errorlogin"]==1){
+                    if($_SESSION["errorLogin"]==1){
                         echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Nom d\'utilisateur ou mot de passe incorrect</p>');
-                        $_SESSION["errorlogin"]=0;
+                        $_SESSION["errorLogin"]=0;
                     }
                     ?>
                 </fieldset>
