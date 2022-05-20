@@ -27,6 +27,10 @@ session_start();
                             <td style="padding:5px"><input type="text" name="firstName" id="firstName" required></td>
                         </tr>
                         <tr>
+                            <td style="padding:5px">Pseudonyme :</td>
+                            <td style="padding:5px"><input type="text" name="username" id="username" required></td>
+                        </tr>
+                        <tr>
                             <td style="padding:5px"><input style="margin: 0 7px 0 7px" type="radio" id="createaccount_form_genderF" name="createaccount_form_gender"><label for="contact_form_genderF" required>Femme</label>
 							<td style="padding:5px"><input style="margin: 0 7px 0 7px" type="radio" id="createaccount_form_genderM" name="createaccount_form_gender"><label for="contact_form_genderM">Homme</label>
                         </tr>

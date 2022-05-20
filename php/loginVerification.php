@@ -8,41 +8,25 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<?php
+    <?php
     $_SESSION["errorLogin"]=0;
     $_SESSION["isLoggedIn"]=0;
     $_SESSION["currentUsername"]="";
-    $loginsArray = array(
-        // [mail, password, username]
-        array("ethanpinto@orange.fr", "1234", "Hanabi"),
-        array("ethan", "0201", "Also_Hanabi"),
-        array("robin", "1302", "It's Robin")
-    );
+
+    $file = "../data/users.json";
+    $json = json_decode(file_get_contents($file), true);
 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         $username=$_REQUEST["username"];
         $password=$_REQUEST["password"];
-        
-        foreach($loginsArray as $login){
-            if($username==$login[0] && $password==$login[1]){
-                $_SESSION["currentMail"]=$login[0];
-                $_SESSION["currentPassword"]=$login[1];
-                $_SESSION["currentUsername"]=$login[2];
-                header("Location: ../index.php", true);
-                exit();
-            }
-            if($username==$login[2] && $password==$login[1]){
-                $_SESSION["currentMail"]=$login[2];
-                $_SESSION["currentPassword"]=$login[1];
-                $_SESSION["currentUsername"]=$login[2];
-                header("Location: ../index.php", true);
-                exit();
-            }
-        }
-        $_SESSION["errorLogin"]=1;
-        header("Location: ./login.php", true);
-        exit();
     }
-?>
+    foreach($json as $user){
+        if(($username==$user["login"] || $username==$user["email"] ) && $password==$user["password"]){
+            $_SESSION["currentUser"]=$user;
+                header("Location: ../index.php", true);
+                exit();
+        }
+   }
+    ?>
 </body>
 </html>
