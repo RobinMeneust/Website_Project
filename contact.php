@@ -33,9 +33,9 @@
 							<nav>
 								<ul class="navElement">
 									<li><a href="index.php">Accueil</a></li>
-									<li id="largeNavElement"><a href="catagorie.php?cat=c1">Fruits&Légumes</a></li>
-									<li><a href="catagorie.php?cat=c2">Viandes</a></li>
-									<li><a href="catagorie.php?cat=c3">Déssert</a></li>
+									<li id="largeNavElement"><a href="categorie.php?cat=c1">Fruits&Légumes</a></li>
+									<li><a href="categorie.php?cat=c2">Viandes</a></li>
+									<li><a href="categorie.php?cat=c3">Déssert</a></li>
 									<li><a href="contact.php">Contact</a></li>
 								</ul>
 							</nav>
@@ -54,9 +54,9 @@
 				<p>Placeholder menu</p><br>
 				<ul class="menuElement">
 					<li><a href="index.php"><img src=img/logo.png alt="PLACEHOLDER">Accueil</a></li>
-					<li><a href="catagorie.php?cat=c1"><img src=img/logo.png alt="PLACEHOLDER">Fruits&Légumes</a></li>
-					<li><a href="catagorie.php?cat=c2"><img src=img/logo.png alt="PLACEHOLDER">Viandes</a></li>
-					<li><a href="catagorie.php?cat=c3"><img src=img/logo.png alt="PLACEHOLDER">Déssert</a></li>
+					<li><a href="categorie.php?cat=c1"><img src=img/logo.png alt="PLACEHOLDER">Fruits&Légumes</a></li>
+					<li><a href="categorie.php?cat=c2"><img src=img/logo.png alt="PLACEHOLDER">Viandes</a></li>
+					<li><a href="categorie.php?cat=c3"><img src=img/logo.png alt="PLACEHOLDER">Déssert</a></li>
 					<li><a href="contact.php"><img src=img/logo.png alt="PLACEHOLDER">Contact</a></li>
 				</ul>
 			</div>
