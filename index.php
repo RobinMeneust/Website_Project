@@ -46,7 +46,7 @@
 							<nav>
 								<ul class="navElement">
 									<li><a href="index.php">Accueil</a></li>
-									<li><a href="WIP.php">Bulbes</a></li>
+									<li><a href="catalogue.html">Bulbes</a></li>
 									<li><a href="WIP.php">Rosiers</a></li>
 									<li id="largeNavElement"><a href="WIP.php">Plantes à massif</a></li>
 									<li><a href="contact.php">Contact</a></li>
