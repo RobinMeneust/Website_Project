@@ -1,16 +1,7 @@
 <?php
     session_start();
-?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <?php
+  
     $_SESSION["errorLogin"]=0;
-    $_SESSION["isLoggedIn"]=0;
     $_SESSION["currentUsername"]="";
 
     $file = "../data/users.json";
@@ -27,6 +18,4 @@
                 exit();
         }
    }
-    ?>
-</body>
-</html>
+?>

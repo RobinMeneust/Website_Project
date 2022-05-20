@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
         <div class="createaccountDiv">
-            <form name="login_form" id="login_form" method="post" action="loginVerification.php">
+            <form name="login_form" id="login_form" method="post" action="createaccountWritting.php">
                 <fieldset>
                     <table style="width:100%">
                         <tr>
@@ -20,7 +20,7 @@ session_start();
                         </tr>
                         <tr>
                             <td style="padding:5px"><br>Nom :</td>
-                            <td style="padding:5px"><br><input type="text" name="name" id="name" required></td>
+                            <td style="padding:5px"><br><input type="text" name="lastName" id="lastName" required></td>
                         </tr>
                         <tr>
                             <td style="padding:5px">Prénom :</td>
@@ -31,14 +31,14 @@ session_start();
                             <td style="padding:5px"><input type="text" name="username" id="username" required></td>
                         </tr>
                         <tr>
-                            <td style="padding:5px"><input style="margin: 0 7px 0 7px" type="radio" id="createaccount_form_genderF" name="createaccount_form_gender"><label for="contact_form_genderF" required>Femme</label>
-							<td style="padding:5px"><input style="margin: 0 7px 0 7px" type="radio" id="createaccount_form_genderM" name="createaccount_form_gender"><label for="contact_form_genderM">Homme</label>
+                            <td style="padding:5px"><input style="margin: 0 7px 0 7px" type="radio" id="genderF" name="gender"><label for="contact_form_genderF" required>Femme</label>
+							<td style="padding:5px"><input style="margin: 0 7px 0 7px" type="radio" id="genderM" name="gender"><label for="contact_form_genderM">Homme</label>
                         </tr>
                         <tr>
                         </tr>
                         <tr>
                             <td style="padding:5px">Mail :</td>
-                            <td style="padding:5px"><input placeholder="monmail@monsite.org" type="email" name="mail" id="mail" required></td>
+                            <td style="padding:5px"><input placeholder="monmail@monsite.org" type="email" name="email" id="email" required></td>
                         </tr>
                         <tr>
                             <td style="padding:5px">Téléphone :</td>
@@ -54,7 +54,7 @@ session_start();
                         </tr>
                         <tr>
                             <td style="padding:5px">Fonction :</td>
-                            <td style="padding:5px"><select id="createaccount_form_job" name="createaccount_form_job">
+                            <td style="padding:5px"><select id="fonction" name="fonction">
 								<option selected></option>
 								<option>Agriculteurs exploitants</option>
 								<option>Artisans. commerçants. chefs entreprise</option>
