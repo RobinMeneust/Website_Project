@@ -1,6 +1,7 @@
 <?php
 	session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 			<table class="tableHeader">
 				<tr>
 					<td class="logo"><img src="./img/logo.png" alt="logo_du_site" width="250px"></td>
-					<td><h1 class="title">LA FLEUR</h1></td>
+					<td><h1 class="title">LE FONCÉ</h1></td>
 					<td>
 						<span class="loginBox">
 							<svg width="20px" height="20px" fill="#e94560"><path d="M10 12c-7.3 0-9 5.5-9 5.5v1h18v-1S17.3 12 10 12z"/><circle cx="10" cy="6" r="5"/></svg>
@@ -43,9 +44,9 @@
 							<nav>
 								<ul class="navElement">
 									<li><a href="index.php">Accueil</a></li>
-									<li><a href="catalogue.html">Bulbes</a></li>
-									<li><a href="WIP.php">Rosiers</a></li>
-									<li id="largeNavElement"><a href="WIP.php">Plantes à massif</a></li>
+									<li id="largeNavElement"><a href="catagorie.php?cat=c1">Fruits&Légumes</a></li>
+									<li><a href="catagorie.php?cat=c2">Viandes</a></li>
+									<li><a href="catagorie.php?cat=c3">Déssert</a></li>
 									<li><a href="contact.php">Contact</a></li>
 								</ul>
 							</nav>
@@ -63,9 +64,10 @@
 				<br><hr style="width:10vw"><br>
 				<p>Placeholder menu</p><br>
 				<ul class="menuElement">
-					<li><a href="WIP.php"><img src=img/logo.png alt="PLACEHOLDER">Bulbes</a></li>
-					<li><a href="WIP.php"><img src=img/logo.png alt="PLACEHOLDER">Rosiers</a></li>
-					<li><a href="WIP.php"><img src=img/logo.png alt="PLACEHOLDER">Plantes à massif</a></li>
+					<li><a href="index.php"><img src=img/logo.png alt="PLACEHOLDER">Accueil</a></li>
+					<li><a href="catagorie.php?cat=c1"><img src=img/logo.png alt="PLACEHOLDER">Fruits&Légumes</a></li>
+					<li><a href="catagorie.php?cat=c2"><img src=img/logo.png alt="PLACEHOLDER">Viandes</a></li>
+					<li><a href="catagorie.php?cat=c3"><img src=img/logo.png alt="PLACEHOLDER">Déssert</a></li>
 					<li><a href="contact.php"><img src=img/logo.png alt="PLACEHOLDER">Contact</a></li>
 				</ul>
 			</div>
@@ -75,7 +77,6 @@
 					<?php
 					//PLACEHOLDER
 					echo "ici se trouve nos débug \n";
-					echo var_dump($_SESSION["currentUser"]);
 					?>
 				</p>
 			</div>
