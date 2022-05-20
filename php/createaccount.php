@@ -77,9 +77,23 @@ session_start();
                         </tr>
                     </table>    
                     <?php
-                    if($_SESSION["errorLogin"]==1){
-                        echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Nom d\'utilisateur ou mot de passe incorrect</p>');
-                        $_SESSION["errorLogin"]=0;
+                    if(isset($_SESSION["ErrorFormFormat"])){
+                        if($_SESSION["ErrorFormFormat"]==1){
+                            echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Veuillez ne pas utilisé de caractère spéciaux pour remplir ces champs.</p>');
+                            $_SESSION["errorLogin"]=0;
+                        }
+                    }
+                    if(isset($_SESSION["MailAlreadyUse"])){
+                        if($_SESSION["MailAlreadyUse"]==1){
+                            echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Un compte utilise déjà cette adresse email.</p>');
+                            $_SESSION["errorLogin"]=0;
+                        }
+                    }
+                    if(isset($_SESSION["UsernameAlreadyUse"])){
+                        if($_SESSION["UsernameAlreadyUse"]==1){
+                            echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Un compte utilise déjà ce pseudonyme.</p>');
+                            $_SESSION["errorLogin"]=0;
+                        }
                     }
                     ?>
                 </fieldset>
