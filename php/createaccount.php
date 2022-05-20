@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Create Account</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<script src="../js/login.js"></script>
@@ -50,7 +50,17 @@ session_start();
                         </tr>
                         <tr>
                             <td style="padding:5px">Fonction :</td>
-                            <td style="padding:5px"><input type="text" name="function" id="function" required></td>
+                            <td style="padding:5px"><select id="createaccount_form_job" name="createaccount_form_job">
+								<option selected></option>
+								<option>Agriculteurs exploitants</option>
+								<option>Artisans. commerçants. chefs entreprise</option>
+								<option>Cadres et professions intellectuelles supérieures</option>
+								<option>Professions intermédiaires</option>
+								<option>Employés</option>
+								<option>Ouvriers</option>
+								<option>Retraités</option>
+								<option>Autres personnes sans activité professionnelle</option>
+							</select></td>
                         </tr>
                         <tr>
                             <td style="padding:5px">Password :</td>
