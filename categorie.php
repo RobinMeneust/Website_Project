@@ -12,7 +12,7 @@
     <script src="./js/categorieGeneration.js"></script>
 	<script src="./js/catalogue.js"></script>
 </head>
-<body onload="loadCategorie('c3')";>
+<body onload="loadCategorie('<?php echo $_REQUEST["cat"]; ?>');">
 	<div class="wrapper">
 		<header>
 			<table class="tableHeader">
