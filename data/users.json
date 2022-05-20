@@ -13,19 +13,6 @@
 		"id": "u0"
 	},
 	{
-		"login": "Hanabi",
-		"password": "1234",
-		"last_name": "Pinto",
-		"first_name": "Ethan",
-		"gender": "male",
-		"email": "ethanpinto02@gmail.com",
-		"phone_nb": "07 77 77 77 77",
-		"birth_date": "02/01/2002",
-		"address": "21 avenue de cytech",
-		"job": "Etudiant",
-		"id": "u1"
-	},
-	{
 		"login": "",
 		"password": "",
 		"last_name": "",
