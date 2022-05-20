@@ -249,9 +249,13 @@ input, select, textarea{
 	background-color: #322f46;
   	margin: auto;
 	margin-top:20vh;
-	width: 400px;
+	width: 450px;
 	height: auto;
 	padding:5px;
+}
+
+.createaccountDiv option{
+	color:black;
 }
 /* Style of all element of createaccount.php*/
 

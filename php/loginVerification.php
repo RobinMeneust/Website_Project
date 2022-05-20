@@ -31,6 +31,13 @@
                 header("Location: ../index.php", true);
                 exit();
             }
+            if($username==$login[2] && $password==$login[1]){
+                $_SESSION["currentMail"]=$login[2];
+                $_SESSION["currentPassword"]=$login[1];
+                $_SESSION["currentUsername"]=$login[2];
+                header("Location: ../index.php", true);
+                exit();
+            }
         }
         $_SESSION["errorLogin"]=1;
         header("Location: ./login.php", true);
