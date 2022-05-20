@@ -39,10 +39,11 @@ header{
 .verticalMenu{
 	width:2vw;
 	background-color: #322f46;
-	white-space: nowrap;
 	position: fixed;
-	border-radius: 20px;
-	transition: 0.5s;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+	height: 60vh !important;
+	margin-top: -8vh;
 }
 
 .verticalMenu, .mainPart{
@@ -54,8 +55,22 @@ header{
 }
 
 .verticalMenuButton{
+	margin-left: 1.7vw;
+	background-color: #22202f;
+	border: #e94560 solid 2px;
+	border-radius: 50%;
 	position:fixed;
 	z-index:1;
+	margin-top: -5vh;
+	width: 50px;
+	height: 50px;
+	font-size: 30px;
+}
+
+.verticalMenuButton:hover{
+	cursor: pointer;
+	box-shadow: 0 0 20px #e94560;
+	transition: 0.5s;
 }
 
 .verticalMenuText{
@@ -95,13 +110,15 @@ it has also been designed to remain fixed.
 	border-collapse:collapse;
 	width:100%;
 	height:100%;
+	z-index: 3;
 }
 
 .logo{
-	vertical-align:top;
-	text-align:left;
-	padding:1% 0 0 1%;
 	width:15vw;
+}
+
+.logo img{
+	width: 150px;
 }
 
 .title{
@@ -156,7 +173,7 @@ nav{
 	text-decoration:none;
 }
 
-.navElement a:hover, .menuElement a:hover{
+.navElement a:hover, .menuElement a:hover span{
 	color:#e94560;
 }
 
@@ -188,15 +205,6 @@ nav{
 
 #largeNavElement{
 	width: 12vw;
-}
-
-
-.verticalRule{
-	height:70vh;
-	margin-top: 5vh;
-	width:0;
-	position: absolute;
-	border-right:solid white 1px;
 }
 
 .tableContactForm{

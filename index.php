@@ -58,18 +58,21 @@
 			</table>
 		</header>
 		<div class="base">
-			<button class="verticalMenuButton" onclick="changeMenuDisplay('show')">☰</button>
-			<div class="box verticalMenu">
-				<ul class="menuElement">
-					<li><a href="index.php"><img src=img/homepage_icon.svg alt="homepage_icon"><span class="verticalMenuText">Accueil</span></a></li>
-				</ul>
-				<br><hr class="verticalMenuText" style="width:10vw"><br><br>
-				<ul class="menuElement">
-					<li><a href="categorie.php?cat=c1"><img src=img/fruit_icon.svg alt="fruit_icon"><span class="verticalMenuText">Fruits et Légumes</span></a></li>
-					<li><a href="categorie.php?cat=c2"><img src=img/meat_icon.svg alt="meat_icon"><span class="verticalMenuText">Viandes</span></a></li>
-					<li><a href="categorie.php?cat=c3"><img src=img/dessert_icon.svg alt="dessert_icon"><span class="verticalMenuText">Desserts</span></a></li>
-					<li><a href="contact.php"><img src=img/contact_icon.svg alt="contact_icon"><span class="verticalMenuText">Contact</span></a></li>
-				</ul>
+			<div style="text-align:center">
+				<button class="verticalMenuButton" onclick="changeMenuDisplay('show')">☰</button>
+				<div class="verticalMenu">
+					<br><br><br>
+					<ul class="menuElement">
+						<li><a href="index.php"><img src=img/homepage_icon.svg alt="homepage_icon"><span class="verticalMenuText">Accueil</span></a></li>
+					</ul>
+					<hr class="verticalMenuText" style="width:10vw"><br><br>
+					<ul class="menuElement">
+						<li><a href="categorie.php?cat=c1"><img src=img/fruit_icon.svg alt="fruit_icon"><span class="verticalMenuText">Fruits et Légumes</span></a></li>
+						<li><a href="categorie.php?cat=c2"><img src=img/meat_icon.svg alt="meat_icon"><span class="verticalMenuText">Viandes</span></a></li>
+						<li><a href="categorie.php?cat=c3"><img src=img/dessert_icon.svg alt="dessert_icon"><span class="verticalMenuText">Desserts</span></a></li>
+						<li><a href="contact.php"><img src=img/contact_icon.svg alt="contact_icon"><span class="verticalMenuText">Contact</span></a></li>
+					</ul>
+				</div>
 			</div>
 			<div class="box" style="width:20vw;">
 				

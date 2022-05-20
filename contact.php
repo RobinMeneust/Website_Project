@@ -128,7 +128,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input class="submitButton" type="submit"><span style="margin-left: 50px">Les champs avec un "*" ne doivent pas être vides</span></td>
+							<td><input class="submitButton" type="submit"><span style="margin-left: 50px">Les champs avec un * ne doivent pas être vides</span></td>
 						</tr>
 					</table>
 				</form>
