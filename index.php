@@ -58,7 +58,7 @@
 			</table>
 		</header>
 		<div class="base">
-			<div class="box menu">
+			<div class="box verticalMenu">
 				<p>Placeholder menu</p><br>
 				<ul class="menuElement">
 					<li><a href="index.php"><img src=img/logo.png alt="PLACEHOLDER">Accueil</a></li>
@@ -75,9 +75,12 @@
 			<div class="box mainPart">
 				<h1>PLACEHOLDER TITLE</h1><br>
 				<p>
-					Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder <br>
-					Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder <br>
-					Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder <br>
+					<?php
+					//PLACEHOLDER
+					for($i=0; $i<50; $i++){
+						echo "Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder <br>";
+					}
+					?>
 				</p>
 			</div>
 		</div>

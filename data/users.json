@@ -1,5 +1,18 @@
 [
 	{
+		"login": "admin",
+		"password": "1234",
+		"last_name": "",
+		"first_name": "",
+		"gender": "",
+		"email": "",
+		"phone_nb": "",
+		"birth_date": "",
+		"address": "",
+		"job": "",
+		"id": "u0"
+	},
+	{
 		"login": "",
 		"password": "",
 		"last_name": "",
@@ -9,6 +22,7 @@
 		"phone_nb": "",
 		"birth_date": "",
 		"address": "",
-		"job": ""
+		"job": "",
+		"id": ""
 	}
 ]
