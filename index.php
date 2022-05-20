@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script src="js/login.js"></script>
+	<script src="js/global.js"></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -16,7 +17,7 @@
 			<table class="tableHeader">
 				<tr>
 					<td class="logo"><img src="./img/logo.png" alt="logo_du_site" width="250px"></td>
-					<td><h1 class="title">LE FONCÉ</h1></td>
+					<td><h1 class="title">PLACEHOLDER TITLE</h1></td>
 					<td>
 						<span class="loginBox">
 							<svg width="20px" height="20px" fill="#e94560"><path d="M10 12c-7.3 0-9 5.5-9 5.5v1h18v-1S17.3 12 10 12z"/><circle cx="10" cy="6" r="5"/></svg>
@@ -45,9 +46,9 @@
 							<nav>
 								<ul class="navElement">
 									<li><a href="index.php">Accueil</a></li>
-									<li id="largeNavElement"><a href="categorie.php?cat=c1">Fruits&Légumes</a></li>
+									<li id="largeNavElement"><a href="categorie.php?cat=c1">Fruits et Légumes</a></li>
 									<li><a href="categorie.php?cat=c2">Viandes</a></li>
-									<li><a href="categorie.php?cat=c3">Déssert</a></li>
+									<li><a href="categorie.php?cat=c3">Desserts</a></li>
 									<li><a href="contact.php">Contact</a></li>
 								</ul>
 							</nav>
@@ -57,27 +58,30 @@
 			</table>
 		</header>
 		<div class="base">
+			<button class="verticalMenuButton" onclick="changeMenuDisplay('show')">☰</button>
 			<div class="box verticalMenu">
-				<p>Placeholder menu</p><br>
 				<ul class="menuElement">
-					<li><a href="index.php"><img src=img/logo.png alt="PLACEHOLDER">Accueil</a></li>
+					<li><a href="index.php"><img src=img/homepage_icon.svg alt="homepage_icon"><span class="verticalMenuText">Accueil</span></a></li>
 				</ul>
-				<br><hr style="width:10vw"><br>
-				<p>Placeholder menu</p><br>
+				<br><hr class="verticalMenuText" style="width:10vw"><br><br>
 				<ul class="menuElement">
-					<li><a href="index.php"><img src=img/logo.png alt="PLACEHOLDER">Accueil</a></li>
-					<li><a href="categorie.php?cat=c1"><img src=img/logo.png alt="PLACEHOLDER">Fruits&Légumes</a></li>
-					<li><a href="categorie.php?cat=c2"><img src=img/logo.png alt="PLACEHOLDER">Viandes</a></li>
-					<li><a href="categorie.php?cat=c3"><img src=img/logo.png alt="PLACEHOLDER">Déssert</a></li>
-					<li><a href="contact.php"><img src=img/logo.png alt="PLACEHOLDER">Contact</a></li>
+					<li><a href="categorie.php?cat=c1"><img src=img/fruit_icon.svg alt="fruit_icon"><span class="verticalMenuText">Fruits et Légumes</span></a></li>
+					<li><a href="categorie.php?cat=c2"><img src=img/meat_icon.svg alt="meat_icon"><span class="verticalMenuText">Viandes</span></a></li>
+					<li><a href="categorie.php?cat=c3"><img src=img/dessert_icon.svg alt="dessert_icon"><span class="verticalMenuText">Desserts</span></a></li>
+					<li><a href="contact.php"><img src=img/contact_icon.svg alt="contact_icon"><span class="verticalMenuText">Contact</span></a></li>
 				</ul>
+			</div>
+			<div class="box" style="width:20vw;">
+				
 			</div>
 			<div class="box mainPart">
 				<h1>PLACEHOLDER TITLE</h1><br>
 				<p>
 					<?php
 					//PLACEHOLDER
-					echo "ici se trouve nos débug \n";
+					for($i=0; $i<50; $i++){
+						echo "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard <br>";
+					}
 					?>
 				</p>
 			</div>

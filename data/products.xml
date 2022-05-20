@@ -5,7 +5,7 @@
       <ID>p1</ID>
       <NAME>poire</NAME>
       <DESCRIPTION>lot de poires</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>4</STOCK>
       <PRICE>3.00€</PRICE>
     </PRODUCT>
@@ -13,7 +13,7 @@
       <ID>p2</ID>
       <NAME>patate</NAME>
       <DESCRIPTION>lot de patates</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>11</STOCK>
       <PRICE>1.70€</PRICE>
     </PRODUCT>
@@ -21,7 +21,7 @@
       <ID>p3</ID>
       <NAME>tomate</NAME>
       <DESCRIPTION>lot de tomates</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>2</STOCK>
       <PRICE>2.60€</PRICE>
     </PRODUCT>
@@ -29,7 +29,7 @@
       <ID>p4</ID>
       <NAME>banane</NAME>
       <DESCRIPTION>lot de banane</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>9</STOCK>
       <PRICE>1.20€</PRICE>
     </PRODUCT>
@@ -37,7 +37,7 @@
       <ID>p5</ID>
       <NAME>carotte</NAME>
       <DESCRIPTION>lot de carottes</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>14</STOCK>
       <PRICE>1.00€</PRICE>
     </PRODUCT>
@@ -47,7 +47,7 @@
       <ID>p6</ID>
       <NAME>cote de boeuf</NAME>
       <DESCRIPTION>une belle cote de boeuf</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>5</STOCK>
       <PRICE>13.00€</PRICE>
     </PRODUCT>
@@ -55,7 +55,7 @@
       <ID>p7</ID>
       <NAME>veau</NAME>
       <DESCRIPTION>une belle tranche de veau</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>3</STOCK>
       <PRICE>15.00€</PRICE>
     </PRODUCT>
@@ -63,7 +63,7 @@
       <ID>p8</ID>
       <NAME>poulet roti</NAME>
       <DESCRIPTION>un poulet roti</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>10</STOCK>
       <PRICE>9.00€</PRICE>
     </PRODUCT>
@@ -71,7 +71,7 @@
       <ID>p9</ID>
       <NAME>porc</NAME>
       <DESCRIPTION>cote de porc</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>4</STOCK>
       <PRICE>7.85€</PRICE>
     </PRODUCT>
@@ -79,7 +79,7 @@
       <ID>p10</ID>
       <NAME>poisson</NAME>
       <DESCRIPTION>poisson</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>12</STOCK>
       <PRICE>20.00€</PRICE>
     </PRODUCT>
@@ -89,7 +89,7 @@
       <ID>p11</ID>
       <NAME>tarte</NAME>
       <DESCRIPTION>tarte chocolat</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>4</STOCK>
       <PRICE>12.00€</PRICE>
     </PRODUCT>
@@ -97,7 +97,7 @@
       <ID>p12</ID>
       <NAME>paris brest</NAME>
       <DESCRIPTION>paris brest</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>6</STOCK>
       <PRICE>4.50€</PRICE>
     </PRODUCT>
@@ -105,7 +105,7 @@
       <ID>p13</ID>
       <NAME>fondant chocolat</NAME>
       <DESCRIPTION>part de fondant chocolat</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>9</STOCK>
       <PRICE>4.00€</PRICE>
     </PRODUCT>
@@ -113,7 +113,7 @@
       <ID>p14</ID>
       <NAME>fraisier</NAME>
       <DESCRIPTION>fraisier</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>7</STOCK>
       <PRICE>16.00€</PRICE>
     </PRODUCT>
@@ -121,7 +121,7 @@
       <ID>p15</ID>
       <NAME>foret noir</NAME>
       <DESCRIPTION>foret noir</DESCRIPTION>
-      <IMG_NAME>../img/logo.png</IMG_NAME>
+      <IMG_NAME>../img/placeholder.png</IMG_NAME>
       <STOCK>1</STOCK>
       <PRICE>32.00€</PRICE>
     </PRODUCT>

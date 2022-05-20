@@ -37,10 +37,12 @@ header{
 }
 
 .verticalMenu{
-	width:15vw;
-	word-break:break-all;
-	/*background-color: #322f46;*/
+	width:2vw;
+	background-color: #322f46;
+	white-space: nowrap;
+	position: fixed;
 	border-radius: 20px;
+	transition: 0.5s;
 }
 
 .verticalMenu, .mainPart{
@@ -49,6 +51,17 @@ header{
 
 .verticalMenu, .mainPart{
 	height:70vh;
+}
+
+.verticalMenuButton{
+	position:fixed;
+	z-index:1;
+}
+
+.verticalMenuText{
+	display: none;
+	margin-left: 20px;
+	transition: 0.5s;
 }
 
 footer{
@@ -150,17 +163,20 @@ nav{
 .menuElement{
 	font-size:23px;
 	list-style-type: none;
+	line-height: 50px;
 }
 
 .menuElement img{
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 25px;
 }
 
 .menuElement a{
 	border-radius: 10px;
 	display: inline-block;
 	width:100%;
+	font-size: 25px;
+	overflow-y: hidden;
 }
 .menuElement a:hover{
 	background-color: #322f46;
@@ -295,4 +311,9 @@ input, select, textarea{
 	font-weight:bold;
 	font-size: 14px;
 	text-decoration: none;
+}
+
+#cat{
+	width: 50vw;
+	text-align: center;
 }
