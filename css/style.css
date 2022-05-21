@@ -48,18 +48,23 @@ header{
 	height: 500px;
 }
 
+.verticalMenuContainer{
+	text-align: center;
+}
+
 .mainPart{
-	padding: 50px 200px 50px 0;
+	padding: 100px 200px 100px 250px;
 }
 
 .verticalMenuButton{
 	margin-left: 10px;
+	left: 0;
 	background-color: #22202f;
 	border: white solid 2px;
 	border-radius: 50%;
-	position:fixed;
-	z-index:1;
-	top:240px;
+	position: fixed;
+	z-index: 1; /*if it isn't specified then the button is hidden under the vertical menu*/
+	top: 240px;
 	width: 50px;
 	height: 50px;
 	font-size: 30px;
@@ -69,7 +74,7 @@ header{
 	cursor: pointer;
 	box-shadow: 0 0 20px #e94560;
 	border-color: #e94560;
-	color:#e94560;
+	color: #e94560;
 	transition: 0.5s;
 }
 
@@ -80,21 +85,20 @@ header{
 
 .verticalMenu hr{
 	width: 50px;
+	border: solid white 1px;
+	margin:auto
 }
 
 footer{
-	border:red 2px solid;
 	display:table-row;
-	height:15vh;
 }
 
 .footerContent{
 	border-top: 1px white solid;
-	width:63vw;
+	width:70%;
 	margin:auto;
-	padding: 0.5vw;
+	padding: 30px;
 	font-size:23px;
-	margin-left:15vw;
 }
 
 .footerContent address{
@@ -113,45 +117,32 @@ it has also been designed to remain fixed.
 	border-collapse:collapse;
 	width:100%;
 	height:100%;
-	z-index: 3;
-}
-
-.logo{
-	width:15vw;
-}
-
-.logo img{
-	width: 150px;
 }
 
 .title{
 	text-align:center;
 	font-size:58px;
-	width: 70vw;
 }
 
-.loginBox, .cartBox{
-	height:8vh;
-	width:12vw;
-	margin-right: 1vw;
+.smallHeaderBox{
+	width: 130px;
+	padding-left: 20px;
 }
 
-.cartBox a, .loginBox a{
+.smallHeaderBox span a{
 	text-decoration: none;
+}
+
+.smallHeaderBox img{
+	width:150px;
 }
 
 body{
 	background-color: #22202f;
 }
 
-hr{
-	border: solid white 1px;
-	width:80vw;
-	margin:auto
-}
-
 nav{
-	padding: 0.5vw;
+	padding: 10px;
 	height: 100%;
 	font-size:23px;
 	text-align: center;
@@ -164,19 +155,18 @@ nav{
 .navElement li{
 	list-style-type: none;
 	display: inline-block;
-	width: 6vw;
+	width: 110px;
 	text-align: center;
 	text-decoration:none;
-	border-bottom: #e94560 solid 2px;
 	padding:5px 15px 5px 15px;
-	margin:-5px;
+	margin:-5px; /*Used to get a continuous line under the horizontal menu nav*/
 }
 
 .navElement a, .menuElement a{
 	text-decoration:none;
 }
 
-.navElement a:hover, .menuElement a:hover span{
+.navElement a:hover, .menuElement a:hover span, .smallHeaderBox span a:hover{
 	color:#e94560;
 }
 
@@ -212,7 +202,7 @@ nav{
 }
 
 #largeNavElement{
-	width: 12vw;
+	width: 200px;
 }
 
 .tableContactForm{
@@ -221,7 +211,7 @@ nav{
 }
 
 .tableContactForm td{
-	padding-top: 1vh;
+	padding-top: 10px;
 }
 
 input, select, textarea{
@@ -229,16 +219,16 @@ input, select, textarea{
 }
 
 .smallSize{
-	width: 10vw;
+	width: 195px;
 }
 
 .mediumSize{
-	width: 32vw;
+	width: 620px;
 }
 
 .submitButton{
-	width: 10vw;
-	height:5vh;
+	width: 180px;
+	height: 50px;
 	background-color: #22202f;
 	border:white 1px solid;
 	color: #e94560;;
@@ -253,19 +243,18 @@ input, select, textarea{
 #contact_form_job option{
 	background-color: #22202f;
 }
-/* Style of all element of login.php*/
+/* Style of all elements in login.php*/
 .loginDiv{
 	background-color: #322f46;
   	margin: auto;
-	margin-top:20vh;
+	margin-top:200px;
 	width: 350px;
-	height: auto;
 	padding:5px;
 }
 
 .loginFooter{
-	margin-top:2vh;
-	margin-left:20vw;
+	margin:auto;
+	margin-top:50px;
 	width:60vw;
 	border-top: 1px white solid;
 	text-align:center;
@@ -274,29 +263,26 @@ input, select, textarea{
 	text-decoration:none;
 	font-size:small;
 }
-/* Style of all element of login.php */
 
-/* Style of all element of createaccount.php*/
+/* Style of all elements in createaccount.php*/
 .createaccountDiv{
 	background-color: #322f46;
   	margin: auto;
-	margin-top:20vh;
+	margin-top:200px;
 	width: 450px;
-	height: auto;
 	padding:5px;
 }
 
 .createaccountDiv option{
 	color:black;
 }
-/* Style of all element of createaccount.php*/
 
-/* Style of all element of profile.php */
+/* Style of all elements in profile.php */
 .profilDiv{
 	background-color: #322f46;
 	border: 1px solid white;
   	margin: auto;
-	margin-top:20vh;
+	margin-top:200px;
 	width: 500px;
 	height: auto;
 	padding:20px;
@@ -307,20 +293,21 @@ input, select, textarea{
 	border:solid 1px white;
 }
 
+/* Style of all elements in sendContactForm.php */
+
 .mailTable{
 	border-collapse: collapse;
-	width:75vw;
-	margin:5vw;
+	width:1000px;
+	margin:50px;
 }
 
 .mailTable td{
 	border: white solid 1px;
-	padding:1vw;
+	padding:20px;
 }
 
 .mailTable td a{
-	padding: 0.5vw;
-	height:5vh;
+	padding: 13px;
 	background-color: #22202f;
 	border:white 1px solid;
 	color: #e94560;;
@@ -329,7 +316,66 @@ input, select, textarea{
 	text-decoration: none;
 }
 
+/* Style of all elements in categorie.php */
+
 #cat{
 	width: 50vw;
 	text-align: center;
+}
+
+/*Adapt to resolution*/
+
+/*WIDTH*/
+
+@media (max-width:1120px) {
+	.mainPart{
+		padding: 50px 50px 50px 100px;
+	}
+}
+
+@media (max-width:700px) {
+	*{
+		font-size: small !important;
+	}
+
+	.mainPart{
+		padding: 50px 20px 50px 90px;
+	}
+
+	.smallHeaderBox img{
+		width:80px;
+	}
+
+	.footerContent{
+		border-top: 1px white solid;
+		width:30%;
+		margin:auto;
+		padding: 30px;
+		font-size:23px;
+	}
+}
+
+/*HEIGHT*/
+
+@media (max-height:740px) {
+	.verticalMenu{
+		height: 300px;
+	}
+
+	.menuElement svg{
+		width: 18px;
+		height: 18px;
+	}
+
+	.menuElement{
+		font-size:23px;
+		list-style-type: none;
+		line-height: 30px;
+	}
+}
+
+@media (max-height:540px) {
+	.verticalMenuContainer{
+		display: none;
+	}
 }

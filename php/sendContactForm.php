@@ -27,7 +27,7 @@
                 exit();
             }
             $message = nl2br($message);
-            $message.="<br><br>$name<br>Envoyé le : $date<br><br>Informations supplémentaires:<br>Genre : $gender<br>Date de naissance : $birthDate<br>Fonction : $job";
+            $message.="<br><br>$name<br>Envoyé le : $date<br><br>_______________<br><br>Informations supplémentaires:<br><br>Genre : $gender<br>Date de naissance : $birthDate<br>Fonction : $job";
             
             echo "<table class=\"mailTable\">";
             echo "<tr><td><b>De</b> : $from </td></tr>";
