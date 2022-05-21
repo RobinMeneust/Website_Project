@@ -5,7 +5,6 @@
     $_SESSION["MailAlreadyUse"]=0;
     $_SESSION["UsernameAlreadyUse"]=0;
 
-
     //check if the create account form are with "valid" form
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         $username=$_REQUEST["username"];
@@ -81,6 +80,9 @@
 
     $json = json_encode($json, JSON_PRETTY_PRINT);
     file_put_contents('../data/users.json',$json);
-    header("Location: createaccount.php", true);
+
+    //Login the user with is new account.
+    $_SESSION["currentUser"]=$newUserData;
+    header("Location: ../index.php", true);
     exit();
 ?>
