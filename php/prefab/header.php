@@ -1,7 +1,7 @@
 <table class="tableHeader">
     <tr>
         <td class="smallHeaderBox"><img src="./img/logo.png" alt="logo_du_site" width="250px"></td>
-        <td><h1 class="title">PLACEHOLDER TITLE</h1></td>
+        <td><h1 class="title">Mini U</h1></td>
         <td class="smallHeaderBox">
             <span>
                 <svg width="20px" height="20px" fill="#e94560"><path d="M10 12c-7.3 0-9 5.5-9 5.5v1h18v-1S17.3 12 10 12z"/><circle cx="10" cy="6" r="5"/></svg>

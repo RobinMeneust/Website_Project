@@ -10,6 +10,12 @@ p{
 	text-align: justify;
 }
 
+h1{
+	text-align: center;
+	color:#e94560;
+	font-size:30px;
+}
+
 /* 
 the padding and global margin are reinitialized
 so that the <body> is not surrounded by a 
@@ -120,6 +126,7 @@ it has also been designed to remain fixed.
 }
 
 .title{
+	color: white;
 	text-align:center;
 	font-size:58px;
 }
@@ -205,17 +212,22 @@ nav{
 	width: 200px;
 }
 
-.tableContactForm{
+.tableForm{
 	width: 80%;
 	margin: auto;
 }
 
-.tableContactForm td{
-	padding-top: 10px;
+.tableForm td{
+	padding-top: 15px;
+	padding-left: 10px;
 }
 
 input, select, textarea{
 	color:black;
+}
+
+option{
+	background-color: #22202f;
 }
 
 .smallSize{
@@ -240,16 +252,13 @@ input, select, textarea{
 	cursor: pointer;
 }
 
-#contact_form_job option{
-	background-color: #22202f;
-}
 /* Style of all elements in login.php*/
-.loginDiv{
+.loginDiv, .createAccountDiv{ /*also used in createaccount.php*/
 	background-color: #322f46;
   	margin: auto;
 	margin-top:200px;
-	width: 350px;
-	padding:5px;
+	width: 1000px;
+	padding: 5px;
 }
 
 .loginFooter{
@@ -264,18 +273,6 @@ input, select, textarea{
 	font-size:small;
 }
 
-/* Style of all elements in createaccount.php*/
-.createaccountDiv{
-	background-color: #322f46;
-  	margin: auto;
-	margin-top:200px;
-	width: 450px;
-	padding:5px;
-}
-
-.createaccountDiv option{
-	color:black;
-}
 
 /* Style of all elements in profile.php */
 .profilDiv{
@@ -334,10 +331,6 @@ input, select, textarea{
 }
 
 @media (max-width:700px) {
-	*{
-		font-size: small !important;
-	}
-
 	.mainPart{
 		padding: 50px 20px 50px 90px;
 	}

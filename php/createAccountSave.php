@@ -13,25 +13,25 @@
         $gender=$_REQUEST["gender"];
         $email=$_REQUEST["email"];
         $phoneNB=$_REQUEST["tel"];
-        $birth=$_REQUEST["birth"];
-        $location=$_REQUEST["adress"];
-        $fonction=$_REQUEST["fonction"];
+        $birth=$_REQUEST["birthDate"];
+        $address=$_REQUEST["address"];
+        $job=$_REQUEST["job"];
         $password=$_REQUEST["password"];
     }
 
-    //check if the mail ou username isn't arleady use
+    //check if the mail or username isn't arleady used
     $file = "../data/users.json";
     $json = json_decode(file_get_contents($file), true);
     
     foreach($json as $user){
         if($email==$user["email"]){
             $_SESSION["MailAlreadyUse"]=1;
-            header("Location: createaccount.php", true);
+            header("Location: createAccount.php", true);
             exit();
         }
         if($username==$user["login"]){
             $_SESSION["UsernameAlreadyUse"]=1;
-            header("Location: createaccount.php", true);
+            header("Location: createAccount.php", true);
             exit();
         }
    }
@@ -65,8 +65,8 @@
 		"email" => $email,
 		"phone_nb" => $phoneNB,
 		"birth_date" => $birth,
-		"address" => $location,
-		"job" => $fonction,
+		"address" => $address,
+		"job" => $job,
 		"id" => $id
     );
     array_push($json,$newUserData);

@@ -8,28 +8,28 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script src="../js/login.js"></script>
+	<script src="../js/formChecker.js"></script>
 </head>
 <body>
-    <div class="loginDiv">
+    <div class="loginDiv" style="width:700px">
         <form name="login_form" id="login_form" method="post" action="loginVerification.php">
             <fieldset>
-                <table style="width:100%">
+                <table class="tableForm" style="width:500px">
                     <tr>
-                        <td colspan="2" style="padding:10px ; text-align: center;"><h2>Se connecter à Wip.com<h2></td>
+                        <td colspan="2" style="padding:10px ; text-align: center;"><h1>Connexion à votre compte<br>Mini U<h1></td>
                     </tr>
                     <tr>
-                        <td style="padding:5px"><br>Mail ou identifiant :</td>
-                        <td style="padding:5px;"><br><input placeholder="identifiant" type="text" name="username" id="username" required></td>
+                        <td class="smallSize"><label for="username">Mail ou identifiant</label></td>
+                        <td><input maxlength="100" onfocusout="checkStringFormat(this, 'username')"  class="smallSize" type="text" name="username" id="username" required></td>
                     </tr>
                     <tr>
-                        <td style="padding:5px">Mot de passe :</td>
-                        <td style="padding:5px"><input type="password" name="password" id="password" required></td>
+                        <td class="smallSize"><label for="password">Mot de passe</label></td>
+                        <td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')"  class="smallSize" type="password" name="password" id="password" required></td>
                     </tr>
-                    <tr>
-                        <td colspan="2" style="padding:5px; text-align: center;">
-                            <input type="submit" value="Se connecter" style="padding:2px">
-                            <button onclick="location.href='createaccount.php'" style="margin-left:10px; padding:2px; color:black;">Créer un compte</button>
+                    <tr style="height:100px">
+                        <td colspan="2" >
+                            <input class="submitButton" type="submit" value="Se connecter" style="margin-right:40px">
+                            <button class="submitButton" onclick="location.href='createAccount.php'">Créer un compte</button>
                         </td>
                     </tr>
                 </table>    

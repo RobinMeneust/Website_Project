@@ -7,7 +7,7 @@
 	<title>Contact</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<script src="js/contact.js"></script>
+	<script src="js/formChecker.js"></script>
 	<script src="js/global.js"></script>
 </head>
 <div class="wrapper">
@@ -19,10 +19,9 @@
 				<?php include('php/prefab/verticalMenu.php')?>
 			</div>
 			<div class="box mainPart">
-				<h1>PLACEHOLDER TITLE</h1><br>
 				<form name="contact_form" id="contact_form" method="post" action="php/sendContactForm.php">
-					<h1 style="text-align: center; color:#e94560;">Demande de contact</h1><br>
-					<table class="tableContactForm">
+					<h1>Demande de contact</h1><br>
+					<table class="tableForm">
 						<tr>
 							<td class="smallSize"><label for="contact_form_date">Date du contact *</label></td>
 							<td><input class="smallSize" type="date" id="contact_form_date" name="contact_form_date" required></td>
@@ -48,8 +47,8 @@
 						<tr>
 							<td class="smallSize">Genre</td>
 							<td>
-								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderF" name="contact_form_gender" value="femme"><label for="contact_form_genderF">Femme</label>
-								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderM" name="contact_form_gender" value="homme"><label for="contact_form_genderM">Homme</label>
+								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderF" name="contact_form_gender" value="F"><label for="contact_form_genderF">Femme</label>
+								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderM" name="contact_form_gender" value="M"><label for="contact_form_genderM">Homme</label>
 							</td>
 						</tr>
 						<tr>
@@ -61,7 +60,7 @@
 							<td><select id="contact_form_job" name="contact_form_job">
 								<option selected></option>
 								<option>Agriculteurs exploitants</option>
-								<option>Artisans. commerçants. chefs entreprise</option>
+								<option>Artisans, commerçants, chefs d'entreprise</option>
 								<option>Cadres et professions intellectuelles supérieures</option>
 								<option>Professions intermédiaires</option>
 								<option>Employés</option>

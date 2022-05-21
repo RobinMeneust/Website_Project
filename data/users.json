@@ -78,6 +78,19 @@
         "id": "u9"
     },
     {
+        "login": "robinv2",
+        "password": "1234",
+        "last_name": "Meneust",
+        "first_name": "Robin",
+        "gender": "M",
+        "email": "abc4@hotmail.fr",
+        "phone_nb": "0600000000",
+        "birth_date": "2002-02-13",
+        "address": "1 rue 0",
+        "job": "Autres personnes sans activit\u00e9 professionnelle",
+        "id": "u10"
+    },
+    {
         "login": "User11",
         "password": "1234",
         "last_name": "empty",
