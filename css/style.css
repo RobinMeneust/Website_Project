@@ -7,6 +7,7 @@
 
 p{
 	font-size: 23px;
+	text-align: justify;
 }
 
 /* 
@@ -14,6 +15,7 @@ the padding and global margin are reinitialized
 so that the <body> is not surrounded by a 
 thin white line. (Due to the default margin.)
 */ 
+
 
 .wrapper{
 	display:table;
@@ -27,7 +29,7 @@ thin white line. (Due to the default margin.)
 
 header{
 	display:table-row;
-	height:15vh;
+	height:150px;
 }
 
 .base{
@@ -37,31 +39,27 @@ header{
 }
 
 .verticalMenu{
-	width:2vw;
+	width:70px;
+	top:230px;
 	background-color: #322f46;
 	position: fixed;
 	border-bottom-right-radius: 20px;
 	border-top-right-radius: 20px;
-	height: 60vh !important;
-	margin-top: -8vh;
+	height: 500px;
 }
 
-.verticalMenu, .mainPart{
-	padding: 2%;
-}
-
-.verticalMenu, .mainPart{
-	height:70vh;
+.mainPart{
+	padding: 50px 200px 50px 0;
 }
 
 .verticalMenuButton{
-	margin-left: 1.7vw;
+	margin-left: 10px;
 	background-color: #22202f;
-	border: #e94560 solid 2px;
+	border: white solid 2px;
 	border-radius: 50%;
 	position:fixed;
 	z-index:1;
-	margin-top: -5vh;
+	top:240px;
 	width: 50px;
 	height: 50px;
 	font-size: 30px;
@@ -70,13 +68,18 @@ header{
 .verticalMenuButton:hover{
 	cursor: pointer;
 	box-shadow: 0 0 20px #e94560;
+	border-color: #e94560;
+	color:#e94560;
 	transition: 0.5s;
 }
 
 .verticalMenuText{
 	display: none;
 	margin-left: 20px;
-	transition: 0.5s;
+}
+
+.verticalMenu hr{
+	width: 50px;
 }
 
 footer{
@@ -183,9 +186,14 @@ nav{
 	line-height: 50px;
 }
 
-.menuElement img{
+.menuElement svg{
 	width: 25px;
 	height: 25px;
+	fill: white;
+}
+
+.menuElement a:hover svg{
+	fill: #e94560;
 }
 
 .menuElement a{
