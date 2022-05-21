@@ -24,7 +24,7 @@
 					<table class="tableForm">
 						<tr>
 							<td class="smallSize"><label for="contact_form_date">Date du contact *</label></td>
-							<td><input class="smallSize" type="date" id="contact_form_date" name="contact_form_date" required></td>
+							<td><input class="smallSize" type="date" id="contact_form_date" name="contact_form_date" value="<?php echo date('Y-m-d') ?>" required></td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_lastName">Nom *</label></td>
