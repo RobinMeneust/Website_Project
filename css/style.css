@@ -144,6 +144,12 @@ it has also been designed to remain fixed.
 	width:150px;
 }
 
+.smallHeaderBox svg{
+	width: 35px;
+	height: 35px;
+}
+
+
 body{
 	background-color: #22202f;
 }
