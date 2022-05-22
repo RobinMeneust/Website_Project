@@ -32,11 +32,11 @@
 
 				
 				if(isset($_REQUEST["contact_form_gender"]))
-				$gender=$_REQUEST["contact_form_gender"];
+					$gender=$_REQUEST["contact_form_gender"];
 				if(isset($_REQUEST["contact_form_birthDate"]))
-				$birthDate=$_REQUEST["contact_form_birthDate"];
+					$birthDate=$_REQUEST["contact_form_birthDate"];
 				if(isset($_REQUEST["contact_form_job"]))
-				$job=$_REQUEST["contact_form_job"];
+					$job=$_REQUEST["contact_form_job"];
 				if(trim($subject)=="" || trim($message)=="" || trim($from)=="" || trim($name)=="" || $date=="" || !checkDatesConsistency($birthDate, $date)){
 					$_SESSION["incorrectContactForm"]=true;
 					header("Location: contact.php", true);

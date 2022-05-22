@@ -22,19 +22,19 @@
 				<tr>
 					<td class="smallSize"><label for="lastName">Nom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["last_name"]; ?>" type="text" id="lastName" name="lastName">
+						<input onfocusout="checkStringFormat(this, 'default', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["last_name"]; ?>" type="text" id="lastName" name="lastName">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="firstName">Prénom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["first_name"]; ?>" type="text" id="firstName" name="firstName">
+						<input onfocusout="checkStringFormat(this, 'default', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["first_name"]; ?>" type="text" id="firstName" name="firstName">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="username">Identifiant</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["login"]; ?>" type="text" id="username" name="username">
+						<input onfocusout="checkStringFormat(this, 'default', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["login"]; ?>" type="text" id="username" name="username">
 					</td>
 				</tr>
 				<tr>
@@ -71,25 +71,25 @@
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="tel">Téléphone</label></td>
-					<td><input maxlength="15" onfocusout="checkStringFormat(this, 'tel')" class="smallSize" placeholder="<?php echo $_SESSION["currentUser"]["phone_nb"]; ?>" type="tel" name="tel" id="tel"></td>
+					<td><input maxlength="15" onfocusout="checkStringFormat(this, 'tel', true)" class="smallSize" placeholder="<?php echo $_SESSION["currentUser"]["phone_nb"]; ?>" type="tel" name="tel" id="tel"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="address">Adresse</label></td>
-					<td><input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["address"]; ?>" type="text" name="address" id="address"></td>
+					<td><input onfocusout="checkStringFormat(this, 'default', true)" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["address"]; ?>" type="text" name="address" id="address"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="password">Nouveau mot de passe</label></td>
-					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" placeholder="******" type="password" name="password" id="password"></td>
+					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd', true)" class="mediumSize" placeholder="******" type="password" name="password" id="password"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="password">confirmer le nouveau mot de passe</label></td>
-					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" placeholder="******" type="password" name="newPassword" id="newPassword"></td>
+					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd', true)" class="mediumSize" placeholder="******" type="password" name="newPassword" id="newPassword"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="password">mot de passe actuel *</label></td>
 					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" type="password" name="oldPassword" id="oldPassword"></td>
 				</tr>
-				<tr><td><td><i>Vous devez écrire votre mot de passe actuel pour changer les informations de votre compte.</i></td></td></tr>
+				<tr><td></td><td><i>Vous devez écrire votre mot de passe actuel pour changer les informations de votre compte.</i></td></tr>
 				<tr>
 					<td></td>
 					<td><input class="submitButton" type="submit" value="Valider"></td>

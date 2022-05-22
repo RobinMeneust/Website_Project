@@ -51,46 +51,49 @@
 		}
    }
 
-   //Search where are writted the actual information of the user with is ID and change his coordonate.
+   //Search where are written the actual information of the user with is ID and change his coordinates.
+   $i=0;
    foreach($json as $user){
 		if($_SESSION["currentUser"]["id"] == $user["id"]){
 			if($username != ""){
-				$user["login"] = $username;
+				$json[$i]["login"] = $username;
 				$_SESSION["currentUser"]["login"] = $username;
 			}
 			if($lastName != ""){
-				$user["last_name"] = $lastName;
+				$json[$i]["last_name"] = $lastName;
 				$_SESSION["currentUser"]["last_name"] = $lastName;
 			}
 			if($firstName != ""){
-				$user["first_name"] = $firstName;
+				$json[$i]["first_name"] = $firstName;
 				$_SESSION["currentUser"]["first_name"] = $firstName;
 			}
 			if($gender != ""){
-				$user["gender"] = $gender;
+				$json[$i]["gender"] = $gender;
 				$_SESSION["currentUser"]["gender"] = $gender;
 			}
 			if($email != ""){
-				$user["email"] = $email;
+				$json[$i]["email"] = $email;
 				$_SESSION["currentUser"]["email"] = $email;
 			}
 			if($phoneNB != ""){
-				$user["phone_nb"] = $phoneNB;
+				$json[$i]["phone_nb"] = $phoneNB;
 				$_SESSION["currentUser"]["phone_nb"] = $phoneNB;
 			}
 			if($birth != ""){
-				$user["birth_date"] = $birth;
+				$json[$i]["birth_date"] = $birth;
 				$_SESSION["currentUser"]["birth_date"] = $birth;
 			}
 			if($address != ""){
-				$user["address"] = $address;
+				$json[$i]["address"] = $address;
 				$_SESSION["currentUser"]["address"] = $address;
 			}
 			if($job != ""){
-				$user["job"] = $job;
+				$json[$i]["job"] = $job;
 				$_SESSION["currentUser"]["job"] = $job;
 			}
+			break; // User's ID is unique so if we found it we don't have to search for other ones
 		}
+		$i++;
 	}
 
 	$json = json_encode($json, JSON_PRETTY_PRINT);

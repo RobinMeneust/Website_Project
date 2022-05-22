@@ -1,4 +1,4 @@
-function checkStringFormat(element, mode="default"){
+function checkStringFormat(element, mode="default", canBeEmpty=false){
 	let parent = element.parentNode;
 	let isActive = (document.getElementById(element.id+"_format")!=null);
 	let isIncorrect = false;
@@ -8,7 +8,7 @@ function checkStringFormat(element, mode="default"){
 	const regex_username = new RegExp('^([A-Za-z0-9_]*)$');
 	const regex_passwd = new RegExp('^([A-Za-z0-9À-ÖØ-Ýà-öø-ý~!@#$%^&*_+=<>.?/-]*)$');
 
-	if(element.value==""){
+	if(!canBeEmpty && element.value==""){
 		isIncorrect = true;
 		errorMsg = "<br>Ne doit pas être vide";
 	}
@@ -28,8 +28,6 @@ function checkStringFormat(element, mode="default"){
 		isIncorrect = !regex_default.test(element.value);
 		errorMsg = "<br>Ne doit pas contenir de caractères spéciaux (mais plusieurs accents sont autorisés)";
 	}
-
-	console.log(isIncorrect);
 
 	if(isIncorrect){ // if the format is incorrect
 		if(!isActive){ // if format_info_box doesn't exists
