@@ -1,25 +1,38 @@
 var hidden = 0;
 
-function increase(idQuantity, idButton) {
-	var value = parseInt(document.getElementById(idQuantity).value); //*Récupère la valeur de l'élément en entier*//
+function increase(id) {
+	var value = parseInt(document.getElementById('quantity'+id).value); //*Récupère la valeur de l'élément en entier*//
+	var max = parseInt(document.getElementById('stockID'+id).innerHTML);
 	value = isNaN(value) ? 0 : value;//*S'il n'y a pas de valeur, on met 0. Sinon, on garde la valeur*//
+	max = isNaN(max) ? 0 : max;
 	value++;//*On augmente la valeur de 1*//
-	document.getElementById(idQuantity).value = value;//*Mettre à jour la valeur affichée*//
-	if (value > 0) {
-		document.getElementById(idButton).disabled = false;
-	}
+	if(value<=max)
+		document.getElementById('quantity'+id).value = value;//*Mettre à jour la valeur affichée*//
+		if (value > 0) {
+			document.getElementById('button-'+id).disabled = false;
+		}
+	if(value>=max)
+		document.getElementById('button+'+id).disabled = true;
 }
 
-function decrease(idQuantity, idButton) {
-	var value = parseInt(document.getElementById(idQuantity).value);
+function decrease(id) {
+	var value = parseInt(document.getElementById('quantity'+id).value);
 	value = isNaN(value) ? 0 : value;
 	if (value > 0) {
 		value--;
+		document.getElementById('button+'+id).disabled = false;
 	}
-	else if (value == 0) {
-		document.getElementById(idButton).disabled = true;
+	else{
+		document.getElementById('button-'+id).disabled = true;
 	}
-	document.getElementById(idQuantity).value = value;
+	document.getElementById('quantity'+id).value = value;
+}
+
+function checkIfLesserThanStock(value, id){
+	var max = parseInt(document.getElementById('stockID'+id).innerHTML);
+	if(value>max){
+		document.getElementById('quantity'+id).value = max;
+	}
 }
 
 function hide() {
