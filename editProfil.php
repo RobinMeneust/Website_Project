@@ -1,14 +1,14 @@
 <?php
 	session_start();
-	if(isset($_SESSION["currentUser"])){
-		header("Location: profile.php");
+	if(!(isset($_SESSION["currentUser"]))){
+		header("Location: login.php");
 		exit();
 	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Create Account</title>
+	<title>Edit Profil</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" type="image/png" href="img/logo.png">
@@ -16,48 +16,48 @@
 </head>
 <body>
 	<div class="createAccountDiv">
-		<form name="login_form" id="login_form" method="post" action="php/createAccountSave.php">
-			<h1>Création de compte</h1><br>
+		<form name="editProfil_form" id="editProfil_form" method="post" action="php/editProfilConfirmation.php">
+			<h1>Modification du profil</h1><br>
 			<table class="tableForm">
 				<tr>
 					<td class="smallSize"><label for="lastName">Nom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre nom" type="text" id="lastName" name="lastName" required>
+						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["last_name"]; ?>" type="text" id="lastName" name="lastName">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="firstName">Prénom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="firstName" name="firstName" required>
+						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["first_name"]; ?>" type="text" id="firstName" name="firstName">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="username">Identifiant</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre identifiant" type="text" id="username" name="username" required>
+						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["login"]; ?>" type="text" id="username" name="username">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="email">Email</label></td>
 					<td>
-						<input maxlength="255" class="mediumSize" placeholder="monmail@monsite.org"  type="email" id="email" name="email" required>
+						<input maxlength="255" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["email"]; ?>"  type="email" id="email" name="email">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize">Genre</td>
 					<td>
-						<input style="margin: 0 7px 0 7px" type="radio" id="genderF" name="gender" value="F" required><label for="genderF">Femme</label>
+						<input style="margin: 0 7px 0 7px" type="radio" id="genderF" name="gender" value="F"><label for="genderF">Femme</label>
 						<input style="margin: 0 7px 0 7px" type="radio" id="genderM" name="gender" value="M"><label for="genderM">Homme</label>
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="birthDate">Date de Naissance</label></td>
-					<td><input class="smallSize" type="date" id="birthDate" name="birthDate" required></td>
+					<td><input class="smallSize" type="date" id="birthDate" name="birthDate"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="job">Fonction</label></td>
 					<td>
-						<select id="job" name="job" required>
+						<select id="job" name="job">
 							<option>Agriculteurs exploitants</option>
 							<option>Artisans, commerçants, chefs d'entreprise</option>
 							<option>Cadres et professions intellectuelles supérieures</option>
@@ -71,19 +71,19 @@
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="tel">Téléphone</label></td>
-					<td><input maxlength="15" onfocusout="checkStringFormat(this, 'tel')" class="smallSize" type="tel" name="tel" id="tel" required></td>
+					<td><input maxlength="15" onfocusout="checkStringFormat(this, 'tel')" class="smallSize" placeholder="<?php echo $_SESSION["currentUser"]["phone_nb"]; ?>" type="tel" name="tel" id="tel"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="address">Adresse</label></td>
-					<td><input onfocusout="checkStringFormat(this)" class="mediumSize" type="text" name="address" id="address" required></td>
+					<td><input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["address"]; ?>" type="text" name="address" id="address"></td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="password">Password</label></td>
-					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" type="password" name="password" id="password" required></td>
+					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" type="password" name="password" id="password"></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input class="submitButton" type="submit" value="S'inscrire"></td>
+					<td><input class="submitButton" type="submit" value="Valider"></td>
 				</tr>
 			</table>
 			<?php 

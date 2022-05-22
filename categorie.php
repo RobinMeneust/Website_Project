@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" type="image/png" href="img/logo.png">
-    <script src="js/categorieGeneration.js"></script>
+	<script src="js/categorieGeneration.js"></script>
 	<script src="js/catalogue.js"></script>
 	<script src="js/global.js"></script>
 </head>
@@ -28,11 +28,11 @@
 			</div>
 			<div class="box mainPart">
 				<h1><?php echo $_REQUEST["catName"]; ?></h1><br>
-                <table id="cat"></table>
+				<table id="cat"></table>
 				<button id="aligneDroit" type="submit" class="button"  onclick="Cacher()">Cacher stock</button>
 				<script src="js/catalogue.js"></script>
 				<?php
-                    
+					
 				?>
 			</div>
 			<script src="js/catalogue.js"></script>
