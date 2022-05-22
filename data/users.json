@@ -78,6 +78,19 @@
         "id": "u5"
     },
     {
+        "login": "Hanabi",
+        "password": "1111",
+        "last_name": "Pinto",
+        "first_name": "Ethan",
+        "gender": "M",
+        "email": "ethanpinto02@gmail.com",
+        "phone_nb": "0105050505",
+        "birth_date": "2002-01-02",
+        "address": "02 rue de chez moi",
+        "job": "Employ\u00e9s",
+        "id": "u6"
+    },
+    {
         "login": "User9",
         "password": "1234",
         "last_name": "empty",
