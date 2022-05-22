@@ -6,6 +6,20 @@
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png" href="img/logo.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+		var bool = 0;
+		function showPassword(){
+			if (bool == 0){
+				document.getElementById("profilpassword").innerHTML = "<?php echo $_SESSION["currentUser"]["password"]; ?>";
+				document.getElementById("showPassword").innerHTML = "Cacher";
+				bool = 1;
+			} else {
+				document.getElementById("profilpassword").innerHTML = "********";
+				document.getElementById("showPassword").innerHTML = "Afficher";
+				bool = 0;
+			}
+		}
+	</script>
 </head>
 <body>
 	<div class="profilDiv">
@@ -59,8 +73,8 @@
 			</tr>
 			<tr>
 				<td>Mot de Passe : </td>
-				<td><div class="profilPassword"><?php echo ("********");?></div></td>
-				<td><button class="showPassword" onclick="">Afficher</button></td>
+				<td><p id="profilpassword" style="font-size: small;">********</p></td>
+				<td><button class="showPassword" id="showPassword" onclick="showPassword()">Afficher</button></td>
 			</tr>
 		</table>
 		<a href="php/logout.php" tite="Logout" style="margin-left:10px; padding:5px;">Se déconnecter</a>
