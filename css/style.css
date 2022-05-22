@@ -10,10 +10,9 @@ p{
 	text-align: justify;
 }
 
-h1{
+h1, h2{
 	text-align: center;
 	color:#e94560;
-	font-size:30px;
 }
 
 /* 
@@ -74,6 +73,7 @@ header{
 	width: 50px;
 	height: 50px;
 	font-size: 30px;
+	transition: 0.5s;
 }
 
 .verticalMenuButton:hover{
@@ -162,7 +162,7 @@ nav{
 .navElement li{
 	list-style-type: none;
 	display: inline-block;
-	width: 110px;
+	width: 160px;
 	text-align: center;
 	text-decoration:none;
 	padding:5px 15px 5px 15px;
@@ -318,6 +318,21 @@ option{
 #cat{
 	width: 50vw;
 	text-align: center;
+}
+
+/* Style of the table containg a list of all the categories in browse.php*/
+.categoriesTable{
+	border: #e94560 solid 2px;
+	border-collapse: collapse;
+	width: 1200px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.categoriesTable td{
+	border: white solid 1px;
+	height: 70px;
+	padding: 20px;
 }
 
 /*Adapt to resolution*/

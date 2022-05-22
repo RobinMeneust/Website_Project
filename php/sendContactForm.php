@@ -11,18 +11,41 @@
 </head>
 <body>
     <?php
-        if($_SERVER["REQUEST_METHOD"]=="POST"){
-            $to="websiteprojet2022@gmail.com";
-            $subject=$_REQUEST["contact_form_subject"];
-            $message=$_REQUEST["contact_form_content"];
-            $from=$_REQUEST["contact_form_email"];
-            $name=$_REQUEST["contact_form_firstName"]." ".$_REQUEST["contact_form_lastName"];
-            $date=$_REQUEST["contact_form_date"];
+        function checkDatesConsistency($birthDate, $date){
+            $dateArray = explode('-', $date);
+            $birthDateArray = explode('-', $birthDate);
 
-            $gender=$_REQUEST["contact_form_gender"];
-            $birthDate=$_REQUEST["contact_form_birthDate"];
-            $job=$_REQUEST["contact_form_job"];
-            if(trim($subject)=="" || trim($message)=="" || trim($from)=="" || trim($name)=="" || $date==""){
+            if($dateArray[0] <= $birthDateArray[0]){ // if the birth date is after the current date or if the user is less than 1 year old
+                return false;
+            }
+            return true;
+        }
+
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $_SESSION["incorrectContactForm"]=false;
+            $to="websiteprojet2022@gmail.com";
+            if(isset($_REQUEST["contact_form_subject"], $_REQUEST["contact_form_content"], $_REQUEST["contact_form_email"], $_REQUEST["contact_form_firstName"], $_REQUEST["contact_form_lastName"], $_REQUEST["contact_form_date"])){
+                $subject=$_REQUEST["contact_form_subject"];
+                $message=$_REQUEST["contact_form_content"];
+                $from=$_REQUEST["contact_form_email"];
+                $name=$_REQUEST["contact_form_firstName"]." ".$_REQUEST["contact_form_lastName"];
+                $date=$_REQUEST["contact_form_date"];
+
+                
+                if(isset($_REQUEST["contact_form_gender"]))
+                $gender=$_REQUEST["contact_form_gender"];
+                if(isset($_REQUEST["contact_form_birthDate"]))
+                $birthDate=$_REQUEST["contact_form_birthDate"];
+                if(isset($_REQUEST["contact_form_job"]))
+                $job=$_REQUEST["contact_form_job"];
+                if(trim($subject)=="" || trim($message)=="" || trim($from)=="" || trim($name)=="" || $date=="" || !checkDatesConsistency($birthDate, $date)){
+                    $_SESSION["incorrectContactForm"]=true;
+                    header("Location: ../contact.php", true);
+                    exit();
+                }
+            }
+            else{
+                $_SESSION["incorrectContactForm"]=true;
                 header("Location: ../contact.php", true);
                 exit();
             }

@@ -7,7 +7,6 @@
 	<title>Accueil</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
-	<script src="js/login.js"></script>
 	<script src="js/global.js"></script>
 </head>
 <body>

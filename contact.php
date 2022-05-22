@@ -24,7 +24,7 @@
 					<table class="tableForm">
 						<tr>
 							<td class="smallSize"><label for="contact_form_date">Date du contact *</label></td>
-							<td><input class="smallSize" type="date" id="contact_form_date" name="contact_form_date" value="<?php echo date('Y-m-d') ?>" required></td>
+							<td><input class="smallSize" type="date" id="contact_form_date" name="contact_form_date" value="<?php echo date('Y-m-d') ?>" readonly></td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_lastName">Nom *</label></td>
@@ -47,8 +47,8 @@
 						<tr>
 							<td class="smallSize">Genre</td>
 							<td>
-								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderF" name="contact_form_gender" value="F"><label for="contact_form_genderF">Femme</label>
-								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderM" name="contact_form_gender" value="M"><label for="contact_form_genderM">Homme</label>
+								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderF" name="contact_form_gender" value="Femme"><label for="contact_form_genderF">Femme</label>
+								<input style="margin: 0 7px 0 7px" type="radio" id="contact_form_genderM" name="contact_form_gender" value="Homme"><label for="contact_form_genderM">Homme</label>
 							</td>
 						</tr>
 						<tr>
@@ -85,6 +85,12 @@
 							<td></td>
 							<td><input class="submitButton" type="submit"><span style="margin-left: 50px">Les champs avec un * ne doivent pas être vides</span></td>
 						</tr>
+						<?php 
+							if(isset($_SESSION["incorrectContactForm"]) && $_SESSION["incorrectContactForm"]){
+								echo "<tr> <td></td> <td><span style=\"color:red\">Formulaire incorrect, veuillez revérifier vos valeurs et donner des dates correctes</span></td></tr>";
+								$_SESSION["incorrectContactForm"]=false;
+							}
+						?>
 					</table>
 				</form>
 			</div>

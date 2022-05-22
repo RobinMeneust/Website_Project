@@ -9,7 +9,6 @@ session_start();
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="../js/formChecker.js"></script>
-	<script src="../js/login.js"></script>
 </head>
 <body>
     <div class="createAccountDiv">

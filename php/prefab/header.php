@@ -30,10 +30,9 @@
                 <nav>
                     <ul class="navElement">
                         <li><a href="index.php">Accueil</a></li>
-                        <li id="largeNavElement"><a href="categorie.php?cat=c1">Fruits et Légumes</a></li>
-                        <li><a href="categorie.php?cat=c2">Viandes</a></li>
-                        <li><a href="categorie.php?cat=c3">Desserts</a></li>
+                        <li><a href="browse.php">Produits</a></li>
                         <li><a href="contact.php">Contact</a></li>
+                        <li><a href="apropos.php">À propos</a></li>
                     </ul>
                 </nav>
             </td>
