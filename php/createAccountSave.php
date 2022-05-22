@@ -3,7 +3,7 @@
 
 	$_SESSION["ErrorFormFormat"]=0;
 	$_SESSION["MailAlreadyUse"]=0;
-	$_SESSION["UsernameAlreadyUse"]=0;
+	$_SESSION["usernameAlreadyUsed"]=0;
 
 	//check if the create account form are with "valid" form
 	if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -25,12 +25,12 @@
 	
 	foreach($json as $user){
 		if($email==$user["email"]){
-			$_SESSION["MailAlreadyUse"]=1;
+			$_SESSION["mailAlreadyUsed"]=1;
 			header("Location: ../createAccount.php", true);
 			exit();
 		}
 		if($username==$user["login"]){
-			$_SESSION["UsernameAlreadyUse"]=1;
+			$_SESSION["usernameAlreadyUsed"]=1;
 			header("Location: ../createAccount.php", true);
 			exit();
 		}

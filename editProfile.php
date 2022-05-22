@@ -15,8 +15,8 @@
 	<script src="js/formChecker.js"></script>
 </head>
 <body>
-	<div class="editProfilDiv">
-		<form name="editProfil_form" id="editProfil_form" method="post" action="php/editProfilConfirmation.php">
+	<div class="editProfileDiv">
+		<form name="editProfile_form" id="editProfile_form" method="post" action="php/editProfileConfirmation.php">
 			<h1>Modification du profil</h1><br>
 			<table class="tableForm">
 				<tr>
@@ -96,23 +96,23 @@
 				</tr>
 			</table>
 			<?php 
-			if(isset($_SESSION["MailAlreadyUse"])){
-				if($_SESSION["MailAlreadyUse"]==1){
+			if(isset($_SESSION["mailAlreadyUsed"])){
+				if($_SESSION["mailAlreadyUsed"]==1){
 					echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Cette adresse mail est déjà utilisé</p>');
-					$_SESSION["MailAlreadyUse"]=0;
+					$_SESSION["mailAlreadyUsed"]=0;
 				}
 			}
-			if(isset($_SESSION["UsernameAlreadyUse"])){
-				if($_SESSION["UsernameAlreadyUse"]==1){
+			if(isset($_SESSION["usernameAlreadyUsed"])){
+				if($_SESSION["usernameAlreadyUsed"]==1){
 					echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Ce pseudonyme est déjà utilisé</p>');
-					$_SESSION["UsernameAlreadyUse"]=0;
+					$_SESSION["usernameAlreadyUsed"]=0;
 				}
 			}
-			if(isset($_SESSION["ErrorPassword"]) && isset($_SESSION["ErrorNewPassword"])){
-				if($_SESSION["ErrorPassword"]==1 || $_SESSION["ErrorNewPassword"]==1){
+			if(isset($_SESSION["errorPassword"]) && isset($_SESSION["errorNewPassword"])){
+				if($_SESSION["errorPassword"]==1 || $_SESSION["errorNewPassword"]==1){
 					echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Mot de passe invalide.</p>');
-					$_SESSION["ErrorPassword"]=0;
-					$_SESSION["ErrorNewPassword"]=0;
+					$_SESSION["errorPassword"]=0;
+					$_SESSION["errorNewPassword"]=0;
 				}
 			}
 			?>

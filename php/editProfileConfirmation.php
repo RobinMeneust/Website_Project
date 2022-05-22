@@ -1,10 +1,10 @@
 <?php
 	session_start();
 
-	$_SESSION["MailAlreadyUse"]=0;
-	$_SESSION["UsernameAlreadyUse"]=0;
-	$_SESSION["ErrorPassword"]=0;
-	$_SESSION["ErrorNewPassword"]=0;
+	$_SESSION["mailAlreadyUsed"]=0;
+	$_SESSION["usernameAlreadyUsed"]=0;
+	$_SESSION["errorPassword"]=0;
+	$_SESSION["errorNewPassword"]=0;
 
 	if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$username=$_REQUEST["username"];
@@ -21,13 +21,13 @@
 		$oldPassword=$_REQUEST["oldPassword"];
 	}
 	if($oldPassword != $_SESSION["currentUser"]["password"]){
-		$_SESSION["ErrorPassword"] = 1;
-		header("Location: ../editProfil.php", true);
+		$_SESSION["errorPassword"] = 1;
+		header("Location: ../editProfile.php", true);
 		exit();
 	}
 	if($password != $newPassword){
-		$_SESSION["ErrorNewPassword"] = 1;
-		header("Location: ../editProfil.php", true);
+		$_SESSION["errorNewPassword"] = 1;
+		header("Location: ../editProfile.php", true);
 		exit();
 	}
 	$file = "../data/users.json";
@@ -37,15 +37,15 @@
 	foreach($json as $user){
 		if(($email==$user["email"]) && ($email != "")){
 			if ($email != $_SESSION["currentUser"]["email"]){
-				$_SESSION["MailAlreadyUse"]=1;
-				header("Location: ../editProfil.php", true);
+				$_SESSION["mailAlreadyUsed"]=1;
+				header("Location: ../editProfile.php", true);
 				exit();
 			}
 		}
 		if(($username==$user["login"]) && ($username != "")){
 			if ($username != $_SESSION["currentUser"]["login"]){
-				$_SESSION["UsernameAlreadyUse"]=1;
-				header("Location: ../editProfil.php", true);
+				$_SESSION["usernameAlreadyUsed"]=1;
+				header("Location: ../editProfile.php", true);
 				exit();
 			}
 		}

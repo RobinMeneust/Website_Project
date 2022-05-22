@@ -87,16 +87,16 @@
 				</tr>
 			</table>
 			<?php 
-			if(isset($_SESSION["MailAlreadyUse"])){
-					if($_SESSION["MailAlreadyUse"]==1){
+			if(isset($_SESSION["mailAlreadyUsed"])){
+					if($_SESSION["mailAlreadyUsed"]==1){
 						echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Cette adresse mail est déjà utilisé</p>');
-						$_SESSION["MailAlreadyUse"]=0;
+						$_SESSION["mailAlreadyUsed"]=0;
 					}
 				}
-				if(isset($_SESSION["UsernameAlreadyUse"])){
-					if($_SESSION["UsernameAlreadyUse"]==1){
+				if(isset($_SESSION["usernameAlreadyUsed"])){
+					if($_SESSION["usernameAlreadyUsed"]==1){
 						echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Ce pseudonyme est déjà utilisé</p>');
-						$_SESSION["UsernameAlreadyUse"]=0;
+						$_SESSION["usernameAlreadyUsed"]=0;
 					}
 				}
 			?>

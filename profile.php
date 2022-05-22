@@ -77,9 +77,9 @@
 				<td><button class="showPassword" id="showPassword" onclick="showPassword()">Afficher</button></td>
 			</tr>
 		</table>
-		<a href="php/logout.php" tite="Logout" style="margin-left:10px; padding:5px;">Se déconnecter</a>
-		<a href="index.php" tite="Index" style="margin-left:10px; padding:5px;">Accueil</a>
-		<a href="editProfil.php" tite="EditProfil" style="margin-left:10px; padding:5px;">Modifier le profil</a>
+		<a href="php/logout.php" title="Logout" style="margin-left:10px; padding:5px;">Se déconnecter</a>
+		<a href="index.php" title="Index" style="margin-left:10px; padding:5px;">Accueil</a>
+		<a href="editProfile.php" title="EditProfile" style="margin-left:10px; padding:5px;">Modifier le profil</a>
 	</div>
 </body>
 </html>
