@@ -19,6 +19,6 @@
 		}
 	}
 	$_SESSION["errorLogin"]=1;
-	header("Location: login.php", true);
+	header("Location: ../login.php", true);
 	exit();
 ?>

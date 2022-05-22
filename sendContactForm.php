@@ -7,7 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Envoi du formulaire de contact</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 <body>
     <?php
@@ -40,13 +41,13 @@
                 $job=$_REQUEST["contact_form_job"];
                 if(trim($subject)=="" || trim($message)=="" || trim($from)=="" || trim($name)=="" || $date=="" || !checkDatesConsistency($birthDate, $date)){
                     $_SESSION["incorrectContactForm"]=true;
-                    header("Location: ../contact.php", true);
+                    header("Location: contact.php", true);
                     exit();
                 }
             }
             else{
                 $_SESSION["incorrectContactForm"]=true;
-                header("Location: ../contact.php", true);
+                header("Location: contact.php", true);
                 exit();
             }
             $message = nl2br($message);

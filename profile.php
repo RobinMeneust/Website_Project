@@ -1,16 +1,17 @@
 <?php session_start();?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Profil</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="profilDiv">
 		<?php
 			if(!isset($_SESSION["currentUser"])){
-				header("Location:php/login.php");
+				header("Location:login.php");
 				exit();
 			}
 		?>
@@ -65,9 +66,8 @@
 				<td style="padding-left:0px;">Modifier</td>
 			</tr>
 		</table>
-		<a href="./php/logout.php" tite="Logout" style="margin-left:10px; padding:5px;">Se déconnecter</a>
-		<a href="./index.php" tite="Index" style="margin-left:10px; padding:5px;">Accueil</a>
+		<a href="php/logout.php" tite="Logout" style="margin-left:10px; padding:5px;">Se déconnecter</a>
+		<a href="index.php" tite="Index" style="margin-left:10px; padding:5px;">Accueil</a>
 	</div>
 </body>
 </html>
-<!-- $_SESSION["currentPassword"] -->

@@ -8,7 +8,7 @@
                 <?php
                     echo ('<a href=');
                     if(!isset($_SESSION["currentUser"]))
-                        echo ('"php/login.php">Connexion</a>');
+                        echo ('"login.php">Connexion</a>');
                     else echo ('"profile.php">'.$_SESSION["currentUser"]["login"].'</a>');
                 ?>
             </span>
@@ -18,7 +18,7 @@
                 <a href="
                     <?php
                         if(!isset($_SESSION["currentUser"]))
-                            echo ('php/login.php');
+                            echo ('login.php');
                         else echo ('cart.php');
                     ?>">Panier</a>
             </span>
@@ -32,7 +32,7 @@
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="browse.php">Produits</a></li>
                         <li><a href="contact.php">Contact</a></li>
-                        <li><a href="apropos.php">À propos</a></li>
+                        <li><a href="about.php">À propos</a></li>
                     </ul>
                 </nav>
             </td>

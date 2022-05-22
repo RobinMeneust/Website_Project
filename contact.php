@@ -2,11 +2,12 @@
     session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Contact</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
 	<script src="js/formChecker.js"></script>
 	<script src="js/global.js"></script>
 </head>
@@ -19,7 +20,7 @@
 				<?php include('php/prefab/verticalMenu.php')?>
 			</div>
 			<div class="box mainPart">
-				<form name="contact_form" id="contact_form" method="post" action="php/sendContactForm.php">
+				<form name="contact_form" id="contact_form" method="post" action="sendContactForm.php">
 					<h1>Demande de contact</h1><br>
 					<table class="tableForm">
 						<tr>
@@ -96,12 +97,7 @@
 			</div>
 		</div>
 		<footer>
-			<div class="footerContent">
-				<h4>footer title placeholder</h4><br>
-				<address>
-					placeholder<br>
-				</address>
-			</div>
+			<?php include('php/prefab/footer.php')?>
 		</footer>
 	</div>
 </body>

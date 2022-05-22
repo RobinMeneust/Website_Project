@@ -2,11 +2,12 @@
 	session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Accueil</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" type="image/png" href="img/logo.png">
 	<script src="js/global.js"></script>
 </head>
 <body>
@@ -31,12 +32,7 @@
 			</div>
 		</div>
 		<footer>
-			<div class="footerContent">
-				<h4>footer title placeholder</h4><br>
-				<address>
-					placeholder<br>
-				</address>
-			</div>
+			<?php include('php/prefab/footer.php')?>
 		</footer>
 	</div>
 </body>

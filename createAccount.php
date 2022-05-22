@@ -3,16 +3,17 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Create Account</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-    <script src="../js/formChecker.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <script src="js/formChecker.js"></script>
 </head>
 <body>
     <div class="createAccountDiv">
-        <form name="login_form" id="login_form" method="post" action="createAccountSave.php">
+        <form name="login_form" id="login_form" method="post" action="php/createAccountSave.php">
             <h1>Création de compte</h1><br>
             <table class="tableForm">
                 <tr>
@@ -86,8 +87,8 @@ session_start();
     </div>
         <div class="loginFooter">
             <p>
-                <a href="./login.php">Retour</a>
-                <a href="../index.php">Retourner à l'accueil</a>
+                <a href="login.php">Retour</a>
+                <a href="index.php">Retourner à l'accueil</a>
             </p>
         </div>
 </body>

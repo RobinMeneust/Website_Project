@@ -3,16 +3,17 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Login</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script src="../js/formChecker.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+	<script src="js/formChecker.js"></script>
 </head>
 <body>
     <div class="loginDiv" style="width:700px">
-        <form name="login_form" id="login_form" method="post" action="loginVerification.php">
+        <form name="login_form" id="login_form" method="post" action="php/loginVerification.php">
             <fieldset>
                 <table class="tableForm" style="width:500px">
                     <tr>
@@ -45,7 +46,7 @@
         </form>
     </div>
     <div class="loginFooter">
-            <p><a href="../index.php">Retourner à l'accueil</a></p>
-        </div>
+        <p><a href="index.php">Retourner à l'accueil</a></p>
+    </div>
 </body>
 </html>

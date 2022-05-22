@@ -52,6 +52,19 @@
         "id": "u3"
     },
     {
+        "login": "robin123",
+        "password": "1234",
+        "last_name": "Meneust",
+        "first_name": "Robin",
+        "gender": "M",
+        "email": "test123@hotmail.fr",
+        "phone_nb": "0600000000",
+        "birth_date": "2002-02-13",
+        "address": "1 rue 0",
+        "job": "Autres personnes sans activit\u00e9 professionnelle",
+        "id": "u4"
+    },
+    {
         "login": "User5",
         "password": "1234",
         "last_name": "empty",
