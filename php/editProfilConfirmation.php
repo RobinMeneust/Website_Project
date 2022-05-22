@@ -3,6 +3,8 @@
 
 	$_SESSION["MailAlreadyUse"]=0;
 	$_SESSION["UsernameAlreadyUse"]=0;
+	$_SESSION["ErrorPassword"]=0;
+	$_SESSION["ErrorNewPassword"]=0;
 
 	if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$username=$_REQUEST["username"];
@@ -15,8 +17,19 @@
 		$address=$_REQUEST["address"];
 		$job=$_REQUEST["job"];
 		$password=$_REQUEST["password"];
+		$newPassword=$_REQUEST["newPassword"];
+		$oldPassword=$_REQUEST["oldPassword"];
 	}
-
+	if($oldPassword != $_SESSION["currentUser"]["password"]){
+		$_SESSION["ErrorPassword"] = 1;
+		header("Location: ../editProfil.php", true);
+		exit();
+	}
+	if($password != $newPassword){
+		$_SESSION["ErrorNewPassword"] = 1;
+		header("Location: ../editProfil.php", true);
+		exit();
+	}
 	$file = "../data/users.json";
 	$json = json_decode(file_get_contents($file), true);
 

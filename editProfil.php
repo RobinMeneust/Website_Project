@@ -78,9 +78,18 @@
 					<td><input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["address"]; ?>" type="text" name="address" id="address"></td>
 				</tr>
 				<tr>
-					<td class="smallSize"><label for="password">Password</label></td>
-					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" type="password" name="password" id="password"></td>
+					<td class="smallSize"><label for="password">New Password</label></td>
+					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" placeholder="******" type="password" name="password" id="password"></td>
 				</tr>
+				<tr>
+					<td class="smallSize"><label for="password">Confirm New Password</label></td>
+					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" placeholder="******" type="password" name="newPassword" id="newPassword"></td>
+				</tr>
+				<tr>
+					<td class="smallSize"><label for="password">actual Password *</label></td>
+					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" type="password" name="oldPassword" id="oldPassword"></td>
+				</tr>
+				<tr><td><td><i>You need to write your actual password for change your account informations.</i></td></td></tr>
 				<tr>
 					<td></td>
 					<td><input class="submitButton" type="submit" value="Valider"></td>
@@ -88,17 +97,24 @@
 			</table>
 			<?php 
 			if(isset($_SESSION["MailAlreadyUse"])){
-					if($_SESSION["MailAlreadyUse"]==1){
-						echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Cette adresse mail est déjà utilisé</p>');
-						$_SESSION["MailAlreadyUse"]=0;
-					}
+				if($_SESSION["MailAlreadyUse"]==1){
+					echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Cette adresse mail est déjà utilisé</p>');
+					$_SESSION["MailAlreadyUse"]=0;
 				}
-				if(isset($_SESSION["UsernameAlreadyUse"])){
-					if($_SESSION["UsernameAlreadyUse"]==1){
-						echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Ce pseudonyme est déjà utilisé</p>');
-						$_SESSION["UsernameAlreadyUse"]=0;
-					}
+			}
+			if(isset($_SESSION["UsernameAlreadyUse"])){
+				if($_SESSION["UsernameAlreadyUse"]==1){
+					echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Ce pseudonyme est déjà utilisé</p>');
+					$_SESSION["UsernameAlreadyUse"]=0;
 				}
+			}
+			if(isset($_SESSION["ErrorPassword"]) && isset($_SESSION["ErrorNewPassword"])){
+				if($_SESSION["ErrorPassword"]==1 || $_SESSION["ErrorNewPassword"]==1){
+					echo ('<p style="color:red; margin-top:5px; font-size: medium; text-align: center;">Mot de passe invalide.</p>');
+					$_SESSION["ErrorPassword"]=0;
+					$_SESSION["ErrorNewPassword"]=0;
+				}
+			}
 			?>
 		</form>
 	</div>
