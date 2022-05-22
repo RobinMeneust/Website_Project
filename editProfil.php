@@ -15,7 +15,7 @@
 	<script src="js/formChecker.js"></script>
 </head>
 <body>
-	<div class="createAccountDiv">
+	<div class="editProfilDiv">
 		<form name="editProfil_form" id="editProfil_form" method="post" action="php/editProfilConfirmation.php">
 			<h1>Modification du profil</h1><br>
 			<table class="tableForm">
@@ -78,18 +78,18 @@
 					<td><input onfocusout="checkStringFormat(this)" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["address"]; ?>" type="text" name="address" id="address"></td>
 				</tr>
 				<tr>
-					<td class="smallSize"><label for="password">New Password</label></td>
+					<td class="smallSize"><label for="password">Nouveau mot de passe</label></td>
 					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" placeholder="******" type="password" name="password" id="password"></td>
 				</tr>
 				<tr>
-					<td class="smallSize"><label for="password">Confirm New Password</label></td>
+					<td class="smallSize"><label for="password">confirmer le nouveau mot de passe</label></td>
 					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" placeholder="******" type="password" name="newPassword" id="newPassword"></td>
 				</tr>
 				<tr>
-					<td class="smallSize"><label for="password">actual Password *</label></td>
+					<td class="smallSize"><label for="password">mot de passe actuel *</label></td>
 					<td><input maxlength="100" onfocusout="checkStringFormat(this, 'passwd')" class="mediumSize" type="password" name="oldPassword" id="oldPassword"></td>
 				</tr>
-				<tr><td><td><i>You need to write your actual password for change your account informations.</i></td></td></tr>
+				<tr><td><td><i>Vous devez écrire votre mot de passe actuel pour changer les informations de votre compte.</i></td></td></tr>
 				<tr>
 					<td></td>
 					<td><input class="submitButton" type="submit" value="Valider"></td>

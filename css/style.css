@@ -278,7 +278,7 @@ option{
 }
 
 /* Style of all elements in login.php*/
-.loginDiv, .createAccountDiv{ /*also used in createaccount.php*/
+.loginDiv, .createAccountDiv, .editProfilDiv{ /*also used in createaccount.php*/
 	background-color: #322f46;
   	margin: auto;
 	margin-top:200px;
