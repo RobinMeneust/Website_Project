@@ -263,7 +263,7 @@ option{
 	width: 620px;
 }
 
-.submitButton{
+.submitButton, #buttonHideStock{
 	width: 180px;
 	height: 50px;
 	background-color: #22202f;
@@ -273,7 +273,7 @@ option{
 	font-size: 14px;
 }
 
-.submitButton:hover{
+.submitButton:hover, #buttonHideStock:hover{
 	cursor: pointer;
 }
 
@@ -356,6 +356,7 @@ option{
 	width: 50vw;
 	text-align: center;
 }
+
 
 /* Style of the table containg a list of all the categories in browse.php*/
 .categoriesTable{

@@ -29,13 +29,8 @@
 			<div class="box mainPart">
 				<h1><?php echo $_REQUEST["catName"]; ?></h1><br>
 				<table id="cat"></table>
-				<button id="aligneDroit" type="submit" class="button"  onclick="Cacher()">Cacher stock</button>
-				<script src="js/catalogue.js"></script>
-				<?php
-					
-				?>
+				<button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Cacher stock</button>
 			</div>
-			<script src="js/catalogue.js"></script>
 		</div>
 		<footer>
 			<?php include('php/prefab/footer.php')?>

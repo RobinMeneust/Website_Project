@@ -18,9 +18,9 @@ function loadCategorie(categorie) {
 			const imgSrc = foundCat.getElementsByTagName("IMG_NAME");
 			const stock = foundCat.getElementsByTagName("STOCK");
 			const price = foundCat.getElementsByTagName("PRICE");
-			let txt = '<tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="colonne">Stock</th><th>Commande</th></tr>';
+			let txt = '<tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Commande</th></tr>';
 			for (let i = 0; i < name.length; i++) {
-				txt += '<tr> <td><img style="width:150px" src="'+imgSrc[i].childNodes[0].nodeValue+'" alt="photo"></td><td>'+id[i].childNodes[0].nodeValue+'</td><td>'+desc[i].childNodes[0].nodeValue+'</td><td>'+price[i].childNodes[0].nodeValue+'</td><td class="colonne">'+stock[i].childNodes[0].nodeValue+'</td><td><form action="/action_page.php"><input type="button" id="button'+(i+1)+'" value="-" onclick="diminuer(`quantity'+(i+1)+'`,`button'+(i+1)+'`)" disabled="disabled"><input type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"><input type="button" value="+" onclick="augmenter(`quantity'+(i+1)+'`,`button'+(i+1)+'`)"><br><input type="button" class="button" value="Ajouter au panier"></form></td> </tr>';
+				txt += '<tr> <td><img style="width:150px" src="'+imgSrc[i].childNodes[0].nodeValue+'"></td><td>'+id[i].childNodes[0].nodeValue+'</td><td>'+desc[i].childNodes[0].nodeValue+'</td><td>'+price[i].childNodes[0].nodeValue+'</td><td class="stockColumn">'+stock[i].childNodes[0].nodeValue+'</td><td><form action="/action_page /*WIP*/.php"><input type="button" id="button'+(i+1)+'" value="-" onclick="decrease(`quantity'+(i+1)+'`,`button'+(i+1)+'`)" disabled="disabled"><input type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"><input type="button" value="+" onclick="increase(`quantity'+(i+1)+'`,`button'+(i+1)+'`)"><br><input type="button" class="button" value="Ajouter au panier"></form></td> </tr>';
 			}
 			document.getElementById("cat").innerHTML = txt;
 		}
