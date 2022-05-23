@@ -168,6 +168,17 @@ it has also been designed to remain fixed.
 	height: 35px;
 }
 
+.cartButton{
+	border:none;
+	background-color:transparent;
+	cursor: pointer;
+	font-size:medium
+}
+
+.cartButton:hover span{
+	color:#e94560;
+}
+
 
 body{
 	background-color: #22202f;
@@ -263,7 +274,7 @@ option{
 	width: 620px;
 }
 
-.submitButton, #buttonHideStock{
+.submitButton, #buttonHideStock, .addToCartButton{
 	width: 180px;
 	height: 50px;
 	background-color: #22202f;
@@ -271,6 +282,17 @@ option{
 	color: #e94560;;
 	font-weight:bold;
 	font-size: 14px;
+	cursor: pointer;
+}
+
+.addToCartButton{
+	height: 30px;
+	width: 150px;
+	margin-left: 20px;
+}
+
+.hiddenInput{
+	display:none;
 }
 
 .submitButton:hover, #buttonHideStock:hover{
