@@ -60,7 +60,7 @@ function hide() {
 }
 
 function zoomIn(element){
-	element.style.width="800px";
+	element.style.width="500px";
 	let background = document.createElement("div");
 	background.id="backgroundForImg";
 	document.body.appendChild(background);
