@@ -31,7 +31,7 @@ function decrease(id) {
 function checkIfCorrectValue(value, id){
 	var max = parseInt(document.getElementById('stockID'+id).innerHTML);
 	if(value>max){
-		document.getElementById('quantity'+id).value = max;
+		document.getElementById('quantity'+id).value = 1;
 	}
 	if(value<0){
 		document.getElementById('quantity'+id).value = 0;
