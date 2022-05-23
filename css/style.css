@@ -61,6 +61,24 @@ header{
 	padding: 100px 200px 100px 250px;
 }
 
+#backgroundForImg{
+	width:100vw;
+	height:100vh;
+	margin:auto;	
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:100;
+	object-fit: cover;
+	background-color: rgba(0, 0, 0, 0.98);
+}
+
+.catalogueImg{
+	width:150px;
+	position: relative;
+	cursor: zoom-in;
+}
+
 .verticalMenuButton{
 	margin-left: 10px;
 	left: 0;

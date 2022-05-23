@@ -58,3 +58,24 @@ function hide() {
 		hidden=0;
 	}
 }
+
+function zoomIn(element){
+	element.style.width="800px";
+	let background = document.createElement("div");
+	background.id="backgroundForImg";
+	document.body.appendChild(background);
+	
+	element.setAttribute("onclick", "zoomOut(this)");
+	element.style.cursor="zoom-out";
+	element.style.zIndex="101";
+}
+
+function zoomOut(element){
+	if(backgroundForImg!=null){
+		document.getElementById("backgroundForImg").remove();
+	}
+	element.style.width="150px";
+	element.style.cursor="zoom-in";
+	element.style.zIndex="1";
+	element.setAttribute("onclick", "zoomIn(this)");
+}
