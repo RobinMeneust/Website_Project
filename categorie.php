@@ -46,7 +46,6 @@
 							$_SESSION['cart'][$productID]=$quantity;
 						}
 					}
-					echo "<span>TEST SESSION: (for ID=".$productID.") ".$_SESSION['cart'][$productID]." | TEST FORM: ".$productID." ".$quantity."</span><br>";
 				?>
 			</div>
 		</div>
