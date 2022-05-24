@@ -15,3 +15,17 @@ function changeMenuDisplay(newState){
 		document.getElementsByClassName("verticalMenuButton")[0].setAttribute("onclick", "changeMenuDisplay('show')");
 	}
 }
+
+function changeCartDisplay(newState){
+	let cartdiv = document.getElementsByClassName("cartdiv")[0];
+	 
+
+	if(newState=="show"){
+		cartdiv.style.display="block";
+		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "changeCartDisplay('hide')");
+	}
+	else if(newState=="hide"){
+		cartdiv.style.display="none";
+		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "changeCartDisplay('show')");
+	}
+}
