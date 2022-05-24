@@ -79,3 +79,21 @@ function zoomOut(element){
 	element.style.zIndex="1";
 	element.setAttribute("onclick", "zoomIn(this)");
 }
+
+function addToCart(imgSrc, id, description, price, stock, cellID){
+	let quantity = parseInt(document.getElementById("quantity"+cellID).value);
+	if(quantity>0){
+		const xhttp = new XMLHttpRequest();
+		xhttp.onload = function () {
+			if(this.readyState == 4 && this.status == 200){
+				const returnedStatus = this.responseText;
+				if(returnedStatus=="error")
+					console.log("Error in addToCart()");
+				console.log(returnedStatus);
+			}
+		};
+		xhttp.open("POST", "../php/addToSessionCart.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("imgSrc="+imgSrc+"&id="+id+"&description="+description+"&price="+price+"&stock="+stock+"&quantity="+quantity);
+	}
+}

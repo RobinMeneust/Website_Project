@@ -47,6 +47,7 @@ header{
 }
 
 .verticalMenu{
+	z-index: 2;
 	width:70px;
 	top:230px;
 	background-color: #322f46;
@@ -90,7 +91,7 @@ header{
 	border: white solid 2px;
 	border-radius: 50%;
 	position: fixed;
-	z-index: 1; /*if it isn't specified then the button is hidden under the vertical menu*/
+	z-index: 3; /*if it isn't specified then the button is hidden under the vertical menu*/
 	top: 240px;
 	width: 50px;
 	height: 50px;
@@ -311,10 +312,6 @@ option{
 	height: 30px;
 	width: 150px;
 	margin-left: 20px;
-}
-
-.hiddenInput{
-	display:none;
 }
 
 .submitButton:hover, #buttonHideStock:hover{

@@ -30,23 +30,6 @@
 				<h1><?php echo $_REQUEST["catName"]; ?></h1><br>
 				<table id="cat"></table>
 				<button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Cacher stock</button>
-				<?php
-					if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_REQUEST["quantity"], $_REQUEST["productID"])){
-						$quantity=$_REQUEST["quantity"];
-						$productID=$_REQUEST["productID"];
-
-						if(isset($_REQUEST['cart'][$productID])){	
-							if($_SESSION['cart'][$productID]!=$quantity){
-								//update existing var
-								$_SESSION['cart'][$productID]=$quantity;
-							}
-						}
-						else{
-							//new var
-							$_SESSION['cart'][$productID]=$quantity;
-						}
-					}
-				?>
 			</div>
 		</div>
 		<footer>

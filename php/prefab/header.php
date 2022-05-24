@@ -43,6 +43,7 @@
 		<?php 
 			// access to session vars to generate the cart in the tag <table>
 			// echo <tr><td> <img...$_SESSION[...] > </td><td> $_SESSION[...] </td></tr>
+			// or in ajax ???
 		?>
 	</table>
 	<a href="cart.php">Valider le panier</a>
