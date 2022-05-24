@@ -1,3 +1,7 @@
+function productsVarsAreDefined(stock, imgSrc, id, desc, price){
+	return (typeof stock.childNodes[0] !== 'undefined' && typeof imgSrc.childNodes[0] !== 'undefined' && typeof id.childNodes[0] !== 'undefined' && typeof desc.childNodes[0] !== 'undefined' && typeof price.childNodes[0] !== 'undefined');
+}
+
 function checkIfCorrectStockValue(element){
 	if(element.value<0){
 		element.value=0;
@@ -39,6 +43,7 @@ function updateStock(id, cellID){
 	document.getElementById("stockID"+cellID).innerHTML=newStock;
 }
 
+
 function loadStock() {
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
@@ -50,9 +55,9 @@ function loadStock() {
 			const imgSrc = xmlDoc.getElementsByTagName("IMG_NAME");
 			const stock = xmlDoc.getElementsByTagName("STOCK");
 			const price = xmlDoc.getElementsByTagName("PRICE");
-				let txt = '<tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Edition des stocks</th></tr>';
+			let txt = '<tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Edition des stocks</th></tr>';
 			for (let i = 0; i < name.length; i++) {
-				if (stock[i].childNodes[0].nodeValue > 0) {
+				if(productsVarsAreDefined(stock[i], imgSrc[i], id[i], desc[i], price[i]) && stock[i].childNodes[0].nodeValue > 0) {
 					txt += '<tr> <td><img class="catalogueImg" onclick="zoomIn(this)" src="'+imgSrc[i].childNodes[0].nodeValue+'"></td><td>'+id[i].childNodes[0].nodeValue+'</td><td>'+desc[i].childNodes[0].nodeValue+'</td><td>'+price[i].childNodes[0].nodeValue+'</td><td class="stockColumn" id="stockID'+(i+1)+'">'+stock[i].childNodes[0].nodeValue+'</td><td><form name="addToCart_form" id="addToCart_form"><input onkeyup="checkIfCorrectStockValue(this)" type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"><input onclick="updateStock(\''+id[i].childNodes[0].nodeValue+'\', \''+(i+1)+'\')" class="default_button" type="button" value="Sauvegarder"></form></td></tr>';
 				}
 			}

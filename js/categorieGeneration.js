@@ -1,3 +1,7 @@
+function productsVarsAreDefined(stock, imgSrc, id, desc, price){
+	return (typeof stock.childNodes[0] !== 'undefined' && typeof imgSrc.childNodes[0] !== 'undefined' && typeof id.childNodes[0] !== 'undefined' && typeof desc.childNodes[0] !== 'undefined' && typeof price.childNodes[0] !== 'undefined');
+}
+
 function loadCategorie(categorie) {
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
@@ -20,7 +24,7 @@ function loadCategorie(categorie) {
 			const price = foundCat.getElementsByTagName("PRICE");
 			let txt = '<tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Commande</th></tr>';
 			for (let i = 0; i < name.length; i++) {
-				if (stock[i].childNodes[0].nodeValue > 0) {
+				if (productsVarsAreDefined(stock[i], imgSrc[i], id[i], desc[i], price[i]) && stock[i].childNodes[0].nodeValue > 0) {
 					txt += '<tr> <td><img class="catalogueImg" onclick="zoomIn(this)" src="'+imgSrc[i].childNodes[0].nodeValue+'"></td><td>'+id[i].childNodes[0].nodeValue+'</td><td>'+desc[i].childNodes[0].nodeValue+'</td><td>'+price[i].childNodes[0].nodeValue+'</td><td class="stockColumn" id="stockID'+(i+1)+'">'+stock[i].childNodes[0].nodeValue+'</td><td><form name="addToCart_form" id="addToCart_form"><input type="button" id="button-'+(i+1)+'" value="-" onclick="decrease('+(i+1)+');" disabled="disabled"><input onkeyup="checkIfCorrectValue(this.value, '+(i+1)+')" type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"><input type="button" id="button+'+(i+1)+'" value="+" onclick="increase('+(i+1)+');"><input onclick="addToCart(\''+imgSrc[i].childNodes[0].nodeValue+'\', \''+id[i].childNodes[0].nodeValue+'\', \''+desc[i].childNodes[0].nodeValue+'\', \''+price[i].childNodes[0].nodeValue+'\', \''+stock[i].childNodes[0].nodeValue+'\', \''+(i+1)+'\')" class="default_button" type="button" value="Ajouter au panier"></form></td></tr>';
 				}
 			}
