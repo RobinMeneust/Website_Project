@@ -89,7 +89,6 @@ function addToCart(imgSrc, id, description, price, stock, cellID){
 				const returnedStatus = this.responseText;
 				if(returnedStatus=="error")
 					console.log("Error in addToCart()");
-				console.log(returnedStatus);
 			}
 		};
 		xhttp.open("POST", "../php/addToSessionCart.php", true);

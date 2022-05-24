@@ -30,6 +30,7 @@
 						<li><a href="browse.php">Produits</a></li>
 						<li><a href="contact.php">Contact</a></li>
 						<li><a href="about.php">À propos</a></li>
+						<?php if(isset($_SESSION['currentUser']['id']) && $_SESSION['currentUser']['id']=="u00") { echo "<li><a href=\"admin.php\">Gestion du site</a></li>";} ?>
 					</ul>
 				</nav>
 			</td>

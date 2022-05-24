@@ -10,7 +10,7 @@
         if(isset($_SESSION['cart'][$productID])){	
             if($_SESSION['cart'][$productID]!=$quantity){
                 //update existing var
-                $_SESSION['cart'][$productID]=$quantity;
+                $_SESSION['cart'][$productID]+=$quantity;
             }
         }
         else{

@@ -297,7 +297,7 @@ option{
 	width: 620px;
 }
 
-.submitButton, #buttonHideStock, .addToCartButton{
+.submitButton, #buttonHideStock, .default_button{
 	width: 180px;
 	height: 50px;
 	background-color: #22202f;
@@ -308,7 +308,7 @@ option{
 	cursor: pointer;
 }
 
-.addToCartButton{
+.default_button{
 	height: 30px;
 	width: 150px;
 	margin-left: 20px;
@@ -393,7 +393,7 @@ option{
 
 /* Style of all elements in categorie.php */
 
-#cat{
+#cat, #editStockTable{
 	width: 50vw;
 	text-align: center;
 }
