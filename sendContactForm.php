@@ -10,6 +10,7 @@
 </head>
 <body>
 	<?php
+	// Checks if a the birth date is invalid (checks if it's in the future)
 		function checkDatesConsistency($birthDate, $date){
 			$dateArray = explode('-', $date);
 			$birthDateArray = explode('-', $birthDate);
@@ -29,8 +30,8 @@
 				$from=$_REQUEST["contact_form_email"];
 				$name=$_REQUEST["contact_form_firstName"]." ".$_REQUEST["contact_form_lastName"];
 				$date=$_REQUEST["contact_form_date"];
-
 				
+				//Check if the needed variables are defined
 				if(isset($_REQUEST["contact_form_gender"]))
 					$gender=$_REQUEST["contact_form_gender"];
 				if(isset($_REQUEST["contact_form_birthDate"]))
@@ -48,7 +49,7 @@
 				header("Location: contact.php", true);
 				exit();
 			}
-			$message = nl2br($message);
+			$message = nl2br($message); // Used to convert all "\n" to "<br>"
 			$message.="<br><br>$name<br>Envoyé le : $date<br><br>_______________<br><br>Informations supplémentaires:<br><br>Genre : $gender<br>Date de naissance : $birthDate<br>Fonction : $job";
 			
 			echo "<table class=\"mailTable\">";

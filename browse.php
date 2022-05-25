@@ -21,6 +21,7 @@
 				<h1>Liste des catégories</h1><br>
 				<table class="categoriesTable">
 					<?php
+						//We print the list of categories
 						$dataFile = fopen("data/categories.csv", "r") or die("ERROR the file data/categories.csv could not be opened");
 						fgetcsv($dataFile, 100, ","); // Used to ignore the 1st line of the csv file
 						while(($data = fgetcsv($dataFile, 100, ",")) !=FALSE){

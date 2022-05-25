@@ -1,13 +1,14 @@
-var hidden = 0;
+var hidden = 0; // Used to now whether we should hide or show the content depending on this value
 
+// Increase the quantity of the list id
 function increase(id) {
-	var value = parseInt(document.getElementById('quantity'+id).value); //*Récupère la valeur de l'élément en entier*//
+	var value = parseInt(document.getElementById('quantity'+id).value); // Get the product current ordered quantity
 	var max = parseInt(document.getElementById('stockID'+id).innerHTML);
-	value = isNaN(value) ? 0 : value;//*S'il n'y a pas de valeur, on met 0. Sinon, on garde la valeur*//
+	value = isNaN(value) ? 0 : value;// If there is no value then we put a 0 by default, in the other case we keep the value as it is
 	max = isNaN(max) ? 0 : max;
-	value++;//*On augmente la valeur de 1*//
+	value++;// We increase the quantity by one
 	if(value<=max)
-		document.getElementById('quantity'+id).value = value;//*Mettre à jour la valeur affichée*//
+		document.getElementById('quantity'+id).value = value;// Update the displayed value
 		if (value > 0) {
 			document.getElementById('button-'+id).disabled = false;
 		}
@@ -15,6 +16,7 @@ function increase(id) {
 		document.getElementById('button+'+id).disabled = true;
 }
 
+// Decrease the quantity of the list id
 function decrease(id) {
 	var value = parseInt(document.getElementById('quantity'+id).value);
 	value = isNaN(value) ? 0 : value;
@@ -28,6 +30,7 @@ function decrease(id) {
 	document.getElementById('quantity'+id).value = value;
 }
 
+// Checks if the user input (ordered quantity) is correct
 function checkIfCorrectValue(value, id){
 	var max = parseInt(document.getElementById('stockID'+id).innerHTML);
 	if(value>max){
@@ -38,6 +41,7 @@ function checkIfCorrectValue(value, id){
 	}
 }
 
+// Hide (or show) the stock column
 function hide() {
 	var elements = document.getElementsByClassName("stockColumn");
 	var i;
@@ -59,6 +63,7 @@ function hide() {
 	}
 }
 
+// Zoom in the image
 function zoomIn(element){
 	element.style.width="500px";
 	let background = document.createElement("div");
@@ -70,6 +75,7 @@ function zoomIn(element){
 	element.style.zIndex="101";
 }
 
+// Zoom out the image
 function zoomOut(element){
 	if(backgroundForImg!=null){
 		document.getElementById("backgroundForImg").remove();
@@ -80,6 +86,7 @@ function zoomOut(element){
 	element.setAttribute("onclick", "zoomIn(this)");
 }
 
+// Add an product to the cart with the given parameter (to be put in a session variable)
 function addToCart(imgSrc, id, description, price, stock, cellID){
 	let quantity = parseInt(document.getElementById("quantity"+cellID).value);
 	if(quantity>0){

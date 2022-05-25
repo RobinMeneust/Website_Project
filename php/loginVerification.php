@@ -12,7 +12,7 @@
 		$password=$_REQUEST["password"];
 	}
 	foreach($json as $user){
-		if(($username==$user["login"] /*|| $username==$user["email"] [WIP]*/ ) && $password==$user["password"]){
+		if(($username==$user["login"] || $username==$user["email"]) && $password==$user["password"]){
 			$_SESSION["currentUser"]=$user;
 			header("Location: ../index.php", true);
 			exit();

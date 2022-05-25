@@ -25,7 +25,7 @@
 					</tr>
 					<tr>
 						<td class="smallSize"><label for="username">Mail ou identifiant</label></td>
-						<td><input maxlength="100" onfocusout="checkStringFormat(this, 'username')"  class="smallSize" type="text" name="username" id="username" required></td>
+						<td><input maxlength="100" onfocusout="checkStringFormat(this, 'login')"  class="smallSize" type="text" name="username" id="username" required></td>
 					</tr>
 					<tr>
 						<td class="smallSize"><label for="password">Mot de passe</label></td>

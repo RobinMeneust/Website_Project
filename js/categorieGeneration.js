@@ -1,7 +1,9 @@
+// Checks if the given variables are defined. It's used to avoid errors when generating the products lis
 function productsVarsAreDefined(stock, imgSrc, id, desc, price){
 	return (typeof stock.childNodes[0] !== 'undefined' && typeof imgSrc.childNodes[0] !== 'undefined' && typeof id.childNodes[0] !== 'undefined' && typeof desc.childNodes[0] !== 'undefined' && typeof price.childNodes[0] !== 'undefined');
 }
 
+// Search a categorie in products.xml and display its products in the table with the id "cat"
 function loadCategorie(categorie) {
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {

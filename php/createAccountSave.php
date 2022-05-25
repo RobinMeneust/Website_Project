@@ -43,12 +43,12 @@
 	foreach($json as $user){
 		$idRead = (int) filter_var($user["id"], FILTER_SANITIZE_NUMBER_INT);
 		if($idRead != 0){  //don't check the case id=0 because it's the admin.
-			if($idRead != ($prev+1)){  // If we have found an unused id betwen 2 used, we can use it for the new utilisator
+			if($idRead != ($prev+1)){  // If we have found an unused id betwen 2 used, we can use it for the new user
 				$id = "u".($prev+1);
 				break;
 			}
 			if(++$i === $nbUser){
-				$id = "u".($idRead+1);  // Case all id are already use, so we add an id +1 bigger than the biggest one. 
+				$id = "u".($idRead+1);  // if all id are already used, so we add an id +1 bigger than the biggest one. 
 				break;
 			}
 			$prev = $idRead;

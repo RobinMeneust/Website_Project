@@ -1,3 +1,4 @@
+// We show or hide the vertical menu, depending on the previous state ('hide' or 'show')
 function changeMenuDisplay(newState){
 	let verticalMenu = document.getElementsByClassName("verticalMenu")[0];
 	let verticalMenuTextElements = document.getElementsByClassName("verticalMenuText");
@@ -16,9 +17,9 @@ function changeMenuDisplay(newState){
 	}
 }
 
+// Show or hide the cart in the header
 function changeCartDisplay(newState){
 	let cartdiv = document.getElementsByClassName("cartdiv")[0];
-	 
 
 	if(newState=="show"){
 		cartdiv.style.display="block";

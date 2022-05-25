@@ -32,7 +32,7 @@
 		<h2 style="text-align:center;">Profil</h2>
 		<table style="padding:5px; margin-bottom:10px; width:100%;">
 			<tr>
-				<td>Pseudonyme : </td>
+				<td>Identifiant : </td>
 				<td><?php echo ($_SESSION["currentUser"]["login"]); ?></td>				
 			</tr>
 			<tr>
