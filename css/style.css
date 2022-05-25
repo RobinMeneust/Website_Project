@@ -18,6 +18,10 @@ h1, h2{
 	color:#e94560;
 }
 
+a{
+	text-decoration: none;
+}
+
 /*HEADER*/
 
 .smallHeaderBox{
@@ -53,7 +57,7 @@ header{
 	height:150px;
 }
 
-#cartdiv {
+#cartdiv{
 	display: none;
 	position: fixed;
 	height: 700px;
@@ -62,14 +66,21 @@ header{
 	background-color: #322f46;
 	border: solid 1px white;
 	z-index: 5;
+	text-align: center;
+	padding-bottom: 30px;
 	overflow-y: scroll;
 }
 
 #tableCart{
 	border-collapse: collapse;
-	width:1000px;
+	width:500px;
 	margin:50px;
 	text-align: center;
+}
+
+#tableCart img{
+	width: 80px;
+	height: 80px;
 }
 
 #tableCart td{
@@ -344,6 +355,11 @@ option{
 	height: 30px;
 	width: 150px;
 	margin-left: 20px;
+	padding: 15px;
+}
+
+.default_button:hover{
+	background-color: #544f74;
 }
 
 .submitButton:hover, #buttonHideStock:hover{

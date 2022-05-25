@@ -35,7 +35,7 @@ function updateCartDisplay(newState){
 	let cartdiv = document.getElementById("cartdiv");
 
 	if(newState=="show"){
-		document.getElementById("tableCart").innerHTML='<tr><th>Photo</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Commande</th></tr>';
+		document.getElementById("tableCart").innerHTML='';
 		getCartHTML();
 		cartdiv.style.display="block";
 		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "updateCartDisplay('hide')");
