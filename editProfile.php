@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Edit Profil</title>
+	<title>Modification du profil</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" type="image/png" href="img/logo.png">

@@ -18,14 +18,11 @@
 				<?php include('php/prefab/verticalMenu.php')?>
 			</div>
 			<div class="box mainPart">
-				<h1>PLACEHOLDER TITLE</h1><br>
+				<h1>Accueil</h1><br>
+				<br><br>
+				<h2>Bienvenue !</h2><br><br>
 				<p>
-					<?php
-						//PLACEHOLDER
-						for($i=0; $i<5; $i++){
-							echo "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard ";
-						}
-					?>
+					TEXTTEXTTEXT
 				</p>
 			</div>
 		</div>

@@ -10,11 +10,11 @@
 		var bool = 0;
 		function showPassword(){
 			if (bool == 0){
-				document.getElementById("profilpassword").innerHTML = "<?php echo $_SESSION["currentUser"]["password"]; ?>";
+				document.getElementById("profilePassword").innerHTML = "<?php echo $_SESSION["currentUser"]["password"]; ?>";
 				document.getElementById("showPassword").innerHTML = "Cacher";
 				bool = 1;
 			} else {
-				document.getElementById("profilpassword").innerHTML = "********";
+				document.getElementById("profilePassword").innerHTML = "********";
 				document.getElementById("showPassword").innerHTML = "Afficher";
 				bool = 0;
 			}
@@ -22,7 +22,7 @@
 	</script>
 </head>
 <body>
-	<div class="profilDiv">
+	<div class="profileDiv">
 		<?php
 			if(!isset($_SESSION["currentUser"])){
 				header("Location:login.php");
@@ -73,7 +73,7 @@
 			</tr>
 			<tr>
 				<td>Mot de Passe : </td>
-				<td><p id="profilpassword" style="font-size: small;">********</p></td>
+				<td><p id="profilePassword" style="font-size: small;">********</p></td>
 				<td><button class="showPassword" id="showPassword" onclick="showPassword()">Afficher</button></td>
 			</tr>
 		</table>

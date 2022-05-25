@@ -1,3 +1,5 @@
+/*GENERAL*/
+
 *{
 	margin:0;
 	padding:0;
@@ -15,16 +17,104 @@ h1, h2{
 	color:#e94560;
 }
 
-.cartdiv {
-display: none;
+/*HEADER*/
+
+.smallHeaderBox{
+	width: 130px;
+	padding-left: 20px;
 }
-/* 
-the padding and global margin are reinitialized
-so that the <body> is not surrounded by a 
-thin white line. (Due to the default margin.)
-*/ 
 
+.smallHeaderBox a{
+	text-decoration: none;
+}
 
+.smallHeaderBox td{
+	list-style-type: none;
+	width: 180px;
+	height: 50px;
+	font-weight:bold;
+	font-size: 14px;
+	cursor: pointer;
+	text-align: left;
+}
+
+.smallHeaderBox img{
+	width:150px;
+}
+
+.smallHeaderBox svg{
+	width: 35px;
+	height: 35px;
+}
+
+header{
+	display:table-row;
+	height:150px;
+}
+
+.cartdiv {
+	display: none;
+}
+
+.tableHeader{
+	border-collapse:collapse;
+	width:100%;
+	height:100%;
+}
+
+nav{
+	padding: 10px;
+	height: 100%;
+	font-size:23px;
+	text-align: center;
+}
+
+.horizontalMenu{
+	background-color: #322f46;
+}
+
+.navElement li{
+	list-style-type: none;
+	display: inline-block;
+	width: 160px;
+	text-align: center;
+	text-decoration:none;
+	padding:5px 15px 5px 15px;
+}
+
+.navElement a, .verticalMenuElement a{
+	text-decoration:none;
+}
+
+.navElement a:hover, .verticalMenuElement a:hover span, .smallHeaderBox a:hover, .footerContent a:hover{
+	color:#e94560;
+}
+
+.title{ /*website name displayed in the upper part of the page*/
+	color: white;
+	text-align:center;
+	font-size:58px;
+}
+
+.cartButton{
+	border:none;
+	background-color:transparent;
+	cursor: pointer;
+	font-weight:bold;
+	font-size: 14px;
+}
+
+.cartButton:hover span{
+	color:#e94560;
+}
+
+/*PAGES STRUCTURE
+
+- wrapper is the whole container of the pages.
+- base is between the header and the footer
+- the height ratio is calculated for each part so that it covers the whole page of the browser (and doesn't overflow). 
+
+*/
 .wrapper{
 	display:table;
 	height:100%;
@@ -35,16 +125,22 @@ thin white line. (Due to the default margin.)
 	display:table-cell;
 }
 
-header{
-	display:table-row;
-	height:150px;
-}
 
 .base{
 	display:table;
 	height:100%;
 	width:100%;
 }
+
+.mainPart{
+	padding: 100px 200px 100px 250px;
+}
+
+body{
+	background-color: #22202f;
+}
+
+/*VERTICAL NAVIGATION BAR (on the left of most of the pages)*/
 
 .verticalMenu{
 	z-index: 2;
@@ -59,29 +155,6 @@ header{
 
 .verticalMenuContainer{
 	text-align: center;
-}
-
-.mainPart{
-	padding: 100px 200px 100px 250px;
-}
-
-#backgroundForImg{
-	width:100vw;
-	height:100vh;
-	margin:auto;	
-	position:fixed;
-	top:0px;
-	left:0px;
-	z-index:100;
-	object-fit: cover;
-	background-color: rgba(0, 0, 0, 0.98);
-}
-
-.catalogueImg{
-	width:150px;
-	position: relative;
-	cursor: zoom-in;
-	border-radius: 10%;
 }
 
 .verticalMenuButton{
@@ -118,6 +191,50 @@ header{
 	margin:auto
 }
 
+.verticalMenuElement{
+	font-size:23px;
+	list-style-type: none;
+	line-height: 50px;
+}
+
+.verticalMenuElement svg{
+	width: 25px;
+	height: 25px;
+	fill: white;
+}
+
+.verticalMenuElement a:hover svg{
+	fill: #e94560;
+}
+
+.verticalMenuElement a{
+	display: inline-block;
+	overflow-y: hidden;
+}
+
+/*PRODUCTS DISPLAY*/
+
+#backgroundForImg{
+	width:100vw;
+	height:100vh;
+	margin:auto;	
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:100;
+	object-fit: cover;
+	background-color: rgba(0, 0, 0, 0.98);
+}
+
+.catalogueImg{
+	width:150px;
+	position: relative;
+	cursor: zoom-in;
+	border-radius: 10%;
+}
+
+/*FOOTER*/
+
 footer{
 	display:table-row;
 }
@@ -152,124 +269,7 @@ footer{
 	text-decoration: none;
 }
 
-/* 
-- wrapper is the whole index page.
-- base is between the header and the footer
-- the height ratio is calculated for each part 
-so that the global display constantly covers 
-the whole page of the browser (and never overflows). 
-it has also been designed to remain fixed. 
-*/
-
-.tableHeader{
-	border-collapse:collapse;
-	width:100%;
-	height:100%;
-}
-
-.title{
-	color: white;
-	text-align:center;
-	font-size:58px;
-}
-
-.smallHeaderBox{
-	width: 130px;
-	padding-left: 20px;
-}
-
-.smallHeaderBox span a{
-	text-decoration: none;
-}
-
-.smallHeaderBox img{
-	width:150px;
-}
-
-.smallHeaderBox svg{
-	width: 35px;
-	height: 35px;
-}
-
-.cartButton{
-	border:none;
-	background-color:transparent;
-	cursor: pointer;
-	font-size:medium
-}
-
-.cartButton:hover span{
-	color:#e94560;
-}
-
-
-body{
-	background-color: #22202f;
-}
-
-nav{
-	padding: 10px;
-	height: 100%;
-	font-size:23px;
-	text-align: center;
-}
-
-.horizontalMenu{
-	background-color: #322f46;
-}
-
-.navElement li{
-	list-style-type: none;
-	display: inline-block;
-	width: 160px;
-	text-align: center;
-	text-decoration:none;
-	padding:5px 15px 5px 15px;
-	margin:-5px; /*Used to get a continuous line under the horizontal menu nav*/
-}
-
-.navElement a, .menuElement a{
-	text-decoration:none;
-}
-
-.navElement a:hover, .menuElement a:hover span, .smallHeaderBox span a:hover, .footerContent a:hover{
-	color:#e94560;
-}
-
-.menuElement{
-	font-size:23px;
-	list-style-type: none;
-	line-height: 50px;
-}
-
-.menuElement svg{
-	width: 25px;
-	height: 25px;
-	fill: white;
-}
-
-.menuElement a:hover svg{
-	fill: #e94560;
-}
-
-.menuElement a{
-	border-radius: 10px;
-	display: inline-block;
-	width:100%;
-	font-size: 25px;
-	overflow-y: hidden;
-}
-.menuElement a:hover{
-	background-color: #322f46;
-}
-
-#firstNavElement{
-	border-left: none;
-}
-
-#largeNavElement{
-	width: 200px;
-}
+/*FORMS*/
 
 .tableForm{
 	width: 80%;
@@ -302,7 +302,7 @@ option{
 	height: 50px;
 	background-color: #22202f;
 	border:white 1px solid;
-	color: #e94560;;
+	color: #e94560;
 	font-weight:bold;
 	font-size: 14px;
 	cursor: pointer;
@@ -317,6 +317,8 @@ option{
 .submitButton:hover, #buttonHideStock:hover{
 	cursor: pointer;
 }
+
+/*ACCOUNT MANAGEMENT*/
 
 /* Style of all elements in login.php*/
 .loginDiv, .createAccountDiv, .editProfileDiv{ /*also used in createaccount.php*/
@@ -341,7 +343,7 @@ option{
 
 
 /* Style of all elements in profile.php */
-.profilDiv{
+.profileDiv{
 	background-color: #322f46;
 	border: 1px solid white;
   	margin: auto;
@@ -351,7 +353,7 @@ option{
 	padding:20px;
 }
 
-.profilDiv a{
+.profileDiv a{
 	text-decoration: none;
 	border:solid 1px white;
 }
@@ -385,7 +387,7 @@ option{
 	padding: 13px;
 	background-color: #22202f;
 	border:white 1px solid;
-	color: #e94560;;
+	color: #e94560;
 	font-weight:bold;
 	font-size: 14px;
 	text-decoration: none;
@@ -414,7 +416,7 @@ option{
 	padding: 20px;
 }
 
-/*Adapt to resolution*/
+/*ADAPT TO RESOLUTION*/
 
 /*WIDTH*/
 
@@ -449,12 +451,12 @@ option{
 		height: 300px;
 	}
 
-	.menuElement svg{
+	.verticalMenuElement svg{
 		width: 18px;
 		height: 18px;
 	}
 
-	.menuElement{
+	.verticalMenuElement{
 		font-size:23px;
 		list-style-type: none;
 		line-height: 30px;

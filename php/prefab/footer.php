@@ -22,7 +22,7 @@
 			<ul>
 				<li><a href=createAccount.php>Inscription</a></li>
 				<li><a href=login.php>Connexion</a></li>
-				<li><a href=profile.php>Profile</a></li>
+				<li><a href=profile.php>Profil</a></li>
 				<li><a href=php/logout.php>Déconnexion</a></li>
 			</ul>
 		</td>
