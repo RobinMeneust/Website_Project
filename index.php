@@ -17,12 +17,11 @@
 			<div class="box verticalMenuContainer">
 				<?php include('php/prefab/verticalMenu.php')?>
 			</div>
-			<div class="box mainPart">
-				<h1>Accueil</h1><br>
-				<br><br>
-				<h2>Bienvenue !</h2><br><br>
-				<p>
-					TEXTTEXTTEXT
+			<div class="box mainPart" style="text-align:center;">
+				<h1>Faites vos coures avec Mini U !</h1><br>
+				<img src="./img/logo.png" alt="logo_du_site" width="300px">
+				<p style="text-align:center;">
+					Bonjour à vous ! la société Mini U est ravi de vous accueillir sur son site web !
 				</p>
 			</div>
 		</div>
