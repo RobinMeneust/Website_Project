@@ -17,16 +17,32 @@ function changeMenuDisplay(newState){
 	}
 }
 
+
+// Get the current cart form session variables with AJAX
+function getCartHTML(){
+	const xhttp = new XMLHttpRequest();
+	xhttp.onload = function () {
+		if(this.readyState == 4 && this.status == 200){
+			document.getElementById("tableCart").innerHTML+=this.responseText;
+		}
+	};
+	xhttp.open("GET", "../php/updateCart.php", true);
+	xhttp.send();
+}
+
 // Show or hide the cart in the header
-function changeCartDisplay(newState){
-	let cartdiv = document.getElementsByClassName("cartdiv")[0];
+function updateCartDisplay(newState){
+	let cartdiv = document.getElementById("cartdiv");
 
 	if(newState=="show"){
+		document.getElementById("tableCart").innerHTML='<tr><th>Photo</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Commande</th></tr>';
+		getCartHTML();
 		cartdiv.style.display="block";
-		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "changeCartDisplay('hide')");
+		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "updateCartDisplay('hide')");
 	}
 	else if(newState=="hide"){
 		cartdiv.style.display="none";
-		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "changeCartDisplay('show')");
+		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "updateCartDisplay('show')");
+		document.getElementById("tableCart").innerHTML="";
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if(isset($_REQUEST["quantity"], $_REQUEST["id"], $_REQUEST["imgSrc"], $_REQUEST["description"], $_REQUEST["price"], $_REQUEST["stock"])){
         $quantity=$_REQUEST["quantity"];
         $productID=$_REQUEST["id"];
@@ -8,9 +9,12 @@
         $stock=$_REQUEST["stock"];
 
         if(isset($_SESSION['cart'][$productID])){	
-            if($_SESSION['cart'][$productID]!=$quantity){
+            if($quantity>0){
                 //update existing var
-                $_SESSION['cart'][$productID]+=$quantity;
+                $_SESSION['cart'][$productID]['quantity']+=$quantity;
+                if($_SESSION['cart'][$productID]['quantity']>$stock){
+                    $_SESSION['cart'][$productID]['quantity']=$stock;
+                }
             }
         }
         else{

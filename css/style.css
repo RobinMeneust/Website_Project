@@ -53,8 +53,38 @@ header{
 	height:150px;
 }
 
-.cartdiv {
+#cartdiv {
 	display: none;
+	position: fixed;
+	height: 700px;
+	top:150px;
+	right:0px;
+	background-color: #322f46;
+	border: solid 1px white;
+	z-index: 5;
+	overflow-y: scroll;
+}
+
+#tableCart{
+	border-collapse: collapse;
+	width:1000px;
+	margin:50px;
+	text-align: center;
+}
+
+#tableCart td{
+	border: white solid 1px;
+	padding:20px;
+}
+
+#tableCart td a{
+	padding: 13px;
+	background-color: #22202f;
+	border:white 1px solid;
+	color: #e94560;;
+	font-weight:bold;
+	font-size: 14px;
+	text-decoration: none;
 }
 
 .tableHeader{
