@@ -11,6 +11,8 @@ p{
 	font-size: 23px;
 	text-align: justify;
 	line-height:32px;
+	max-width: 1000px;
+	margin: auto;
 }
 
 h1, h2{
@@ -175,7 +177,7 @@ nav{
 }
 
 .mainPart{
-	padding: 100px 330px 100px 350px;
+	padding: 100px 265px 100px 250px;
 }
 
 body{
