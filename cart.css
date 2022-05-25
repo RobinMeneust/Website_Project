@@ -1,0 +1,21 @@
+.tableCart{
+	border-collapse: collapse;
+	width:1000px;
+	margin:50px;
+	text-align: center;
+}
+
+.tableCart td{
+	border: white solid 1px;
+	padding:20px;
+}
+
+.tableCart td a{
+	padding: 13px;
+	background-color: #22202f;
+	border:white 1px solid;
+	color: #e94560;;
+	font-weight:bold;
+	font-size: 14px;
+	text-decoration: none;
+}
