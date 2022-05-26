@@ -34,6 +34,10 @@ function getCartHTML(){
 function updateCartDisplay(newState){
 	let cartdiv = document.getElementById("cartdiv");
 
+	if(newState=="onlyRefresh"){ // we only refresh the content of cartdiv, we don't change its visibility
+		document.getElementById("tableCart").innerHTML='';
+		getCartHTML();
+	}
 	if(newState=="show"){
 		document.getElementById("tableCart").innerHTML='';
 		getCartHTML();
@@ -45,4 +49,19 @@ function updateCartDisplay(newState){
 		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "updateCartDisplay('show')");
 		document.getElementById("tableCart").innerHTML="";
 	}
+}
+
+// Clear the cart by unsetting all the session variables that contain it
+function clearSessionCart(){
+	const xhttp = new XMLHttpRequest();
+	xhttp.onload = function () {
+		if(this.readyState == 4 && this.status == 200){
+			const returnedStatus = this.responseText;
+			if(returnedStatus=="error")
+				console.log("Error in addToCart()");
+			updateCartDisplay("onlyRefresh");
+		}
+	};
+	xhttp.open("POST", "../php/clearSessionCart.php", true);
+	xhttp.send();
 }

@@ -40,6 +40,7 @@
 
 <div id="cartdiv">
 	<table id="tableCart"></table>
-	<a class="default_button" href="cart.php">Valider le panier</a>
+	<a class="submitButton" href="cart.php">Valider le panier</a>
+	<button class="submitButton" onclick="clearSessionCart();">Vider le panier</a>
 </div>
 

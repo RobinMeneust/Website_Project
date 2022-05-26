@@ -357,10 +357,13 @@ option{
 	height: 30px;
 	width: 150px;
 	margin-left: 20px;
-	padding: 15px;
 }
 
-.default_button:hover{
+a.submitButton{
+	padding: 16px;
+}
+
+.submitButton:hover, .default_button:hover{
 	background-color: #544f74;
 }
 
