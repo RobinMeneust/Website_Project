@@ -6,9 +6,10 @@
     if(isset($_SESSION['cart'])) {
         foreach($_SESSION['cart'] as $product){
             if(isset($product['imgSrc'], $product['description'], $product['price'], $product['stock'], $product['quantity'])){
-                $returnedHTML.="<tr><td><img class='catalogueImg' style='cursor:default' alt=".$product['imgSrc']." src=".$product['imgSrc']." alt='Photo de bananes'</td><td>".$product['description']."</td><td>".$product['price']."</td><td>".$product['stock']."</td><td>".$product['quantity']."</td></tr>";
+                $returnedHTML.="<tr><td><img class='catalogueImg' style='cursor:default' alt='".$product['imgSrc']."' src='".$product['imgSrc']."' alt='Photo de bananes'></td><td>".$product['description']."</td><td>".$product['price']."</td><td>".$product['stock']."</td><td>".$product['quantity']."</td></tr>";
                 $cartSize+=intval($product['quantity'], 10);
-                $totalPrice+=floatval(substr($product['price'], 0, -1)); // we delete the "€" character at the end and we convert the string to a number
+                
+                $totalPrice+=floatval(substr($product['price'], 0, -1))*floatval($product['quantity']); // we delete the "€" character at the end and we convert the string to a number
             }
         }
     }
