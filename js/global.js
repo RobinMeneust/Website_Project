@@ -1,19 +1,23 @@
+// by default it's hidden
+let hiddenCart=true;
+let hiddenMenu=true; 
+
 // We show or hide the vertical menu, depending on the previous state ('hide' or 'show')
-function changeMenuDisplay(newState){
+function changeMenuDisplay(){
 	let verticalMenu = document.getElementsByClassName("verticalMenu")[0];
 	let verticalMenuTextElements = document.getElementsByClassName("verticalMenuText");
 
-	if(newState=="show"){
+	if(hiddenMenu){
 		verticalMenu.style.width="330px";
 		for(let i=0; i<verticalMenuTextElements.length; i++)
 			verticalMenuTextElements[i].style.display="inline-block";
-		document.getElementsByClassName("verticalMenuButton")[0].setAttribute("onclick", "changeMenuDisplay('hide')");
+		hiddenMenu=false;
 	}
-	else if(newState=="hide"){
+	else{
 		verticalMenu.style.width="70px";
 		for(let i=0; i<verticalMenuTextElements.length; i++)
 			verticalMenuTextElements[i].style.display="none";
-		document.getElementsByClassName("verticalMenuButton")[0].setAttribute("onclick", "changeMenuDisplay('show')");
+		hiddenMenu=true;
 	}
 }
 
@@ -31,23 +35,23 @@ function getCartHTML(){
 }
 
 // Show or hide the cart in the header
-function updateCartDisplay(newState){
+function updateCartDisplay(mode){
 	let cartdiv = document.getElementById("cartdiv");
 
-	if(newState=="onlyRefresh"){ // we only refresh the content of cartdiv, we don't change its visibility
+	if(mode=="onlyRefresh"){ // we only refresh the content of cartdiv, we don't change its visibility
 		document.getElementById("tableCart").innerHTML='';
 		getCartHTML();
 	}
-	if(newState=="show"){
+	else if(hiddenCart){
 		document.getElementById("tableCart").innerHTML='';
 		getCartHTML();
 		cartdiv.style.display="block";
-		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "updateCartDisplay('hide')");
+		hiddenCart=false;
 	}
-	else if(newState=="hide"){
+	else{
 		cartdiv.style.display="none";
-		document.getElementsByClassName("cartButton")[0].setAttribute("onclick", "updateCartDisplay('show')");
 		document.getElementById("tableCart").innerHTML="";
+		hiddenCart=true;
 	}
 }
 

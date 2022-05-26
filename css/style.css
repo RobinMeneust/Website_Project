@@ -140,7 +140,7 @@ nav{
 	font-size:58px;
 }
 
-.cartButton{
+#cartButton, #cartCloseButton{
 	border:none;
 	background-color:transparent;
 	cursor: pointer;
@@ -148,8 +148,14 @@ nav{
 	font-size: 14px;
 }
 
-.cartButton:hover span{
+#cartButton:hover span, #cartCloseButton:hover{
 	color:#e94560;
+}
+
+#cartCloseButton{
+	right:30px;
+	position:fixed;
+	font-size:50px;
 }
 
 /*PAGES STRUCTURE

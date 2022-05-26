@@ -1,4 +1,4 @@
-<button class="verticalMenuButton" onclick="changeMenuDisplay('show')">☰</button>
+<button class="verticalMenuButton" onclick="changeMenuDisplay()">☰</button>
 <div class="verticalMenu">
 	<br><br><br><br>
 	<ul class="verticalMenuElement">
