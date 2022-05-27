@@ -1,3 +1,5 @@
+// Some functions using AJAX had to be synchronous so that they return their value before that the calling function need it
+
 // Checks if the given variables are defined. It's used to avoid errors when generating the products list
 function productsVarsAreDefined(stock, imgSrc, id, desc, price){
 	return (typeof stock.childNodes[0] !== 'undefined' && typeof imgSrc.childNodes[0] !== 'undefined' && typeof id.childNodes[0] !== 'undefined' && typeof desc.childNodes[0] !== 'undefined' && typeof price.childNodes[0] !== 'undefined');
@@ -65,7 +67,7 @@ function loadEditableProducts() {
 			const imgSrc = xmlDoc.getElementsByTagName("IMG_NAME");
 			const stock = xmlDoc.getElementsByTagName("STOCK");
 			const price = xmlDoc.getElementsByTagName("PRICE");
-			let txt = '<tr><th>Photo</th><th>ID de catégorie</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Nouveau stock</th><th>Nouvelle catégorie</th><th colspan="2">Action</th></tr>';
+			let txt = '<tr><th>Photo</th><th>ID de catégorie</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Nouveau stock</th><th colspan="2">Action</th></tr>';
 			for (let i=0; i < name.length; i++) {
 				if(productsVarsAreDefined(stock[i], imgSrc[i], id[i], desc[i], price[i])) {
 					txt += '<tr><td><img class="catalogueImg" style="cursor:default;" src="'+imgSrc[i].childNodes[0].nodeValue+'"></td>';
@@ -75,9 +77,8 @@ function loadEditableProducts() {
 					txt += '<td>'+price[i].childNodes[0].nodeValue+'</td>';
 					txt += '<td class="stockColumn" id="stockID'+(i+1)+'">'+stock[i].childNodes[0].nodeValue+'</td>';
 					txt += '<td><input onfocusout="checkIfElementValueIsPositive(this); checkIfElementValueIsInt(this)" type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"></td>';
-					txt += '<td><input maxlength="100" class="smallSize" placeholder="Entrez le nom de la catégorie" type="text" id="newCategoryName'+(i+1)+'" name="newCategoryName"></td>';
 					txt += '<td><input onclick="updateStock(\''+id[i].childNodes[0].nodeValue+'\', \''+(i+1)+'\');" class="default_button" type="button" value="Sauvegarder"></td>';
-					txt += '<td><button class="submitButton onclick="deleteProduct('+id[i].childNodes[0].nodeValue+');">Supprimer</button></td></tr>';
+					txt += '<td><button class="submitButton" onclick="deleteProduct(\''+id[i].childNodes[0].nodeValue+'\');">Supprimer</button></td></tr>';
 				}
 			}
 			document.getElementById("editProductsTable").innerHTML = txt;
@@ -145,18 +146,22 @@ function addNewCategory(cat){
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function (){
 		const xmlDoc = this.responseXML;
-		const catalog = xmlDoc.getElementsByTagName("CATALOG")[0];
-		let newCatNode = xmlDoc.createElement("CATEGORY");
-
-		//search a new ID
-		newID=generateNewCatID();
-		addCategoryToCSV(newID, cat);
-
-		newCatNode.setAttribute("cat", newID);
-		console.log(newCatNode);
-		catalog.appendChild(newCatNode);
-
+		
 		if(this.readyState == 4 && this.status == 200){
+			const catalog = xmlDoc.getElementsByTagName("CATALOG")[0];
+			newID=generateNewCatID();
+			addCategoryToCSV(newID, cat);
+
+			let textNode = xmlDoc.createTextNode("\t");
+			catalog.appendChild(textNode);
+
+			let newCatNode = xmlDoc.createElement("CATEGORY");
+			newCatNode.setAttribute("cat", newID);
+			newCatNode.innerHTML = "\n\t";
+			catalog.appendChild(newCatNode);
+			textNode = xmlDoc.createTextNode("\n");
+			catalog.appendChild(textNode);
+
 			const xhttp2 = new XMLHttpRequest(); // we send the new content to a php file to save it in products.xml
 			let returnedStatus=this.responseText;
 			xhttp2.onload = function () {
@@ -165,14 +170,14 @@ function addNewCategory(cat){
 						console.log("Error in addNewCategory()");
 				}
 			};
-			xhttp2.open("POST", "../php/updateProducts.php", true);
+			xhttp2.open("POST", "../php/updateProducts.php", false);
 			xhttp2.setRequestHeader("Content-type", "text/xml");
 			xhttp2.send(xmlDoc);
-			return newID;
 		}
 	};
-	xhttp.open("GET", "../data/products.xml", true);
+	xhttp.open("GET", "../data/products.xml", false);
 	xhttp.send();
+	return newID;
 }
 
 // Add a new product in products.xml
@@ -187,8 +192,8 @@ function addNewProduct(){
 
 	console.log(newCategory+"Ncat | CatID "+categoryID);
 	if(newCategory!="" && categoryID==""){
-		console.log('new category');
 		categoryID=addNewCategory(newCategory);; // now that we created the new category we can add the product to it
+		console.log('new category ID : '+categoryID);
 	}
 
 	if(categoryID!=""){
@@ -281,20 +286,25 @@ function deleteProduct(id){
 		const xmlDoc = this.responseXML;
 		const idList = xmlDoc.getElementsByTagName("ID");
 		let foundID;
-		
+		let catalog=xmlDoc.getElementsByTagName("CATALOG")[0];
+
 		if(this.readyState == 4 && this.status == 200){
 			for (let i = 0; i < idList.length; i++) {
-				if(idList[i]==id){
+				if(idList[i].innerHTML==id){
 					foundID = idList[i];
 					break;
 				}
 			}
 			let productToDelete=foundID.parentNode;
+			let categoryOfTheProduct=productToDelete.parentNode;
 			if(productToDelete.parentNode.getElementsByTagName("PRODUCT").length<=1){ // only one element so we delete the category along with its only product
-				productToDelete.parentNode.parentNode.removeChild(productToDelete.parentNode)
+				productToDelete.parentNode.parentNode.removeChild(productToDelete.parentNode);
+				catalog.innerHTML = catalog.innerHTML.substring(0, catalog.innerHTML.length - 2); // we remove the \n and \t characters at the end of the CATALOG in xml
+				removeCategoryFromCSV(productToDelete.parentNode.getAttribute("cat"));
 			}
 			else{ // several elements
-				productToDelete.parentNode.removeChild(foundProduct);
+				productToDelete.parentNode.removeChild(productToDelete);
+				categoryOfTheProduct.innerHTML = categoryOfTheProduct.innerHTML.substring(0, categoryOfTheProduct.innerHTML.length - 3); // we remove the \n and \t\t characters at the end of the CATEGORY in xml
 			}
 	
 			const xhttp2 = new XMLHttpRequest(); // we send the new content to a php file to save it in products.xml
@@ -308,6 +318,9 @@ function deleteProduct(id){
 			xhttp2.open("POST", "../php/updateProducts.php", true);
 			xhttp2.setRequestHeader("Content-type", "text/xml");
 			xhttp2.send(xmlDoc);
+			//REFRESH
+			loadEditableProducts();
+			loadCategoriesSelectList();
 		}
 	};
 	xhttp.open("GET", "../data/products.xml", true);
@@ -335,12 +348,58 @@ function loadCategoriesSelectList(){
 // Add a category to the csv file
 function addCategoryToCSV(catID, catName){
 	const xhttp = new XMLHttpRequest();
+
 	xhttp.onload = function () {
 		if(this.readyState == 4 && this.status == 200){
-			newCSVContent=this.responseText+"\n"+catID+","+catName;
+			const xhttp2 = new XMLHttpRequest();
+			let = newCSVContent = this.responseText+"\n"+catID+","+catName;
+			console.log(newCSVContent);
+			xhttp2.onload = function () {
+				let returnedStatus=this.responseText;
+				if(this.readyState == 4 && this.status == 200){
+					if(returnedStatus=="error")
+							console.log("Error in addCategoryToCSV()");
+				}
+			};
+
+			xhttp2.open("POST", "../php/updateCategories.php", true);
+			xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp2.send(newCSVContent);
 		}
 	};
-	xhttp.open("POST", "../php/updateCategories.php", true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send(newCSVContent);
+	xhttp.open("GET", "../data/categories.csv", true);
+	xhttp.send();
+}
+
+// Remove a category to the csv file
+function removeCategoryFromCSV(catID){
+	const xhttp = new XMLHttpRequest();
+
+	xhttp.onload = function () {
+		if(this.readyState == 4 && this.status == 200){
+			const xhttp2 = new XMLHttpRequest();
+			let lines = this.responseText.split('\n');
+			let newCSVContent = "";
+			for(let i=0; i<lines.length; i++){
+				console.log(lines[i].split(',')[0] + ' | '+catID);
+				if(lines[i].split(',')[0] != catID){
+					newCSVContent += lines[i]+'\n';
+				}
+			}
+			newCSVContent=newCSVContent.substring(0, newCSVContent.length - 1); // To remove the '\n'
+			xhttp2.onload = function () {
+				let returnedStatus=this.responseText;
+				if(this.readyState == 4 && this.status == 200){
+					if(returnedStatus=="error")
+							console.log("Error in addCategoryToCSV()");
+				}
+			};
+
+			xhttp2.open("POST", "../php/updateCategories.php", true);
+			xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp2.send(newCSVContent);
+		}
+	};
+	xhttp.open("GET", "../data/categories.csv", true);
+	xhttp.send();
 }
