@@ -1,10 +1,5 @@
 <?php
 	session_start();
-	if(!isset($_REQUEST["catID"], $_REQUEST["catName"])){
-		$_SESSION["invalidCategoryParams"]=true;
-		header("Location: browse.php", true);
-		exit();
-	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +12,7 @@
 	<script src="js/catalogue.js"></script>
 	<script src="js/global.js"></script>
 </head>
-<body onload="loadCategorie('<?php echo $_REQUEST["catID"]; ?>');">
+<body onload="loadCategory('<?php echo $_REQUEST["catID"]; ?>');">
 <div class="wrapper">
 		<header>
 			<?php include('php/prefab/header.php')?>

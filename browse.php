@@ -1,11 +1,4 @@
-<?php
-	session_start();
-	if(!isset($_REQUEST["catID"], $_REQUEST["catName"])){
-		$_SESSION["invalidCategoryParams"]=true;
-		header("Location: browse.php", true);
-		exit();
-	}
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,12 +6,10 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" type="image/png" href="img/logo.png">
-	<script src="js/categorieGeneration.js"></script>
-	<script src="js/catalogue.js"></script>
 	<script src="js/global.js"></script>
 </head>
-<body onload="loadCategory('<?php echo $_REQUEST["catID"]; ?>');">
-<div class="wrapper">
+<body>
+	<div class="wrapper">
 		<header>
 			<?php include('php/prefab/header.php')?>
 		</header>
@@ -27,9 +18,25 @@
 				<?php include('php/prefab/verticalMenu.php')?>
 			</div>
 			<div class="box mainPart">
-				<h1><?php echo $_REQUEST["catName"]; ?></h1><br>
-				<table id="cat"></table>
-				<button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Cacher stock</button>
+				<h1>Liste des catégories</h1><br>
+				<table class="categoriesTable">
+					<?php
+						//We print the list of categories
+						$dataFile = fopen("data/categories.csv", "r") or die("ERROR the file data/categories.csv could not be opened");
+						fgetcsv($dataFile, 100, ","); // Used to ignore the 1st line of the csv file
+						while(($data = fgetcsv($dataFile, 100, ",")) !=FALSE){
+							if(isset($data[1])) // We get the 2nd element (the name of the category)
+								echo "<tr><td><a href=\"categories.php?catID=$data[0]&catName=$data[1]\">$data[1]</a></td></tr>";
+						}
+						fclose($dataFile);
+					?>
+				</table>
+				<?php
+					if(isset($_SESSION["invalidCategoryParams"]) && $_SESSION["invalidCategoryParams"]){
+						echo "<span style=\"color:red\">Erreur catégorie inexistante, veuillez nous contacter via la page Contact</span>";
+						$_SESSION["invalidCategoryParams"]=false;
+					}
+				?>
 			</div>
 		</div>
 		<footer>

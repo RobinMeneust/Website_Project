@@ -1,4 +1,4 @@
-// Checks if the given variables are defined. It's used to avoid errors when generating the products list
+/*// Checks if the given variables are defined. It's used to avoid errors when generating the products list
 function productsVarsAreDefined(stock, imgSrc, id, desc, price){
 	return (typeof stock.childNodes[0] !== 'undefined' && typeof imgSrc.childNodes[0] !== 'undefined' && typeof id.childNodes[0] !== 'undefined' && typeof desc.childNodes[0] !== 'undefined' && typeof price.childNodes[0] !== 'undefined');
 }
@@ -302,4 +302,4 @@ function addCategoryToCSV(catID, catName){
 	xhttp.open("POST", "../php/updateCategories.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(newCSVContent);
-}
+}*/
