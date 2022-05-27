@@ -42,7 +42,7 @@
 							<tr><td>Ou prendre une existante : </td><td><select id="select_categoryNameOfNewItem" name="select_categoryNameOfNewItem"></select></td></tr>
 						</table>
 					</td>
-					<td><button class="submitButton" onclick="addNewProduct(); loadEditableProducts(); loadCategoriesSelectList();">Ajouter</button></td></tr>
+					<td><button class="submitButton" onclick="addNewProduct();">Ajouter</button></td></tr>
 				</table>
 			</div>
 		</div>

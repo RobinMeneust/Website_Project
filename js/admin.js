@@ -1,4 +1,4 @@
-/*// Checks if the given variables are defined. It's used to avoid errors when generating the products list
+// Checks if the given variables are defined. It's used to avoid errors when generating the products list
 function productsVarsAreDefined(stock, imgSrc, id, desc, price){
 	return (typeof stock.childNodes[0] !== 'undefined' && typeof imgSrc.childNodes[0] !== 'undefined' && typeof id.childNodes[0] !== 'undefined' && typeof desc.childNodes[0] !== 'undefined' && typeof price.childNodes[0] !== 'undefined');
 }
@@ -67,7 +67,7 @@ function loadEditableProducts() {
 			const price = xmlDoc.getElementsByTagName("PRICE");
 			let txt = '<tr><th>Photo</th><th>ID de catégorie</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Nouveau stock</th><th>Nouvelle catégorie</th><th colspan="2">Action</th></tr>';
 			for (let i=0; i < name.length; i++) {
-				if(productsVarsAreDefined(stock[i], imgSrc[i], id[i], desc[i], price[i]) && stock[i].childNodes[0].nodeValue > 0) {
+				if(productsVarsAreDefined(stock[i], imgSrc[i], id[i], desc[i], price[i])) {
 					txt += '<tr><td><img class="catalogueImg" style="cursor:default;" src="'+imgSrc[i].childNodes[0].nodeValue+'"></td>';
 					txt += '<td>'+name[i].parentNode.parentNode.getAttribute("cat")+'</td>';
 					txt += '<td>'+id[i].childNodes[0].nodeValue+'</td>';
@@ -76,8 +76,8 @@ function loadEditableProducts() {
 					txt += '<td class="stockColumn" id="stockID'+(i+1)+'">'+stock[i].childNodes[0].nodeValue+'</td>';
 					txt += '<td><input onfocusout="checkIfElementValueIsPositive(this); checkIfElementValueIsInt(this)" type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"></td>';
 					txt += '<td><input maxlength="100" class="smallSize" placeholder="Entrez le nom de la catégorie" type="text" id="newCategoryName'+(i+1)+'" name="newCategoryName"></td>';
-					txt += '<td><input onclick="updateStock(\''+id[i].childNodes[0].nodeValue+'\', \''+(i+1)+'\'); loadEditableProducts(); loadCategoriesSelectList();" class="default_button" type="button" value="Sauvegarder"></td>';
-					txt += '<td><button class="submitButton onclick="deleteProduct('+id[i].childNodes[0].nodeValue+'); loadEditableProducts(); loadCategoriesSelectList();">Supprimer</button></td></tr>';
+					txt += '<td><input onclick="updateStock(\''+id[i].childNodes[0].nodeValue+'\', \''+(i+1)+'\');" class="default_button" type="button" value="Sauvegarder"></td>';
+					txt += '<td><button class="submitButton onclick="deleteProduct('+id[i].childNodes[0].nodeValue+');">Supprimer</button></td></tr>';
 				}
 			}
 			document.getElementById("editProductsTable").innerHTML = txt;
@@ -204,15 +204,53 @@ function addNewProduct(){
 						break;
 					}
 				}
+				//We create the new XML nodes to the new product.xml that will replace the previous one
+				let textNode = xmlDoc.createTextNode("\t");
+				foundCategory.appendChild(textNode);
 				let newProductNode = xmlDoc.createElement("PRODUCT");
-				let idNode = xmlDoc.createElement("ID"); idNode.appendChild(xmlDoc.createTextNode(generateNewProductID())); newProductNode.appendChild(idNode);
-				let nameNode = xmlDoc.createElement("NAME"); nameNode.appendChild(xmlDoc.createTextNode(name)); newProductNode.appendChild(nameNode);
-				let descriptionNode = xmlDoc.createElement("DESCRIPTION"); descriptionNode.appendChild(xmlDoc.createTextNode(desc)); newProductNode.appendChild(descriptionNode);
-				let imgSrcNode = xmlDoc.createElement("IMG_NAME"); imgSrcNode.appendChild(xmlDoc.createTextNode(img)); newProductNode.appendChild(imgSrcNode);
-				let stockNode = xmlDoc.createElement("STOCK"); stockNode.appendChild(xmlDoc.createTextNode(stock)); newProductNode.appendChild(stockNode);
-				let priceNode = xmlDoc.createElement("PRICE"); priceNode.appendChild(xmlDoc.createTextNode(price)); newProductNode.appendChild(priceNode);
+
+				textNode = xmlDoc.createTextNode("\n\t\t\t");
+				newProductNode.appendChild(textNode);
+				let idNode = xmlDoc.createElement("ID");
+				idNode.innerHTML = generateNewProductID();
+				newProductNode.appendChild(idNode);
+
+				textNode = xmlDoc.createTextNode("\n\t\t\t");
+				newProductNode.appendChild(textNode);
+				let nameNode = xmlDoc.createElement("NAME");
+				nameNode.innerHTML = name;
+				newProductNode.appendChild(nameNode);
+
+				textNode = xmlDoc.createTextNode("\n\t\t\t");
+				newProductNode.appendChild(textNode);
+				let descriptionNode = xmlDoc.createElement("DESCRIPTION");
+				descriptionNode.innerHTML = desc;
+				newProductNode.appendChild(descriptionNode);
+
+				textNode = xmlDoc.createTextNode("\n\t\t\t");
+				newProductNode.appendChild(textNode);
+				let imgSrcNode = xmlDoc.createElement("IMG_NAME");
+				imgSrcNode.innerHTML = img;
+				newProductNode.appendChild(imgSrcNode);
+
+				textNode = xmlDoc.createTextNode("\n\t\t\t");
+				newProductNode.appendChild(textNode);
+				let stockNode = xmlDoc.createElement("STOCK");
+				stockNode.innerHTML = stock;
+				newProductNode.appendChild(stockNode);
+
+				textNode = xmlDoc.createTextNode("\n\t\t\t");
+				newProductNode.appendChild(textNode);
+				let priceNode = xmlDoc.createElement("PRICE");
+				priceNode.innerHTML = price;
+				newProductNode.appendChild(priceNode);
+				textNode = xmlDoc.createTextNode("\n\t\t");
+				newProductNode.appendChild(textNode);
 				
 				foundCategory.appendChild(newProductNode);
+				textNode = xmlDoc.createTextNode("\n\t");
+				foundCategory.appendChild(textNode);
+
 				const xhttp2 = new XMLHttpRequest(); // we send the new content to a php file to save it in products.xml
 				let returnedStatus=this.responseText;
 				xhttp2.onload = function () {
@@ -220,6 +258,9 @@ function addNewProduct(){
 						if(returnedStatus=="error")
 							console.log("Error in addNewProduct()");
 					}
+					//REFRESH
+					loadEditableProducts();
+					loadCategoriesSelectList();
 				};
 
 				xhttp2.open("POST", "../php/updateProducts.php", true);
@@ -302,4 +343,4 @@ function addCategoryToCSV(catID, catName){
 	xhttp.open("POST", "../php/updateCategories.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(newCSVContent);
-}*/
+}
