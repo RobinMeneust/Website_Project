@@ -12,12 +12,11 @@ function loadCategory(category) {
 			const cat = xmlDoc.getElementsByTagName("CATEGORY");
 			let foundCat;
 			for (let i = 0; i < cat.length; i++) {
-				if(cat[i].getAttribute("cat")==category){
+				if(cat[i].getAttribute("cat").normalize() == category.normalize()){
 					foundCat = cat[i];
 					break;
 				}
 			}
-			//console.log(foundCat);
 			const name = foundCat.getElementsByTagName("NAME");
 			const id = foundCat.getElementsByTagName("ID");
 			const desc = foundCat.getElementsByTagName("DESCRIPTION");
