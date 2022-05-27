@@ -13,6 +13,6 @@
             }
         }
     }
-    $returnedHTML.="<tr><td></td><td><b>Total</b></td><td>$totalPrice</td><td></th><td>$cartSize</td></tr>";
+    $returnedHTML.="<tr><td></td><td><b>Total</b></td><td>$totalPrice"."€</td><td></th><td>$cartSize</td></tr>";
     echo $returnedHTML;
 ?>

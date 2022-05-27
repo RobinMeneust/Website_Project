@@ -62,7 +62,7 @@ header{
 #cartdiv{
 	display: none;
 	position: fixed;
-	height: 700px;
+	height: 500px;
 	top:150px;
 	right:0px;
 	background-color: #322f46;
@@ -362,7 +362,6 @@ option{
 .default_button{
 	height: 30px;
 	width: 150px;
-	margin-left: 20px;
 }
 
 a.submitButton{
@@ -452,26 +451,46 @@ a.submitButton{
 	text-decoration: none;
 }
 
-/* Style of all elements in categorie.php */
+/* PRODUCTS AND CATEGORIES LIST GENERATION */
 
-#cat, #editStockTable{
-	width: 50vw;
+#cat, #editProductsTable, #newProductTable{
+	width: 1300px;
 	text-align: center;
+	border-collapse: collapse;
 }
+
+#newProductTable{
+	height: 100px;
+}
+
+#editProductsTable td, #cat td, #newProductTable td{
+	border: solid 1px #544f74;
+}
+
+#newCategoryTable td{
+	border: none;
+}
+
+#newCategoryTable{
+	text-align:left;
+}
+
 
 
 /* Style of the table containg a list of all the categories in browse.php*/
 .categoriesTable{
 	border: #e94560 solid 2px;
 	border-collapse: collapse;
-	width: 1200px;
+	width: 600px;
 	margin: auto;
 	margin-top: 50px;
+	text-align: center;
 }
 
-.categoriesTable td{
+.categoriesTable td, .categoriesTable th{
 	border: white solid 1px;
 	height: 70px;
+	width: 200px;
 	padding: 20px;
 }
 

@@ -4,7 +4,7 @@ function productsVarsAreDefined(stock, imgSrc, id, desc, price){
 }
 
 // Search a categorie in products.xml and display its products in the table with the id "cat"
-function loadCategorie(categorie) {
+function loadCategory(category) {
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
 		if(this.readyState == 4 && this.status == 200){
@@ -12,7 +12,7 @@ function loadCategorie(categorie) {
 			const cat = xmlDoc.getElementsByTagName("CATEGORY");
 			let foundCat;
 			for (let i = 0; i < cat.length; i++) {
-				if(cat[i].getAttribute("cat")==categorie){
+				if(cat[i].getAttribute("cat")==category){
 					foundCat = cat[i];
 					break;
 				}

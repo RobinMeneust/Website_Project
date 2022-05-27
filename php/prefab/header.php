@@ -42,6 +42,6 @@
 	<button id="cartCloseButton" onclick="updateCartDisplay()">X</button>
 	<table id="tableCart"></table>
 	<a class="submitButton" href="cart.php">Valider le panier</a>
-	<button class="submitButton" onclick="clearSessionCart();">Vider le panier</a>
+	<button class="submitButton" onclick="clearSessionCart();">Vider le panier</button>
 </div>
 

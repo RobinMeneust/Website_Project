@@ -11,8 +11,8 @@
 					$dataFile = fopen("data/categories.csv", "r") or die("ERROR the file data/categories.csv could not be opened");
 					fgetcsv($dataFile, 100, ","); // Used to ignore the 1st line of the csv file
 					while(($data = fgetcsv($dataFile, 100, ",")) !=FALSE){
-						if(isset($data[1])) // We get the 2nd element (the name of the categorie)
-							echo "<li><a href=\"categorie.php?catID=$data[0]&catName=$data[1]\">$data[1]</a></li>";
+						if(isset($data[1])) // We get the 2nd element (the name of the category)
+							echo "<li><a href=\"categories.php?catID=$data[0]&catName=$data[1]\">$data[1]</a></li>";
 					}
 					fclose($dataFile);
 				?>
