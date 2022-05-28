@@ -414,7 +414,7 @@ a.submitButton{
 	border: 1px solid white;
   	margin: auto;
 	margin-top:200px;
-	width: 500px;
+	width: 700px;
 	height: auto;
 	padding:20px;
 }
@@ -461,7 +461,7 @@ a.submitButton{
 
 /* PRODUCTS AND CATEGORIES LIST GENERATION */
 
-#cat, #editProductsTable, #newProductTable{
+#cat, #editProductsTable, #newProductTable, .ordersTable{
 	width: 1300px;
 	text-align: center;
 	border-collapse: collapse;
@@ -471,8 +471,18 @@ a.submitButton{
 	height: 100px;
 }
 
-#editProductsTable td, #cat td, #newProductTable td{
+#editProductsTable td, #cat td, #newProductTable td, .ordersTable td{
 	border: solid 1px #544f74;
+}
+
+.ordersTable{
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.ordersTable td{
+	width: 30%;
+	height: 45px;
 }
 
 #newCategoryTable td{

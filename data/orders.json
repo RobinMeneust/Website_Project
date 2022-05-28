@@ -1,18 +1,47 @@
 [
     {
         "user_id": "u4",
-        "orders_list": {
-            "date": "28\/05\/2022",
-            "orders_list": {
-                "p1": {
-                    "description": "lot de 5 poires",
-                    "quantity": "3"
-                },
-                "p2": {
-                    "description": "lot de patates",
-                    "quantity": "1"
-                }
+        "orders_list": [
+            {
+                "date": "28\/05\/2022",
+                "items_list": [
+                    {
+                        "id": "p1",
+                        "description": "lot de 5 poires",
+                        "quantity": "2"
+                    }
+                ]
+            },
+            {
+                "date": "28\/05\/2022",
+                "items_list": [
+                    {
+                        "id": "p12",
+                        "description": "glace \u00e0 la pistache",
+                        "quantity": "3"
+                    }
+                ]
+            },
+            {
+                "date": "28\/05\/2022",
+                "items_list": [
+                    {
+                        "id": "p10",
+                        "description": "1kg de saumon",
+                        "quantity": "7"
+                    },
+                    {
+                        "id": "p9",
+                        "description": "500g de crevettes",
+                        "quantity": "1"
+                    },
+                    {
+                        "id": "p8",
+                        "description": "un poulet entier",
+                        "quantity": "2"
+                    }
+                ]
             }
-        }
+        ]
     }
 ]

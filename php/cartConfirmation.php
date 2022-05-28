@@ -36,7 +36,6 @@
 				$_SESSION['cart'][$product['id']]['quantity'] = $list_quantity[$i];
 				$i++;
 			}
-			//var_dump($_SESSION['cart']);
 		}
 	}
 ?>
@@ -54,33 +53,30 @@ if(isset($_SESSION["cart"])){
 	$json = json_decode(file_get_contents($file), true);
 	$foundUser=false;
 
+	// generate the data to be saved
+	$currentOrder["date"] = date("d/m/Y");
+	foreach($_SESSION['cart'] as $product){
+		$currentOrder["items_list"][]= array("id" => $_SESSION['cart'][$product['id']]['id'], "description" => $_SESSION['cart'][$product['id']]['description'], "quantity" => $_SESSION['cart'][$product['id']]['quantity']);
+	}
 
 	//Search the current user in orders.json and save the new order data
 	$i=0;
 	foreach($json as $user){
 		if($_SESSION["currentUser"]["id"] == $user["user_id"]){
-			$json[$i]["orders_list"]["date"] = date("d/m/Y");
-			foreach($_SESSION['cart'] as $product){
-					$json[$i]["orders_list"][$_SESSION['cart'][$product['id']]['id']] = array("description" => $_SESSION['cart'][$product['id']]['description'], "quantity" => $_SESSION['cart'][$product['id']]['quantity']);
-			}
-			break; // User's ID is unique so if we found it we don't have to search for other ones
+			array_push($json[$i]["orders_list"], $currentOrder);
 			$foundUser=true;
+			break; // User's ID is unique so if we found it we don't have to search for other ones
 		}
 		$i++;
 	}
 
 	// if the user isn't in orders.json. It's its first order
 	if($foundUser==false){
-		$newUserData["user_id"]=$_SESSION["currentUser"]["id"];
-
-		$currentOrder["date"] = date("d/m/Y");
-		foreach($_SESSION['cart'] as $product){
-			$currentOrder["orders_list"][$_SESSION['cart'][$product['id']]['id']] = array("description" => $_SESSION['cart'][$product['id']]['description'], "quantity" => $_SESSION['cart'][$product['id']]['quantity']);
-		}
+		$newUserData["user_id"]=$_SESSION["currentUser"]["id"];		
 		$newUserData["orders_list"]=$currentOrder;
 
-		array_push($json,$newUserData);
-		//We have to short the new array
+		array_push($json, $newUserData);
+		//We have to sort the new array
 		function comparator($object1, $object2){
 			$id1 = (int) filter_var($object1["user_id"], FILTER_SANITIZE_NUMBER_INT);
 			$id2 = (int) filter_var($object2["user_id"], FILTER_SANITIZE_NUMBER_INT);

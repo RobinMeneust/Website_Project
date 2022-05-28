@@ -6,7 +6,7 @@
 			<NAME>poire</NAME>
 			<DESCRIPTION>lot de 5 poires</DESCRIPTION>
 			<IMG_NAME>../img/poires.jpg</IMG_NAME>
-			<STOCK>4</STOCK>
+			<STOCK>0</STOCK>
 			<PRICE>3.00€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -14,7 +14,7 @@
 			<NAME>patate</NAME>
 			<DESCRIPTION>lot de patates</DESCRIPTION>
 			<IMG_NAME>../img/patates.jpg</IMG_NAME>
-			<STOCK>11</STOCK>
+			<STOCK>2</STOCK>
 			<PRICE>1.70€</PRICE>
 		</PRODUCT>
 			<PRODUCT>
@@ -22,7 +22,7 @@
 			<NAME>tomate</NAME>
 			<DESCRIPTION>lot de 4 tomates</DESCRIPTION>
 			<IMG_NAME>../img/tomates.jpg</IMG_NAME>
-			<STOCK>2</STOCK>
+			<STOCK>1</STOCK>
 			<PRICE>2.90€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -30,7 +30,7 @@
 			<NAME>banane</NAME>
 			<DESCRIPTION>lot de 2 bananes</DESCRIPTION>
 			<IMG_NAME>../img/bananes.jpg</IMG_NAME>
-			<STOCK>9</STOCK>
+			<STOCK>8</STOCK>
 			<PRICE>1.80€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -64,7 +64,7 @@
 			<NAME>poulet</NAME>
 			<DESCRIPTION>un poulet entier</DESCRIPTION>
 			<IMG_NAME>../img/poulet_entier.jpg</IMG_NAME>
-			<STOCK>10</STOCK>
+			<STOCK>8</STOCK>
 			<PRICE>9.00€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -72,7 +72,7 @@
 			<NAME>crevette</NAME>
 			<DESCRIPTION>500g de crevettes</DESCRIPTION>
 			<IMG_NAME>../img/crevettes.jpg</IMG_NAME>
-			<STOCK>4</STOCK>
+			<STOCK>3</STOCK>
 			<PRICE>7.85€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -80,7 +80,7 @@
 			<NAME>saumon</NAME>
 			<DESCRIPTION>1kg de saumon</DESCRIPTION>
 			<IMG_NAME>../img/saumon.jpg</IMG_NAME>
-			<STOCK>12</STOCK>
+			<STOCK>5</STOCK>
 			<PRICE>20.00€</PRICE>
 		</PRODUCT>
 	</CATEGORY>
@@ -98,7 +98,7 @@
 			<NAME>glace pistache</NAME>
 			<DESCRIPTION>glace à la pistache</DESCRIPTION>
 			<IMG_NAME>../img/glace_pistache.jpg</IMG_NAME>
-			<STOCK>6</STOCK>
+			<STOCK>3</STOCK>
 			<PRICE>4.50€</PRICE>
 		</PRODUCT>
 		<PRODUCT>

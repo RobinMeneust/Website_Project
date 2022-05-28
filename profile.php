@@ -86,6 +86,7 @@
 		<a href="php/logout.php" title="Logout" style="margin-left:10px; padding:5px;">Se déconnecter</a>
 		<a href="index.php" title="Index" style="margin-left:10px; padding:5px;">Accueil</a>
 		<a href="editProfile.php" title="EditProfile" style="margin-left:10px; padding:5px;">Modifier le profil</a>
+		<a href="viewOrders.php" title="ViewOrders" style="margin-left:10px; padding:5px;">Voir les commandes</a>
 	</div>
 </body>
 </html>
