@@ -31,7 +31,7 @@
     					if(isset($_SESSION['cart'])) {
         					foreach($_SESSION['cart'] as $product){
             					if(isset($product['imgSrc'], $product['description'], $product['price'], $product['stock'], $product['quantity'], $product['id'])){
-                					$returnedHTML.="<tr id='".$i."'><td><img class='catalogueImg' style='cursor:default' alt='".$product['imgSrc']."' src='".$product['imgSrc']."' alt='Photo de bananes'></td><td id='ref'>".$product['id']."</td><td>".$product['description']."</td><td id='price". $i ."'>".$product['price']."</td><td id='stockID".$i."'>".$product['stock']."</td><td><input type='button' id='button-".$i."' value='-' onclick='decrease(`".$i."`); minusSize(`".$i."`);'><input type='number' id='quantity". $i ."' name='quantity".$i."' min='0' size='6' value='".$product['quantity']."' disabled /><input type='button' id='button+".$i."' value='+' onclick='increase(`".$i."`); plusSize(`".$i."`);'><br><input type='button' id='buttonX".$i."' value='X' onclick='deleteTr(`".$i."`,`".$product['id']." `);'></td></tr>";
+                					$returnedHTML.="<tr id='".$i."'><td><img class='catalogueImg' style='cursor:default' alt='".$product['imgSrc']."' src='".$product['imgSrc']."' alt='Photo de bananes'></td><td id='ref'>".$product['id']."</td><td>".$product['description']."</td><td id='price". $i ."'>".$product['price']."</td><td id='stockID".$i."'>".$product['stock']."</td><td><input type='button' id='button-".$i."' value='-' onclick='decrease(`".$i."`); minusSize(`".$i."`);'><input type='number' class='quantity' id='quantity". $i ."' name='quantity[".$i."]' min='0' size='6' value='".$product['quantity']."' disabled /><input type='button' id='button+".$i."' value='+' onclick='increase(`".$i."`); plusSize(`".$i."`);'><br><input type='button' id='buttonX".$i."' value='X' onclick='deleteTr(`".$i."`,`".$product['id']." `);'><script>var value = parseInt(document.getElementById('quantity".$i."').value); var stock = parseInt(document.getElementById('stockID".$i."').innerHTML); var button = document.getElementById('button+".$i."'); if(value == stock){button.disabled=true;}else{button.disabled=false;}</script></td></tr>";
                 					$cartSize+=intval($product['quantity'], 10);
                 					$totalPrice+=number_format(floatval(substr($product['price'], 0, -1)),2)*$product['quantity']; // we delete the "€" character at the end and we convert the string to a number
 									$i += 1;
@@ -40,11 +40,10 @@
    		 				}
     					$returnedHTML.="<tr><td></td><td><b>Total</b></td><td id='total'>$totalPrice</td><td></td><td><b>Quantité total</b></td><td id='cartSize'>$cartSize</td></tr></table>";
     					echo $returnedHTML;
-						//var_dump($_SESSION['cart']);
 					?>
-					<button class="submitButton" onclick="clearSessionCart();">Vider le panier</button>
-                    <input class="submitButton" type="submit" id="buttonConfirmation" value="Confirmer la commande" name="cartConfirmation" />
-                </form>
+					<input class="submitButton" type="submit" id="buttonConfirmation" value="Confirmer la commande" name="cartConfirmation" onclick="changeDisabled();" />
+					</form>
+					<br><button class="submitButton" onclick="clearSessionCart();">Vider le panier</button>
 					<script>
 						let total = parseFloat(document.getElementById('total').innerHTML);
 						let confirmation = document.getElementById('buttonConfirmation');
