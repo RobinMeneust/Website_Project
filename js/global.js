@@ -27,7 +27,9 @@ function getCartHTML(){
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
 		if(this.readyState == 4 && this.status == 200){
-			document.getElementById("tableCart").innerHTML+=this.responseText;
+			let carts = document.getElementsByClassName("tableCart");
+			for(let i=0; i<carts.length; i++)
+				carts[i].innerHTML+=this.responseText;
 		}
 	};
 	xhttp.open("GET", "../php/updateCart.php", true);
@@ -37,21 +39,22 @@ function getCartHTML(){
 // Show or hide the cart in the header
 function updateCartDisplay(mode){
 	let cartdiv = document.getElementById("cartdiv");
+	
+	//Update the cart content
+	let carts = document.getElementsByClassName("tableCart");
+	for(let i=0; i<carts.length; i++)
+		carts[i].innerHTML="";
+	getCartHTML();
 
-	if(mode=="onlyRefresh"){ // we only refresh the content of cartdiv, we don't change its visibility
-		document.getElementById("tableCart").innerHTML='';
-		getCartHTML();
-	}
-	else if(hiddenCart){
-		document.getElementById("tableCart").innerHTML='';
-		getCartHTML();
-		cartdiv.style.display="block";
-		hiddenCart=false;
-	}
-	else{
-		cartdiv.style.display="none";
-		document.getElementById("tableCart").innerHTML="";
-		hiddenCart=true;
+	if(mode!="onlyRefresh"){ // if we don't only refresh the content of cartdiv
+		if(hiddenCart){
+			cartdiv.style.display="block";
+			hiddenCart=false;
+		}
+		else{
+			cartdiv.style.display="none";
+			hiddenCart=true;
+		}
 	}
 }
 

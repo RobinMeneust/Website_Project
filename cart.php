@@ -24,7 +24,7 @@
 
                 <form method="post" action="./php/cartConfirmation.php">
 					<?php 
-						$returnedHTML='<table id="tableCart"><tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Quantité Commandée</th></tr>';
+						$returnedHTML='<table class="tableCart"><tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Quantité Commandée</th></tr>';
     					$cartSize=0;
     					$totalPrice=0;
 						$i = 1;

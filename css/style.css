@@ -73,24 +73,24 @@ header{
 	overflow-y: scroll;
 }
 
-#tableCart{
+.tableCart{
 	border-collapse: collapse;
 	width:500px;
 	margin:50px;
 	text-align: center;
 }
 
-#tableCart img{
+.tableCart img{
 	width: 80px;
 	height: 80px;
 }
 
-#tableCart td{
+.tableCart td{
 	border: white solid 1px;
 	padding:20px;
 }
 
-#tableCart td a{
+.tableCart td a{
 	padding: 13px;
 	background-color: #22202f;
 	border:white 1px solid;
