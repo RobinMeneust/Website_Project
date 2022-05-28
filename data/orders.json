@@ -1,0 +1,18 @@
+[
+    {
+        "user_id": "u4",
+        "orders_list": {
+            "date": "28\/05\/2022",
+            "orders_list": {
+                "p1": {
+                    "description": "lot de 5 poires",
+                    "quantity": "3"
+                },
+                "p2": {
+                    "description": "lot de patates",
+                    "quantity": "1"
+                }
+            }
+        }
+    }
+]
