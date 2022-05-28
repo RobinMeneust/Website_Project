@@ -2,15 +2,27 @@
 <html>
 	<head>
 		<script src='../js/cartConfirmation.js'></script>
+		<script src='../js/global.js'></script>
 	</head>
 <?php
 	session_start();
 
 	if(!isset($_SESSION["currentUser"])){
 		header("Location: ../login.php", true);
-	}else{
+		exit();
+	}
+	else if(!isset($_SESSION["currentUser"]["address"])){
+		$_SESSION["missingAddress"]=true;
+		header("Location: ../profile.php", true);
+		exit();
+	}
+	else if(!isset($_SESSION["cart"])){
+		$_SESSION["emptyCart"]=true;
+		header("Location: ../cart.php", true);
+		exit();
+	}
+	else{
 		saveQuantityToSession();
-
 	}
 
 	function saveQuantityToSession() {
@@ -28,12 +40,12 @@
 		}
 	}
 ?>
-<body onload='<?php $i = 1; 
+<body onload='<?php 
 if(isset($_SESSION["cart"])){
 	foreach($_SESSION["cart"] as $product){
-		echo("updateStock(`".$product["id"] .'`,`'. $product["quantity"]."`);");
-		$i++;
+		echo('updateStock("'.$product["id"].'", "'.$product["quantity"].'");');
 	}
+	echo("clearSessionCart(); goToInvoicePage()");
 }
 ?>'>
 </body>

@@ -135,8 +135,10 @@ function updateStock(idProduct, order) {
 			}
 		}
 	};
-	xhttp.open("GET", "../data/products.xml", true);
+	xhttp.open("GET", "../data/products.xml", false);
 	xhttp.send();
+}
 
+function goToInvoicePage(){
 	window.location="../index.php";
 }

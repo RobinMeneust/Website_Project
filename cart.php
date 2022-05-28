@@ -42,17 +42,23 @@
     					echo $returnedHTML;
 					?>
 					<input class="submitButton" type="submit" id="buttonConfirmation" value="Confirmer la commande" name="cartConfirmation" onclick="changeDisabled();" />
-					</form>
-					<br><button class="submitButton" onclick="clearSessionCart();">Vider le panier</button>
-					<script>
-						let total = parseFloat(document.getElementById('total').innerHTML);
-						let confirmation = document.getElementById('buttonConfirmation');
-						if(total <= 0){
-							confirmation.setAttribute('disabled', '');
-						}else{
-							confirmation.setAttribute('enabled', '');
-						}
-					</script>
+				</form>
+				<br><button class="submitButton" onclick="clearSessionCart();">Vider le panier</button>
+				<script>
+					let total = parseFloat(document.getElementById('total').innerHTML);
+					let confirmation = document.getElementById('buttonConfirmation');
+					if(total <= 0){
+						confirmation.setAttribute('disabled', '');
+					}else{
+						confirmation.setAttribute('enabled', '');
+					}
+				</script>
+				<?php 
+					if(isset($_SESSION["emptyCart"]) && $_SESSION["emptyCart"]==true){
+						echo '<span style="color:red;">Le panier est vide vous ne pouvez pas commander</span>';
+						$_SESSION["emptyCart"]=false;
+					}
+				?>
 			</div>
 		</div>
 		<footer>

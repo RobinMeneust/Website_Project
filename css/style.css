@@ -376,6 +376,14 @@ a.submitButton{
 	cursor: pointer;
 }
 
+.submitButton:disabled{
+	background-color: #57536e;
+}
+
+.submitButton:disabled:hover{
+	cursor:default;
+}
+
 /*ACCOUNT MANAGEMENT*/
 
 /* Style of all elements in login.php*/

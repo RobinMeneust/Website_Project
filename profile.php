@@ -61,7 +61,13 @@
 			</tr>
 			<tr>
 				<td>Adresse : </td>
-				<td><?php echo ($_SESSION["currentUser"]["address"]); ?></td>				
+				<td><?php 
+					echo ($_SESSION["currentUser"]["address"]);
+					if($_SESSION["missingAddress"]==true){
+						echo '<span style="color:red;">Veuillez entrer votre adresse avant de commander</span>';
+						$_SESSION["missingAddress"]=false;
+					}
+				?></td>				
 			</tr>
 			<tr>
 				<td>Fonction : </td>
