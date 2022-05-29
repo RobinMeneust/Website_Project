@@ -140,5 +140,5 @@ function updateStock(idProduct, order) {
 }
 
 function goToInvoicePage(){
-	window.location="../index.php";
+	window.location="../invoice.php";
 }
