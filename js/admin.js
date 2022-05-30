@@ -20,8 +20,15 @@ function checkIfElementValueIsInt(element){
 }
 
 // Update the file products.xml with the new stock quantity
-function updateStock(id, cellID){
-	let newStock = parseInt(document.getElementById("quantity"+cellID).value);
+function updateStock(id, cellID, order=0){
+	if (cellID != 0) {
+		var newStock = parseInt(document.getElementById("quantity"+cellID).value);
+	}else{
+		var newStock = order;
+	}
+
+	console.log('newStock='+newStock);
+
 	if(newStock>=0){	
 		const xhttp = new XMLHttpRequest(); // we get the XML data
 		xhttp.onload = function () {
@@ -34,7 +41,13 @@ function updateStock(id, cellID){
 					break;
 				}
 			}
-			foundProduct.getElementsByTagName("STOCK")[0].childNodes[0].nodeValue=document.getElementById("quantity"+cellID).value; // we change the stock value
+
+			if (cellID != 0) {
+				foundProduct.getElementsByTagName("STOCK")[0].childNodes[0].nodeValue = document.getElementById("quantity"+cellID).value; // we change the stock value
+			}else{
+				foundProduct.getElementsByTagName("STOCK")[0].childNodes[0].nodeValue = foundProduct.getElementsByTagName("STOCK")[0].childNodes[0].nodeValue - order;
+			}
+
 			if(this.readyState == 4 && this.status == 200){
 				const xhttp2 = new XMLHttpRequest(); // we send the new content to a php file to save it in products.xml
 				let returnedStatus=this.responseText;
@@ -44,15 +57,16 @@ function updateStock(id, cellID){
 							console.log("Error in updateStock()");
 					}
 				};
-				xhttp2.open("POST", "../php/updateProducts.php", true);
+				xhttp2.open("POST", "../php/updateProducts.php", false);
 				xhttp2.setRequestHeader("Content-type", "text/xml");
 				xhttp2.send(xmlDoc);
 			}
 		};
-		xhttp.open("GET", "../data/products.xml", true);
+		xhttp.open("GET", "../data/products.xml", false);
 		xhttp.send();
 	}
-	document.getElementById("stockID"+cellID).innerHTML=newStock;
+	if(cellID != 0)
+		document.getElementById("stockID"+cellID).innerHTML=newStock;
 }
 
 // Display the list of products with their editable options

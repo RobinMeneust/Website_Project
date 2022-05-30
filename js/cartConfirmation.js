@@ -100,33 +100,28 @@ function changeDisabled() {
 	}
 }
 
-function updateStock(idProduct, order) {
-	//console.log(idProduct);
-	const xhr = new XMLHttpRequest();
+function updateStockOrder(idProduct, order) {
+	console.log(idProduct);
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
 		if(this.readyState == 4 && this.status == 200){
 			const xmlDoc = this.responseXML;
 			const cat = xmlDoc.getElementsByTagName("CATEGORY");
-			//console.log(cat[0].getElementsByTagName("ID"));
 			let foundCat;
 			for (let i = 0; i < cat.length; i++) {
 				for (let j = 0; j < cat[i].getElementsByTagName("ID").length; j++) {
 					if(cat[i].getElementsByTagName("ID")[j].childNodes[0].nodeValue == idProduct){
-						//console.log(cat[i].getElementsByTagName("ID")[j].childNodes[0].nodeValue);
 						foundCat = cat[i];
-						//console.log(foundCat);
 						let stock = foundCat.getElementsByTagName("STOCK")[j].childNodes[0].nodeValue;
-						//console.log("stock="+stock);
-						//console.log("order="+order);
-						let newStock = stock  - order;
-						console.log("newStock="+newStock);
+						foundCat.getElementsByTagName("STOCK")[j].childNodes[0].nodeValue = stock  - order;
+						console.log("foundCat.getElementsByTagName('STOCK')[j].childNodes[0].nodeValue="+newStock);
+						const xhr = new XMLHttpRequest();
 						xhr.onload = function() {
 							if (this.status == 200) {
 								console.log(this.responseText);
 							}
 						};
-						//console.log("id="+idProduct+"&newStock="+stock);
+
 						xhr.open('POST', '../php/changeStock.php', false);
 						xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 						xhr.send("id="+idProduct+"&newStock="+newStock);
