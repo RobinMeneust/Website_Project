@@ -3,6 +3,7 @@
 	<head>
 		<script src='../js/cartConfirmation.js'></script>
 		<script src='../js/global.js'></script>
+		<script src='../js/admin.js'></script>
 	</head>
 <?php
 	session_start();
@@ -42,7 +43,7 @@
 <body onload='<?php 
 if(isset($_SESSION["cart"])){
 	foreach($_SESSION["cart"] as $product){
-		echo('updateStock("'.$product["id"].'", "'.$product["quantity"].'");');
+		echo('updateStock("'.$product["id"].'", 0,"'.$product["quantity"].'");');
 	}
 	echo("clearSessionCart(); goToInvoicePage()");
 }
