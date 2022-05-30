@@ -45,7 +45,7 @@ if(isset($_SESSION["cart"])){
 	foreach($_SESSION["cart"] as $product){
 		echo('updateStock("'.$product["id"].'", 0,"'.$product["quantity"].'");');
 	}
-	echo("clearSessionCart(); goToInvoicePage()");
+	echo("goToInvoicePage()");
 }
 ?>'>
 
