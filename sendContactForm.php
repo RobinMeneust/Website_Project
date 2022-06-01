@@ -49,15 +49,19 @@
 				header("Location: contact.php", true);
 				exit();
 			}
-			$message = nl2br($message); // Used to convert all "\n" to "<br>"
-			$message.="<br><br>$name<br>Envoyé le : $date<br><br>_______________<br><br>Informations supplémentaires:<br><br>Genre : $gender<br>Date de naissance : $birthDate<br>Fonction : $job";
+			$message.="\n$name\nEnvoyé le : $date\n\n_______________\n\nInformations supplémentaires:\n\nGenre : $gender\nDate de naissance : $birthDate\nFonction : $job";
+			
 			
 			echo "<table class=\"mailTable\">";
 			echo "<tr><td><b>De</b> : $from </td></tr>";
 			echo "<tr><td><b>À</b> : $to </td></tr>";
 			echo "<tr><td><b>Objet</b> : $subject</td></tr>";
-			echo "<tr><td>$message</td></tr>";
-			echo"<tr><td><a href=\"mailto:websiteprojet2022@gmail.com?subject=$subject&body=[copier le contenu affiché dans la page 'Envoi du formulaire de contact']\">Envoyer</a></td></tr>";
+			echo "<tr><td>".nl2br($message)."</td></tr>"; // nl2br is used to convert all "\n" to "<br>"
+			// rawurlencode is used to get an url format of subject and body (e.g && is encoded so that it isn't interpreted as a new param such as &body)
+			if(strlen($message)>1800){
+				$message = substr($message, 0, 1800); // if the message is too long we have to shorten it
+			}
+			echo "<tr><td><a href=\"mailto:websiteprojet2022@gmail.com?subject=".rawurlencode($subject)."&body=".rawurlencode($message)."\">Envoyer</a></td></tr>";
 			echo "</table>";
 		}
 	?>

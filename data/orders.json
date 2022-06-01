@@ -41,6 +41,76 @@
                         "quantity": "2"
                     }
                 ]
+            },
+            {
+                "date": "01\/06\/2022",
+                "items_list": [
+                    {
+                        "id": "p2",
+                        "description": "lot de patates",
+                        "quantity": "2"
+                    },
+                    {
+                        "id": "p3",
+                        "description": "lot de 4 tomates",
+                        "quantity": "1"
+                    },
+                    {
+                        "id": "p5",
+                        "description": "lot de 3 carottes",
+                        "quantity": "1"
+                    }
+                ]
+            },
+            {
+                "date": "01\/06\/2022",
+                "items_list": [
+                    {
+                        "id": "p4",
+                        "description": "lot de 2 bananes",
+                        "quantity": "2"
+                    },
+                    {
+                        "id": "p5",
+                        "description": "lot de 3 carottes",
+                        "quantity": "1"
+                    },
+                    {
+                        "id": "p11",
+                        "description": "g\u00e2teau au chocolat",
+                        "quantity": "4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "user_id": "u10",
+        "orders_list": [
+            {
+                "date": "01\/06\/2022",
+                "items_list": [
+                    {
+                        "id": "p5",
+                        "description": "lot de 3 carottes",
+                        "quantity": "1"
+                    },
+                    {
+                        "id": "p4",
+                        "description": "lot de 2 bananes",
+                        "quantity": "2"
+                    }
+                ]
+            },
+            {
+                "date": "01\/06\/2022",
+                "items_list": [
+                    {
+                        "id": "p6",
+                        "description": "lot de 5 brochettes au boeuf",
+                        "quantity": "1"
+                    }
+                ]
             }
         ]
     }

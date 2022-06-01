@@ -74,7 +74,7 @@ if(isset($_SESSION["cart"])){
 	// if the user isn't in orders.json. It's its first order
 	if($foundUser==false){
 		$newUserData["user_id"]=$_SESSION["currentUser"]["id"];		
-		$newUserData["orders_list"]=$currentOrder;
+		$newUserData["orders_list"]=array($currentOrder);
 
 		array_push($json, $newUserData);
 		//We have to sort the new array

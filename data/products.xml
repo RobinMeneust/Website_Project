@@ -14,7 +14,7 @@
 			<NAME>patate</NAME>
 			<DESCRIPTION>lot de patates</DESCRIPTION>
 			<IMG_NAME>../img/patates.jpg</IMG_NAME>
-			<STOCK>2</STOCK>
+			<STOCK>0</STOCK>
 			<PRICE>1.70€</PRICE>
 		</PRODUCT>
 			<PRODUCT>
@@ -22,7 +22,7 @@
 			<NAME>tomate</NAME>
 			<DESCRIPTION>lot de 4 tomates</DESCRIPTION>
 			<IMG_NAME>../img/tomates.jpg</IMG_NAME>
-			<STOCK>1</STOCK>
+			<STOCK>0</STOCK>
 			<PRICE>2.90€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -30,7 +30,7 @@
 			<NAME>banane</NAME>
 			<DESCRIPTION>lot de 2 bananes</DESCRIPTION>
 			<IMG_NAME>../img/bananes.jpg</IMG_NAME>
-			<STOCK>8</STOCK>
+			<STOCK>3</STOCK>
 			<PRICE>1.80€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -38,7 +38,7 @@
 			<NAME>carotte</NAME>
 			<DESCRIPTION>lot de 3 carottes</DESCRIPTION>
 			<IMG_NAME>../img/carottes.jpg</IMG_NAME>
-			<STOCK>14</STOCK>
+			<STOCK>11</STOCK>
 			<PRICE>2.00€</PRICE>
 		</PRODUCT>
 	</CATEGORY>
@@ -48,7 +48,7 @@
 			<NAME>brochettes au boeuf</NAME>
 			<DESCRIPTION>lot de 5 brochettes au boeuf</DESCRIPTION>
 			<IMG_NAME>../img/brochettes_boeuf.jpg</IMG_NAME>
-			<STOCK>5</STOCK>
+			<STOCK>4</STOCK>
 			<PRICE>13.00€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -72,7 +72,7 @@
 			<NAME>crevette</NAME>
 			<DESCRIPTION>500g de crevettes</DESCRIPTION>
 			<IMG_NAME>../img/crevettes.jpg</IMG_NAME>
-			<STOCK>3</STOCK>
+			<STOCK>2</STOCK>
 			<PRICE>7.85€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -80,7 +80,7 @@
 			<NAME>saumon</NAME>
 			<DESCRIPTION>1kg de saumon</DESCRIPTION>
 			<IMG_NAME>../img/saumon.jpg</IMG_NAME>
-			<STOCK>5</STOCK>
+			<STOCK>2</STOCK>
 			<PRICE>20.00€</PRICE>
 		</PRODUCT>
 	</CATEGORY>
@@ -90,7 +90,7 @@
 			<NAME>gateau au chocolat</NAME>
 			<DESCRIPTION>gâteau au chocolat</DESCRIPTION>
 			<IMG_NAME>../img/gateau_chocolat.jpg</IMG_NAME>
-			<STOCK>4</STOCK>
+			<STOCK>0</STOCK>
 			<PRICE>12.00€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
