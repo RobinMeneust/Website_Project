@@ -6,7 +6,7 @@
 			<NAME>poire</NAME>
 			<DESCRIPTION>lot de 5 poires</DESCRIPTION>
 			<IMG_NAME>../img/poires.jpg</IMG_NAME>
-			<STOCK>0</STOCK>
+			<STOCK>8</STOCK>
 			<PRICE>3.00€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -14,7 +14,7 @@
 			<NAME>patate</NAME>
 			<DESCRIPTION>lot de patates</DESCRIPTION>
 			<IMG_NAME>../img/patates.jpg</IMG_NAME>
-			<STOCK>0</STOCK>
+			<STOCK>6</STOCK>
 			<PRICE>1.70€</PRICE>
 		</PRODUCT>
 			<PRODUCT>
@@ -22,7 +22,7 @@
 			<NAME>tomate</NAME>
 			<DESCRIPTION>lot de 4 tomates</DESCRIPTION>
 			<IMG_NAME>../img/tomates.jpg</IMG_NAME>
-			<STOCK>0</STOCK>
+			<STOCK>8</STOCK>
 			<PRICE>2.90€</PRICE>
 		</PRODUCT>
 		<PRODUCT>
@@ -90,7 +90,7 @@
 			<NAME>gateau au chocolat</NAME>
 			<DESCRIPTION>gâteau au chocolat</DESCRIPTION>
 			<IMG_NAME>../img/gateau_chocolat.jpg</IMG_NAME>
-			<STOCK>0</STOCK>
+			<STOCK>7</STOCK>
 			<PRICE>12.00€</PRICE>
 		</PRODUCT>
 		<PRODUCT>

@@ -1,4 +1,4 @@
-var hidden = 0; // Used to now whether we should hide or show the content depending on this value
+var hidden = 1; // Used to now whether we should hide or show the content depending on this value
 
 // Increase the quantity of the list id
 function increase(id) {

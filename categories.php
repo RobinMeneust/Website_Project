@@ -24,7 +24,7 @@
 			<div class="box mainPart">
 				<h1><?php echo $_REQUEST["catName"]; ?></h1><br>
 				<table id="cat"></table>
-				<button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Cacher stock</button>
+				<button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Afficher stock</button>
 			</div>
 		</div>
 		<footer>

@@ -284,6 +284,10 @@ body{
 	border-radius: 10%;
 }
 
+.stockColumn{
+	display:none;
+}
+
 /*FOOTER*/
 
 footer{
