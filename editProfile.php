@@ -22,13 +22,13 @@
 				<tr>
 					<td class="smallSize"><label for="lastName">Nom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this, 'default', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["last_name"]; ?>" type="text" id="lastName" name="lastName">
+						<input onfocusout="checkStringFormat(this, 'name', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["last_name"]; ?>" type="text" id="lastName" name="lastName">
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="firstName">Prénom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this, 'default', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["first_name"]; ?>" type="text" id="firstName" name="firstName">
+						<input onfocusout="checkStringFormat(this, 'name', true)" maxlength="100" class="mediumSize" placeholder="<?php echo $_SESSION["currentUser"]["first_name"]; ?>" type="text" id="firstName" name="firstName">
 					</td>
 				</tr>
 				<tr>

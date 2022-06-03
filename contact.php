@@ -28,13 +28,13 @@
 						<tr>
 							<td class="smallSize"><label for="contact_form_lastName">Nom *</label></td>
 							<td>
-								<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre nom" type="text" id="contact_form_lastName" name="contact_form_lastName" required>
+								<input onfocusout="checkStringFormat(this, 'name')" maxlength="100" class="mediumSize" placeholder="Entrez votre nom" type="text" id="contact_form_lastName" name="contact_form_lastName" required>
 							</td>
 						</tr>
 						<tr>
 							<td class="smallSize"><label for="contact_form_firstName">Prénom *</label></td>
 							<td>
-								<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="contact_form_firstName" name="contact_form_firstName" required>
+								<input onfocusout="checkStringFormat(this, 'name')" maxlength="100" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="contact_form_firstName" name="contact_form_firstName" required>
 							</td>
 						</tr>
 						<tr>
@@ -82,7 +82,7 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input class="submitButton" type="submit"><span style="margin-left: 50px">Les champs avec un * ne doivent pas être vides</span></td>
+							<td><input id="sendFormButton" class="submitButton" type="submit"><span style="margin-left: 50px">Les champs avec un * ne doivent pas être vides</span></td>
 						</tr>
 						<?php 
 							if(isset($_SESSION["incorrectContactForm"]) && $_SESSION["incorrectContactForm"]){

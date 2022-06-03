@@ -38,11 +38,11 @@
 					<td><input onfocusout="checkIfElementValueIsPositive(this)" type="number" id="stockOfNewItem" name="stockOfNewItem" min="0" max="" value="0" size="3"></td>
 					<td>
 						<table id="newCategoryTable">
-							<tr><td>Créer une nouvelle : </td><td><input onfocusout="checkStringFormat(this, 'default', true)" maxlength="100" class="smallSize" placeholder="Entrez le nom de la catégorie" type="text" id="categoryNameOfNewItem" name="categoryNameOfNewItem"></td></tr>
+							<tr><td>Créer une nouvelle : </td><td><input onfocusout="checkStringFormat(this, 'noSpaces', true)" maxlength="100" class="smallSize" placeholder="Entrez le nom de la catégorie" type="text" id="categoryNameOfNewItem" name="categoryNameOfNewItem"></td></tr>
 							<tr><td>Ou prendre une existante : </td><td><select id="select_categoryNameOfNewItem" name="select_categoryNameOfNewItem"></select></td></tr>
 						</table>
 					</td>
-					<td><button class="submitButton" onclick="addNewProduct();">Ajouter</button></td></tr>
+					<td><button id="sendFormButton" class="submitButton" onclick="addNewProduct();">Ajouter</button></td></tr>
 				</table>
 			</div>
 		</div>

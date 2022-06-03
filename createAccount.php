@@ -22,13 +22,13 @@
 				<tr>
 					<td class="smallSize"><label for="lastName">Nom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre nom" type="text" id="lastName" name="lastName" required>
+						<input onfocusout="checkStringFormat(this, 'name')" maxlength="100" class="mediumSize" placeholder="Entrez votre nom" type="text" id="lastName" name="lastName" required>
 					</td>
 				</tr>
 				<tr>
 					<td class="smallSize"><label for="firstName">Prénom</label></td>
 					<td>
-						<input onfocusout="checkStringFormat(this)" maxlength="100" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="firstName" name="firstName" required>
+						<input onfocusout="checkStringFormat(this, 'name')" maxlength="100" class="mediumSize" placeholder="Entrez votre prénom" type="text" id="firstName" name="firstName" required>
 					</td>
 				</tr>
 				<tr>
