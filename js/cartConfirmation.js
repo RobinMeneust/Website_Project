@@ -2,10 +2,14 @@ function buttonDisabled(nbElement) {
 	for (let i = 0; i < nbElement; i++) {
 		let value = parseInt(document.getElementById('quantity'+i).value);
 		let stock = parseInt(document.getElementById('stockID'+i).innerHTML);
-		let button = document.getElementById('button+'+i);
+		let buttonP = document.getElementById('button+'+i);
+		let buttonM = document.getElementById('button-'+i);
 
 		if(value >= stock){
-			button.disabled = true;
+			buttonP.disabled = true;
+		}
+		if(value <= 1){
+			buttonM.disabled = true;
 		}
 	}
 
@@ -45,7 +49,7 @@ function minusSize(id) {
 	let price = parseFloat(document.getElementById('price'+id).innerHTML);
 
 
-	if(value > 0){
+	if(value > 1){
 		size--;
 		total -= price;
 		button.disabled = false;
@@ -100,40 +104,22 @@ function changeDisabled() {
 	}
 }
 
-function updateStockOrder(idProduct, order) {
-	console.log(idProduct);
+function goToInvoicePage(){
+	window.location="../invoice.php";
+}
+
+
+function saveSessionJs(id,PorM){
+
+	console.log(id);
+	console.log(PorM);
+
 	const xhttp = new XMLHttpRequest();
 	xhttp.onload = function () {
 		if(this.readyState == 4 && this.status == 200){
-			const xmlDoc = this.responseXML;
-			const cat = xmlDoc.getElementsByTagName("CATEGORY");
-			let foundCat;
-			for (let i = 0; i < cat.length; i++) {
-				for (let j = 0; j < cat[i].getElementsByTagName("ID").length; j++) {
-					if(cat[i].getElementsByTagName("ID")[j].childNodes[0].nodeValue == idProduct){
-						foundCat = cat[i];
-						let stock = foundCat.getElementsByTagName("STOCK")[j].childNodes[0].nodeValue;
-						foundCat.getElementsByTagName("STOCK")[j].childNodes[0].nodeValue = stock  - order;
-						console.log("foundCat.getElementsByTagName('STOCK')[j].childNodes[0].nodeValue="+newStock);
-						const xhr = new XMLHttpRequest();
-						xhr.onload = function() {
-							if (this.status == 200) {
-								console.log(this.responseText);
-							}
-						};
-
-						xhr.open('POST', '../php/changeStock.php', false);
-						xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-						xhr.send("id="+idProduct+"&newStock="+newStock);
-					}
-				}
-			}
+			//console.log(idProduct);
 		}
 	};
-	xhttp.open("GET", "../data/products.xml", false);
+	xhttp.open("GET", "../php/cartSession.php?id="+id+"&PorM="+PorM, true);
 	xhttp.send();
-}
-
-function goToInvoicePage(){
-	window.location="../invoice.php";
 }
