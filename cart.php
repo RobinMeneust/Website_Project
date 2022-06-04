@@ -24,6 +24,8 @@
 
                 <form method="post" action="./php/cartConfirmation.php">
 					<?php 
+						# create a table to show the cart
+
 						$returnedHTML='<table class="tableCart"><tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Quantité Commandée</th></tr>';
     					$cartSize=0;
     					$totalPrice=0;
@@ -45,7 +47,7 @@
 				</form>
 				<br><button class="submitButton" onclick="clearSessionCart();">Vider le panier</button>
 				<script>
-
+					// enable or disable the confirmation button depending on the stock
 					let total = parseFloat(document.getElementById('total').innerHTML);
 					let confirmation = document.getElementById('buttonConfirmation');
 					if(total <= 0){

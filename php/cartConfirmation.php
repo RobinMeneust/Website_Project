@@ -43,6 +43,7 @@
 <body onload='<?php 
 if(isset($_SESSION["cart"])){
 	foreach($_SESSION["cart"] as $product){
+		// update the stock inside "/data/products.xml"
 		echo('updateStock("'.$product["id"].'", 0,"'.$product["quantity"].'");');
 	}
 	echo("goToInvoicePage()");
@@ -50,6 +51,8 @@ if(isset($_SESSION["cart"])){
 ?>'>
 
 <?php
+	// generates an order history
+
 	$file = "../data/orders.json";
 	$json = json_decode(file_get_contents($file), true);
 	$foundUser=false;
