@@ -35,7 +35,7 @@ function checkStringFormat(element, mode="default", canBeEmpty=false){
 	}
 	else if(mode=="name"){
 		isIncorrect = !regex_name.test(element.value);
-		errorMsg = "<br>Ne doit contenir que des lettres des espaces ou les caractères :  \'-";
+		errorMsg = "<br>Ne doit contenir que des lettres des espaces ou les caractères : \'-";
 	}
 	else if(mode=="noSpaces"){
 		isIncorrect = !regex_withoutSpaces.test(element.value);

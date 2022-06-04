@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php
-	// Checks if a the birth date is invalid (checks if it's in the future)
+	// Check if a the birth date is invalid (checks if it's in the future)
 		function checkDatesConsistency($birthDate, $date){
 			$dateArray = explode('-', $date);
 			$birthDateArray = explode('-', $birthDate);

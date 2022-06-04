@@ -49,11 +49,11 @@
 				exit();
 			}
 		}
-   }
+	}
 
-   //Search where are written the actual information of the user with is ID and change his coordinates.
-   $i=0;
-   foreach($json as $user){
+	//Search where are written the actual information of the user with is ID and change his coordinates.
+	$i=0;
+	foreach($json as $user){
 		if($_SESSION["currentUser"]["id"] == $user["id"]){
 			if($username != ""){
 				$json[$i]["login"] = $username;

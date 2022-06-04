@@ -22,26 +22,26 @@
 			<div class="box mainPart">
 				<h1>PANIER</h1><br>
 
-                <form method="post" action="./php/cartConfirmation.php">
+				<form method="post" action="./php/cartConfirmation.php">
 					<?php 
 						# create a table to show the cart
 
 						$returnedHTML='<table class="tableCart"><tr><th>Photo</th><th>Référence</th><th>Description</th><th>Prix</th><th class="stockColumn">Stock</th><th>Quantité Commandée</th></tr>';
-    					$cartSize=0;
-    					$totalPrice=0;
+						$cartSize=0;
+						$totalPrice=0;
 						$i = 1;
-    					if(isset($_SESSION['cart'])) {
-        					foreach($_SESSION['cart'] as $product){
-            					if(isset($product['imgSrc'], $product['description'], $product['price'], $product['stock'], $product['quantity'], $product['id'])){
-                					$returnedHTML.="<tr id='".$i."'><td><img class='catalogueImg' style='cursor:default' alt='".$product['imgSrc']."' src='".$product['imgSrc']."' alt='Photo de bananes'></td><td id='ref'>".$product['id']."</td><td>".$product['description']."</td><td id='price". $i ."'>".$product['price']."</td><td id='stockID".$i."'>".$product['stock']."</td><td><input type='button' id='button-".$i."' value='-' onclick='decrease(`".$i."`); minusSize(`".$i."`); saveSessionJs(`".$product['id']."`,`-`);'><input type='number' class='quantity' id='quantity". $i ."' name='quantity[".$i."]' min='0' size='6' value='".$product['quantity']."' disabled /><input type='button' id='button+".$i."' value='+' onclick='increase(`".$i."`); plusSize(`".$i."`); saveSessionJs(`".$product['id']."`,`+`);'><br><input type='button' id='buttonX".$i."' value='X' onclick='deleteTr(`".$i."`,`".$product['id']." `);'><script>var value = parseInt(document.getElementById('quantity".$i."').value); var stock = parseInt(document.getElementById('stockID".$i."').innerHTML); var buttonP = document.getElementById('button+".$i."'); var buttonM = document.getElementById('button-".$i."'); if(value == stock){buttonP.disabled=true;}else{buttonP.disabled=false;} if(value <= 1){buttonM.disabled=true;}else{buttonM.disabled=false;}</script></td></tr>";
-                					$cartSize+=intval($product['quantity'], 10);
-                					$totalPrice+=number_format(floatval(substr($product['price'], 0, -1)),2)*$product['quantity']; // we delete the "€" character at the end and we convert the string to a number
+						if(isset($_SESSION['cart'])) {
+							foreach($_SESSION['cart'] as $product){
+								if(isset($product['imgSrc'], $product['description'], $product['price'], $product['stock'], $product['quantity'], $product['id'])){
+									$returnedHTML.="<tr id='".$i."'><td><img class='catalogueImg' style='cursor:default' alt='".$product['imgSrc']."' src='".$product['imgSrc']."' alt='Photo de bananes'></td><td id='ref'>".$product['id']."</td><td>".$product['description']."</td><td id='price". $i ."'>".$product['price']."</td><td id='stockID".$i."'>".$product['stock']."</td><td><input type='button' id='button-".$i."' value='-' onclick='decrease(`".$i."`); minusSize(`".$i."`); saveSessionJs(`".$product['id']."`,`-`);'><input type='number' class='quantity' id='quantity". $i ."' name='quantity[".$i."]' min='0' size='6' value='".$product['quantity']."' disabled /><input type='button' id='button+".$i."' value='+' onclick='increase(`".$i."`); plusSize(`".$i."`); saveSessionJs(`".$product['id']."`,`+`);'><br><input type='button' id='buttonX".$i."' value='X' onclick='deleteTr(`".$i."`,`".$product['id']." `);'><script>var value = parseInt(document.getElementById('quantity".$i."').value); var stock = parseInt(document.getElementById('stockID".$i."').innerHTML); var buttonP = document.getElementById('button+".$i."'); var buttonM = document.getElementById('button-".$i."'); if(value == stock){buttonP.disabled=true;}else{buttonP.disabled=false;} if(value <= 1){buttonM.disabled=true;}else{buttonM.disabled=false;}</script></td></tr>";
+									$cartSize+=intval($product['quantity'], 10);
+									$totalPrice+=number_format(floatval(substr($product['price'], 0, -1)),2)*$product['quantity']; // we delete the "€" character at the end and we convert the string to a number
 									$i += 1;
-            					}
-        					}
-   		 				}
-    					$returnedHTML.="<tr><td></td><td><b>Total</b></td><td id='total'>$totalPrice</td><td></td><td><b>Quantité total</b></td><td id='cartSize'>$cartSize</td></tr></table>";
-    					echo $returnedHTML;
+								}
+							}
+		 				}
+						$returnedHTML.="<tr><td></td><td><b>Total</b></td><td id='total'>$totalPrice</td><td></td><td><b>Quantité total</b></td><td id='cartSize'>$cartSize</td></tr></table>";
+						echo $returnedHTML;
 					?>
 					<input class="submitButton" type="submit" id="buttonConfirmation" value="Confirmer la commande" name="cartConfirmation" onclick="changeDisabled();" />
 				</form>

@@ -5,7 +5,6 @@
 	$_SESSION["MailAlreadyUse"]=0;
 	$_SESSION["usernameAlreadyUsed"]=0;
 
-	//check if the create account form are with "valid" form
 	if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$username=$_REQUEST["username"];
 		$lastName=$_REQUEST["lastName"];
@@ -19,7 +18,7 @@
 		$password=$_REQUEST["password"];
 	}
 
-	//check if the mail or username isn't arleady used
+	//check if the mail or username isn't already used
 	$file = "../data/users.json";
 	$json = json_decode(file_get_contents($file), true);
 	
@@ -34,7 +33,7 @@
 			header("Location: ../createAccount.php", true);
 			exit();
 		}
-   }
+	}
 
 	// generate the id for the new account
 	$prev = 0;
@@ -42,14 +41,14 @@
 	$i = 0;
 	foreach($json as $user){
 		$idRead = (int) filter_var($user["id"], FILTER_SANITIZE_NUMBER_INT);
-		if($idRead != 0){  //don't check the case id=0 because it's the admin.
-			if($idRead != ($prev+1)){  // If we have found an unused id betwen 2 used, we can use it for the new user
-				$id = "u".($prev+1);
+		if($idRead != 0){	//don't check the case id=0 because it's the admin.
+			if($idRead != ($prev+1)){	// If we have found an unused 
+				$id = "u".($prev+1);	// id between 2 used, we can use it for the new user
 				break;
 			}
 			if(++$i === $nbUser){
-				$id = "u".($idRead+1);  // if all id are already used, so we add an id +1 bigger than the biggest one. 
-				break;
+				$id = "u".($idRead+1);	// if all id are already used, 
+				break;					// so we add an id +1 bigger than the biggest one. 
 			}
 			$prev = $idRead;
 		}
@@ -70,7 +69,7 @@
 		"id" => $id
 	);
 	array_push($json,$newUserData);
-	//We have to short the new array
+	//We have to shorten the new array
 	function comparator($object1, $object2){
 		$id1 = (int) filter_var($object1["id"], FILTER_SANITIZE_NUMBER_INT);
 		$id2 = (int) filter_var($object2["id"], FILTER_SANITIZE_NUMBER_INT);

@@ -1,9 +1,9 @@
 <?php 
-    session_start(); 
-    if(!isset($_SESSION["currentUser"]) || $_SESSION['currentUser']['id']!="u00"){
-        header("Location: index.php");
-        exit();
-    }
+	session_start(); 
+	if(!isset($_SESSION["currentUser"]) || $_SESSION['currentUser']['id']!="u00"){
+		header("Location: index.php");
+		exit();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" type="image/png" href="img/logo.png">
 	<script src="js/global.js"></script>
-    <script src="js/admin.js"></script>
+	<script src="js/admin.js"></script>
 	<script src="js/formChecker.js"></script>
 </head>
 <body onload="loadEditableProducts(); loadCategoriesSelectList();">

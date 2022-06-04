@@ -393,7 +393,7 @@ a.submitButton{
 /* Style of all elements in login.php*/
 .loginDiv, .createAccountDiv, .editProfileDiv{ /*also used in createaccount.php*/
 	background-color: #322f46;
-  	margin: auto;
+	margin: auto;
 	margin-top:200px;
 	width: 1000px;
 	padding: 5px;
@@ -416,7 +416,7 @@ a.submitButton{
 .profileDiv{
 	background-color: #322f46;
 	border: 1px solid white;
-  	margin: auto;
+	margin: auto;
 	margin-top:200px;
 	width: 700px;
 	height: auto;

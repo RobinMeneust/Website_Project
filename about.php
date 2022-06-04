@@ -32,7 +32,7 @@
 				</p><br>
 				<p>
 					&emsp;&emsp;Il s'agit là d'une simulation et non d'un cas concret, ne vous attendez pas à recevoir réellement ces produits nous ne voulons pas de clients déçus !
-                </p>
+				</p>
 			</div>
 		</div>
 		<footer>
