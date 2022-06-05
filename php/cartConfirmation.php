@@ -22,23 +22,6 @@
 		header("Location: ../cart.php", true);
 		exit();
 	}
-	else{
-		saveQuantityToSession();
-	}
-
-	function saveQuantityToSession() {
-		$i = 1;
-		$list_quantity = array();
-		if(isset($_POST['quantity']) && is_array($_POST['quantity'])){
-			$list_quantity = $_POST['quantity'];
-		}
-		if(isset($_POST['cartConfirmation'])){
-			foreach($_SESSION['cart'] as $product){
-				$_SESSION['cart'][$product['id']]['quantity'] = $list_quantity[$i];
-				$i++;
-			}
-		}
-	}
 ?>
 <body onload='<?php 
 if(isset($_SESSION["cart"])){
