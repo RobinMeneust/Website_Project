@@ -466,9 +466,17 @@ a.submitButton{
 /* PRODUCTS AND CATEGORIES LIST GENERATION */
 
 #cat, #editProductsTable, #newProductTable, .ordersTable{
-	width: 1300px;
+	width: 60vw;
+	max-width: 2000px;
 	text-align: center;
+	margin: auto;
 	border-collapse: collapse;
+}
+
+#td_hideStockButton{
+	text-align: left;
+	border: none !important;
+	padding-top: 20px;
 }
 
 #newProductTable{
@@ -548,6 +556,7 @@ a.submitButton{
 }
 
 /*HEIGHT*/
+
 
 @media (max-height:740px) {
 	.verticalMenu{

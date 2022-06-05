@@ -12,7 +12,7 @@
 	<script src="js/catalogue.js"></script>
 	<script src="js/global.js"></script>
 </head>
-<body onload="loadCategory('<?php echo $_REQUEST["catID"]; ?>');">
+<body onload="loadCategory('<?php if(isset($_REQUEST["catID"])){ echo $_REQUEST["catID"]; } ?>');">
 <div class="wrapper">
 		<header>
 			<?php include('php/prefab/header.php')?>
@@ -22,9 +22,8 @@
 				<?php include('php/prefab/verticalMenu.php')?>
 			</div>
 			<div class="box mainPart">
-				<h1><?php echo $_REQUEST["catName"]; ?></h1><br>
+				<h1><?php if(isset($_REQUEST["catName"])) echo $_REQUEST["catName"]; ?></h1><br>
 				<table id="cat"></table>
-				<button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Afficher stock</button>
 			</div>
 		</div>
 		<footer>

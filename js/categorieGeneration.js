@@ -29,6 +29,7 @@ function loadCategory(category) {
 					txt += '<tr> <td><img class="catalogueImg" onclick="zoomIn(this)" src="'+imgSrc[i].childNodes[0].nodeValue+'"></td><td>'+id[i].childNodes[0].nodeValue+'</td><td>'+desc[i].childNodes[0].nodeValue+'</td><td>'+price[i].childNodes[0].nodeValue+'</td><td class="stockColumn" id="stockID'+(i+1)+'">'+stock[i].childNodes[0].nodeValue+'</td><td><form name="addToCart_form" id="addToCart_form"><input type="button" id="button-'+(i+1)+'" value="-" onclick="decrease('+(i+1)+');" disabled="disabled"><input onkeyup="checkIfCorrectValue(this.value, '+(i+1)+')" type="number" id="quantity'+(i+1)+'" name="quantity" min="0" max="" value="0" size="6"><input type="button" id="button+'+(i+1)+'" value="+" onclick="increase('+(i+1)+');"><input onclick="addToCart(\''+imgSrc[i].childNodes[0].nodeValue+'\', \''+id[i].childNodes[0].nodeValue+'\', \''+desc[i].childNodes[0].nodeValue+'\', \''+price[i].childNodes[0].nodeValue+'\', \''+stock[i].childNodes[0].nodeValue+'\', \''+(i+1)+'\'); updateCartDisplay(\'onlyRefresh\');" class="default_button" type="button" value="Ajouter au panier"></form></td></tr>';
 				}
 			}
+			txt += '<tr><td id="td_hideStockButton" colspan="6"><button id="buttonHideStock" type="submit" class="button"  onclick="hide()">Afficher stock</button></tr></td>'
 			document.getElementById("cat").innerHTML = txt;
 		}
 	};
