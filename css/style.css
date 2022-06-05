@@ -200,7 +200,7 @@ body{
 	position: fixed;
 	border-bottom-right-radius: 20px;
 	border-top-right-radius: 20px;
-	height: 500px;
+	height: 400px;
 }
 
 .verticalMenuContainer{
@@ -261,6 +261,14 @@ body{
 .verticalMenuElement a{
 	display: inline-block;
 	overflow-y: hidden;
+}
+
+ul.verticalMenuElement{
+	margin-top: 20px;
+}
+
+.verticalMenu{
+	padding-top: 100px;
 }
 
 /*PRODUCTS DISPLAY*/
@@ -553,19 +561,62 @@ a.submitButton{
 		padding: 30px;
 		font-size:23px;
 	}
+
+	.catalogueImg{
+		width:50px;
+	}
+
+	.default_button{
+		height: 20px;
+		width: 125px;
+		font-size: 13px;
+	}
+
+	.verticalMenu, .verticalMenu hr{
+		width: 30px;
+	}
+
+	.verticalMenuElement svg{
+		width: 20px;
+		height: 20px;
+	}
+	
+	.verticalMenu{
+		padding-top: 30px;
+		height: 200px;
+	}
+
+	.verticalMenuElement{
+		font-size:23px;
+		list-style-type: none;
+		line-height: 20px;
+	}
+
+	.verticalMenuButton{
+		margin-left: 4px;
+		border: white solid 1px;
+		width: 20px;
+		height: 20px;
+		font-size: 10px;
+	}
 }
+
 
 /*HEIGHT*/
 
 
 @media (max-height:740px) {
 	.verticalMenu{
-		height: 300px;
+		height: 200px;
 	}
 
 	.verticalMenuElement svg{
-		width: 18px;
-		height: 18px;
+		width: 20px;
+		height: 20px;
+	}
+	
+	.verticalMenu{
+		padding-top: 50px;
 	}
 
 	.verticalMenuElement{
@@ -575,7 +626,7 @@ a.submitButton{
 	}
 }
 
-@media (max-height:540px) {
+@media (max-height:450px) {
 	.verticalMenuContainer{
 		display: none;
 	}
